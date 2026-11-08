@@ -3,12 +3,12 @@ const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const scenes = {
-  interview: { question: '如果缓存删除失败了，你们怎么保证一致性？', answer: '我会先保证数据库写入成功，再删除缓存。\n删除失败时，把任务放入重试队列，同时用 binlog 订阅兜底。\n这个方案保证的是最终一致；对余额这类强一致场景，我会单独设计。' },
-  academic: { question: '相比已有方法，你们最主要的贡献是什么？', answer: '我想从问题本身说起。现有方法在复杂场景下的泛化还不够稳定。\n我们的核心思路，是把结构信息引入建模过程。\n接下来我会结合消融实验，说明这一设计究竟带来了什么。' },
-  meeting: { question: '如果交付时间不变，你会怎么调整这次的范围？', answer: '我建议先锁定本次必须交付的核心流程，把增强功能放到下一阶段。\n今天先对齐验收标准和负责人，再确认各个依赖的最晚时间。\n这样能尽早暴露风险，也让进度更可控。' },
-  course: { question: '能举个例子，解释一下什么是过拟合吗？', answer: '可以把它想成只背熟了练习题，却没有理解解题方法。\n模型在训练数据上表现很好，换一道新题就容易答错。\n我们可以用独立验证集检查这个问题，并尝试正则化或增加数据。' }
+  meeting: { question: 'The release is planned for next Thursday. Could we confirm the rollout and support plan?', answer: '发布计划定在下周四。我们可以确认一下上线安排和支持计划吗？\n\n决定：先向 10% 用户发布，观察两天错误率。\n待办：运维周三前确认回滚方案。\n负责人：林。' },
+  academic: { question: 'How does the selective scan reduce memory traffic for long sequences?', answer: '选择性扫描通过融合离散化、扫描和输出，减少长序列处理中的内存读写。\n\n资料来源：论文第 4 页，图 3。\n待确认：补充与基线方法的吞吐量对比。' },
+  interview: { question: '模拟练习：你会如何安排一次平稳的版本发布？', answer: '先确认发布范围、监控指标和回滚条件。\n按小比例分批上线，逐步扩大范围。\n结束后复盘问题并整理成发布清单。' },
+  course: { question: 'Could you explain what happens after a TLB miss?', answer: 'TLB 未命中后，硬件会先遍历页表。\n如果页表项有效，就把映射写回 TLB；只有页表项无效时才触发缺页异常。\n资料来源：第 9 讲，第 23 页。' }
 };
-let currentScene = 'interview';
+let currentScene = 'meeting';
 let typingTimer = null;
 function playScene(name, userInitiated = false) {
   currentScene = name;
@@ -37,13 +37,13 @@ function playScene(name, userInitiated = false) {
 }
 $$('[data-scene]').forEach(b => b.addEventListener('click', () => playScene(b.dataset.scene, true)));
 $('.replay-button').addEventListener('click', () => playScene(currentScene, true));
-playScene('interview');
+playScene('meeting');
 
 const features = {
-  listen: { symbol: '≋', title: '听得到双方，\n也分得清你我。', description: '系统声音是「对方」，麦克风是「我」。两条音轨独立识别，实时转写；本地规则识别问题，触发流式回答。', points: ['默认在本机完成语音识别', '流式出字，整句再精修', '回声自动忽略，也能手动恢复'], image: 'assistant-dark.webp', alt: '助手页：实时对话、问题识别与建议回答' },
-  context: { symbol: '▧', title: '有背景，\n回答才像你。', description: '把简历、岗位要求、论文或项目资料放进场景。回答会结合当前场景的要求与检索到的资料片段，帮助你把准备用起来。', points: ['面试、学术、商务等五种模式', 'PDF、Office 与图片按需处理', 'OCR 与语义检索可选'], image: 'materials-dark.webp', alt: '场景页：分类资料、背景信息与回答要求' },
-  prompt: { symbol: '✦', title: '把要点，变成\n可以说出口的话。', description: '回答逐字出现，以第一人称、短句与自然衔接组织。打开悬浮提词器，让建议靠近摄像头；随时调整成更短、举例或英文版。', points: ['半透明悬浮窗，自定义字号', '鼠标穿透，减少操作干扰', '快捷键随时显示或隐藏'], image: 'teleprompter-dark.webp', alt: '悬浮提词器：当前问题、建议回答与调整操作' },
-  review: { symbol: '↗', title: '这一次的经历，\n成为下一次的底气。', description: '会话结束后，回看转录与问题，生成复盘。把值得保留的经验和改进后的回答沉淀到场景里，让下一次准备有迹可循。', points: ['记录、问题与提词可回看', '经验库与题库按场景沉淀', '支持导出与本机备份'], image: 'workspace-knowledge-dark.webp', alt: '场景经验库与题库：复盘经验和改进后的回答' }
+  listen: { symbol: '≋', title: '中英对话，\n实时听译。', description: '系统声音与麦克风分开收听，实时显示原文与双向译文。跨语言会议中可边听边读，不需要等到会后再翻译。', points: ['中文与英语双向翻译', '原文和译文并排显示', '字幕可随会议记录保存'], image: 'conversation-dark.svg', alt: '助手页：中英实时字幕与会议纪要' },
+  context: { symbol: '▧', title: '会议资料，\n随手整理。', description: '导入议程、方案、论文和项目文件。资料在本机解析，提问时按需检索相关内容，并保留来源。', points: ['会议、学术与课程场景', 'PDF、Office 与图片按需处理', 'OCR 与语义检索可选'], image: 'materials-dark.svg', alt: '场景页：会议资料、议程与项目文件' },
+  prompt: { symbol: '✦', title: '会中跟进，\n会后快速回顾。', description: '记录实时转写、议题和讨论结论。演讲准备时也可用悬浮提词器查看要点，字号和透明度均可调整。', points: ['实时字幕与讨论记录', '结构化纪要和行动项', '演讲提词可调整字号'], image: 'prompter-dark.svg', alt: '实时字幕与会中重点记录' },
+  review: { symbol: '↗', title: '一场会议，\n留下清晰脉络。', description: '结束后生成纪要或提纲，提取决定事项、待办和待确认问题。原文、译文与资料来源可一并回看。', points: ['纪要、提纲和观点对照', '决定、负责人和待办', '本机保存与备份'], image: 'review-dark.svg', alt: '会议纪要、待办事项与资料来源' }
 };
 let currentFeature = 'listen';
 function selectFeature(name, focus = false) {
@@ -136,13 +136,13 @@ let pulseTimer;
 $('#inject-signal').addEventListener('click',()=>{clearTimeout(pulseTimer);engine.pulse();$('.hero-stage').classList.add('burst');$('#engine-state').textContent='信号已注入 / SIGNAL IN MOTION';pulseTimer=setTimeout(()=>{$('.hero-stage').classList.remove('burst');const b=$('[data-shape][aria-pressed="true"]');$('#engine-state').textContent=shapeNames[Number(b.dataset.shape)];},1600);});
 
 const techSteps={
-  capture:{kicker:'TWO STREAMS. ONE CONVERSATION.',title:'听得见，也分得清。',description:'系统声音与麦克风分别采集、独立识别。本地规则过滤回声、判断提问，让“对方在问”与“我在回答”各归其位。',tags:['双通道采集','本机规则判断','回声可恢复']},
+  capture:{kicker:'TWO STREAMS. ONE CONVERSATION.',title:'听得见，也分得清。',description:'系统声音与麦克风分别采集、独立识别，保留发言顺序并过滤回声，为双语字幕和会议记录打好基础。',tags:['双通道采集','实时语音识别','回声可恢复']},
   decode:{kicker:'STREAM FIRST. REFINE SECOND.',title:'先跟上，再听准。',description:'第一遍流式转写，跟上对话节奏；一句话说完，第二遍整句精修。持续反馈与最终文本，各自承担最合适的任务。',tags:['流式粗稿','整句精修','本机语音处理']},
-  retrieve:{kicker:'THE RIGHT CONTEXT. AT THE RIGHT TIME.',title:'找到相关的，不堆全部的。',description:'标题树切片保留章节、表格与真实定位。关键词与可选语义检索共享切片；语义等待超过约 500 毫秒，采用关键词结果继续回答。',tags:['统一切片','版本化索引','超时关键词兜底']},
-  stream:{kicker:'LESS WAITING. MORE CONVERSATION.',title:'一边生成，一边进入视线。',description:'识别到问题后，组织当前场景与检索片段，调用所选回答服务流式输出。任务绑定场景版本，取消或切换后，过期结果不覆盖当前回答。',tags:['流式呈现','可取消任务','过期结果隔离']}
+  retrieve:{kicker:'THE RIGHT CONTEXT. AT THE RIGHT TIME.',title:'找到相关的，不堆全部的。',description:'标题树切片保留章节、表格与真实定位。关键词与可选语义检索共享切片；知识问答可引用当前场景的资料来源。',tags:['统一切片','版本化索引','来源可追溯']},
+  stream:{kicker:'LESS WAITING. MORE CONVERSATION.',title:'一边听，一边读。',description:'识别到语音后，实时呈现转写与译文；会后可按当前会议整理摘要、决定事项与待办。知识问答也可结合已导入资料。',tags:['实时字幕','结构化纪要','资料问答']}
 };
-function waveMarkup(){return ['remote','self'].map((side,j)=>`<div class="track track-${side}"><span>${j?'SELF':'REMOTE'}</span><div class="wave-track">${Array.from({length:40},(_,i)=>`<i style="height:${4+Math.round(Math.abs(Math.sin(i*2.17+j))*18)}px;animation-delay:-${(i*.13).toFixed(2)}s"></i>`).join('')}</div><b>${j?'我':'对方'}</b></div>`).join('')+'<div class="trace-merge"><i></i><span>独立识别 / 回声过滤</span><i></i></div><div class="trace-output"><span>QUESTION_DETECTED</span><strong>识别问题，触发回答。</strong><span class="trace-cursor">▌</span></div>';}
-const techVisuals={capture:waveMarkup(),decode:'<div class="refine-line"><b>PASS_01</b> 实时流式草稿</div><div class="refine-line"><s>缓寸删除失拜怎么办</s></div><div class="trace-merge"><i></i><span>整句结束 → 离线精修</span><i></i></div><div class="refine-line final"><b>PASS_02</b> 缓存删除失败怎么办？</div><div class="context-route">示意文本 / TWO-PASS TRANSCRIPTION</div>',retrieve:'<div class="context-map"><span>个人简历</span><span class="matched">项目经验</span><span>岗位要求</span><span class="matched">缓存策略</span><span>历史问题</span><span class="matched">一致性方案</span></div><div class="context-route">QUERY → KEYWORD + SEMANTIC* → CONTEXT<br>* 语义检索按需开启</div>',stream:'<div class="stream-code"><span>01 <b>SCENE</b> · 当前场景</span><span>02 <b>CONTEXT</b> · 命中片段</span><span>03 <b>STREAM</b> · 回答逐字呈现</span><div class="trace-merge"><i></i><span>ANSWER_STREAM</span><i></i></div><span class="stream-line">我的思路是，先保证主流程的正确性…</span><i class="trace-cursor">▌</i></div>'};
+function waveMarkup(){return ['remote','self'].map((side,j)=>`<div class="track track-${side}"><span>${j?'SELF':'REMOTE'}</span><div class="wave-track">${Array.from({length:40},(_,i)=>`<i style="height:${4+Math.round(Math.abs(Math.sin(i*2.17+j))*18)}px;animation-delay:-${(i*.13).toFixed(2)}s"></i>`).join('')}</div><b>${j?'我':'对方'}</b></div>`).join('')+'<div class="trace-merge"><i></i><span>独立识别 / 回声过滤</span><i></i></div><div class="trace-output"><span>TRANSCRIPT_READY</span><strong>双语转写，开始同步。</strong><span class="trace-cursor">▌</span></div>';}
+const techVisuals={capture:waveMarkup(),decode:'<div class="refine-line"><b>PASS_01</b> 实时流式草稿</div><div class="refine-line"><s>发布时间定在周四</s></div><div class="trace-merge"><i></i><span>整句结束 → 离线精修</span><i></i></div><div class="refine-line final"><b>PASS_02</b> 发布时间可调整到周四。</div><div class="context-route">示意文本 / TWO-PASS TRANSCRIPTION</div>',retrieve:'<div class="context-map"><span>会议议程</span><span class="matched">发布计划</span><span>项目资料</span><span class="matched">回滚清单</span><span>历史纪要</span><span class="matched">负责人</span></div><div class="context-route">QUERY → KEYWORD + SEMANTIC* → CONTEXT<br>* 语义检索按需开启</div>',stream:'<div class="stream-code"><span>01 <b>SCENE</b> · 当前场景</span><span>02 <b>CONTEXT</b> · 相关资料</span><span>03 <b>STREAM</b> · 译文逐字呈现</span><div class="trace-merge"><i></i><span>CAPTION_STREAM</span><i></i></div><span class="stream-line">周四先向 10% 用户发布…</span><i class="trace-cursor">▌</i></div>'};
 function selectTech(name,focus=false){
   const data=techSteps[name];
   $$('[data-tech]').forEach(b=>{const selected=b.dataset.tech===name;b.classList.toggle('active',selected);b.setAttribute('aria-selected',String(selected));b.tabIndex=selected?0:-1;if(selected&&focus)b.focus();});

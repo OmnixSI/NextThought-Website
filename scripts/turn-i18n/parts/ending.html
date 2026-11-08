@@ -11,7 +11,7 @@
     </div>
     <div class="ending__water" data-ending-copy>
       <div class="ending__letter" data-ending-letter>{{@letter:tomorrow.|ending__lettering}}</div>
-      <p class="ending__sub">{{ InterviewHacker 2.0 即将开放。首批试用正在进行，名额会陆续开放。 ‖ InterviewHacker 2.0 is coming soon. The first beta is running now, and more places are opening. }}</p>
+      <p class="ending__sub">{{ NextThought 2.0 即将开放。首批试用正在进行，名额会陆续开放。 ‖ NextThought 2.0 is coming soon. The first beta is running now, and more places are opening. }}</p>
       <button class="btn btn--ink ending__btn" type="button" aria-controls="waitlist" aria-expanded="false" data-waitlist-open data-needs-js><span>{{ 加入等待名单 ‖ Join the waitlist }}</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
     </div>
 
@@ -21,7 +21,7 @@
         <form class="waitlist__form" action="/api/waitlist" method="post" aria-labelledby="waitlist-title" data-waitlist-form>
           <button class="waitlist__close" type="button" aria-label="{{ 关闭 ‖ Close }}" data-waitlist-close data-needs-js><i></i><i></i></button>
           <header class="waitlist__head">
-            <p class="waitlist__kicker mono"><span>InterviewHacker 2.0</span> <span>· {{ 等待名单 ‖ Waitlist }}</span></p>
+            <p class="waitlist__kicker mono"><span>NextThought 2.0</span> <span>· {{ 等待名单 ‖ Waitlist }}</span></p>
             <h3 class="waitlist__title" id="waitlist-title" tabindex="-1">{{ 加入等待名单 ‖ Join the waitlist }}</h3>
             <p class="waitlist__lead">{{ 开放时，我们会第一时间写信给你。 ‖ We’ll write to you as soon as places open. }}</p>
           </header>
@@ -50,7 +50,7 @@
           <fieldset class="uses" data-field="uses" aria-describedby="wl-uses-msg">
             <legend class="wl-field__label">{{ 用在哪里？可多选 ‖ Where will you use it? Pick any }}</legend>
             <div class="uses__list">
-              <label class="use"><input type="checkbox" name="uses" value="interview"><span>{{ 求职面试 ‖ Job interviews }}</span></label>
+              <label class="use"><input type="checkbox" name="uses" value="interview"><span>{{ 面试练习 ‖ Job interviews }}</span></label>
               <label class="use"><input type="checkbox" name="uses" value="talk"><span>{{ 组会与汇报 ‖ Lab meetings &amp; talks }}</span></label>
               <label class="use"><input type="checkbox" name="uses" value="meeting"><span>{{ 工作会议与客户沟通 ‖ Work meetings &amp; client calls }}</span></label>
               <label class="use"><input type="checkbox" name="uses" value="class"><span>{{ 课程与讲座 ‖ Classes &amp; lectures }}</span></label>
@@ -60,7 +60,7 @@
           </fieldset>
           <div class="wl-field wl-field--more" data-field="more">
             <label class="wl-field__label" for="wl-more">{{ 更多（可选） ‖ Anything else (optional) }}</label>
-            <textarea class="wl-field__input" id="wl-more" name="more" rows="2" maxlength="1000" placeholder="{{ 比如：下个月有一场技术面试 ‖ e.g. a technical interview next month }}"></textarea>
+            <textarea class="wl-field__input" id="wl-more" name="more" rows="2" maxlength="1000" placeholder="{{ 比如：准备一次模拟练习 ‖ e.g. preparing for a practice session }}"></textarea>
           </div>
           <div class="waitlist__trap" aria-hidden="true"><label>Website <input name="website" type="text" tabindex="-1" autocomplete="off"></label></div>
           <input type="hidden" name="lang" value="{{ zh ‖ en }}">

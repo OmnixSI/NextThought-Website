@@ -1,4 +1,4 @@
-# InterviewHacker — Think in Flow
+# NextThought — Think in Flow
 
 ## 作品方向
 

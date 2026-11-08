@@ -9,7 +9,7 @@
 import tls from 'node:tls';
 
 export const USES = {
-  interview: '求职面试 · Job interviews',
+  interview: '面试练习 · Job interviews',
   talk: '组会 / 学术报告 · Lab meetings & talks',
   meeting: '商务会议 / 谈判 · Business meetings',
   class: '网课 / 课程 · Classes',
@@ -36,7 +36,7 @@ export function validate(input) {
 export function compose({ email, name, uses, more, lang }, { from, to, now = new Date() }) {
   const b64 = s => Buffer.from(s, 'utf8').toString('base64');
   const body = [
-    'InterviewHacker 早期试用申请 / Early-access request',
+    'NextThought 早期试用申请 / Early-access request',
     '',
     `称呼 Name: ${name}`,
     `邮箱 Email: ${email}`,
@@ -47,12 +47,12 @@ export function compose({ email, name, uses, more, lang }, { from, to, now = new
     `时间 Time: ${now.toISOString()}`
   ].join('\r\n');
   const headers = [
-    `From: =?UTF-8?B?${b64('InterviewHacker 网站')}?= <${from}>`,
+    `From: =?UTF-8?B?${b64('NextThought 网站')}?= <${from}>`,
     `To: <${to}>`,
     `Reply-To: <${email}>`,
     `Subject: =?UTF-8?B?${b64(`试用申请：${name}`)}?=`,
     `Date: ${now.toUTCString().replace('GMT', '+0000')}`,
-    `Message-ID: <${now.getTime().toString(36)}.${Math.random().toString(36).slice(2)}@interviewhacker.vercel.app>`,
+    `Message-ID: <${now.getTime().toString(36)}.${Math.random().toString(36).slice(2)}@nextthought.vercel.app>`,
     'MIME-Version: 1.0',
     'Content-Type: text/plain; charset=UTF-8',
     'Content-Transfer-Encoding: base64'
@@ -85,7 +85,7 @@ export function sendMail({ host, port, user, pass, from, to, message }, connect 
     });
     (async () => {
       await step(null, [220]);
-      await step('EHLO interviewhacker.vercel.app', [250]);
+      await step('EHLO nextthought.vercel.app', [250]);
       await step('AUTH LOGIN', [334]);
       await step(Buffer.from(user).toString('base64'), [334]);
       await step(Buffer.from(pass).toString('base64'), [235]);

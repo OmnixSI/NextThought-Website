@@ -11,7 +11,7 @@ import { letteringSvg } from './final-lettering.mjs';
 
 const src = path.join(root, 'scripts/final-i18n');
 const out = path.join(root, 'public/final');
-const origin = 'https://interviewhacker.vercel.app';
+const origin = 'https://nextthought.vercel.app';
 const langs = {
   zh: { file: 'index.html', base: './', html: 'zh-CN', url: `${origin}/final/`, other: './en/', hrefZh: './', hrefEn: './en/' },
   en: { file: 'en/index.html', base: '../', html: 'en', url: `${origin}/final/en/`, other: '../', hrefZh: '../', hrefEn: './' }

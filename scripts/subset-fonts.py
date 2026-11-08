@@ -91,7 +91,7 @@ def main():
     zh = texts[0]
     every = set(''.join(texts)) | set(ASCII) | set(PUNCT)
     every = ''.join(sorted(c for c in every if c >= ' '))
-    display = ''.join(sorted(set(display_text(zh)) | set(display_text(texts[1])) | set(ASCII) | set(PUNCT) | set('InterviewHacker')))
+    display = ''.join(sorted(set(display_text(zh)) | set(display_text(texts[1])) | set(ASCII) | set(PUNCT) | set('NextThought')))
     sizes = {
         'display/ih-display.woff2': build(args.src / 'SmileySans-Oblique.ttf', OUT / 'display/ih-display.woff2', display, 'IH Display'),
         'sans/ih-sans.woff2': build(args.src / 'NotoSansSC[wght].ttf', OUT / 'sans/ih-sans.woff2', every, 'IH Sans', (400, 500)),

@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f6f5f1">
-  <title>{{ InterviewHacker — 听清每一个问题，说出你的下一句 ‖ InterviewHacker — Hear every question. Say your next line. }}</title>
-  <meta name="description" content="{{ InterviewHacker 是原生 macOS 实时对话助手：双路收音分别识别对方与你，判断哪句是在问你，结合场景资料流式给出可以直接说出口的回答。适用于面试、学术报告、商务会议与课程。 ‖ InterviewHacker is a native macOS assistant for live conversations. It hears the other side and you on separate channels, detects the questions meant for you, and streams answers you can say out loud, grounded in your own material. }}">
-  <meta property="og:title" content="{{ InterviewHacker — 听清每一个问题，说出你的下一句 ‖ InterviewHacker — Hear every question. Say your next line. }}">
-  <meta property="og:description" content="{{ 面试、学术报告、商务会议与课程中的实时对话助手。默认本机离线语音识别。 ‖ A live conversation assistant for interviews, talks, meetings and classes. On-device speech recognition by default. }}">
+  <title>{{ NextThought — 听清对话，说出你的下一句 ‖ NextThought — Hear the conversation. Find your next line. }}</title>
+  <meta name="description" content="{{ NextThought 是原生 macOS 双语会议助手，提供中英实时转写与同声传译、会议纪要、资料整理和知识问答。 ‖ NextThought is a native macOS meeting assistant for live Chinese–English transcription and interpretation, meeting notes, organised materials and knowledge Q&amp;A. }}">
+  <meta property="og:title" content="{{ NextThought — 听清对话，说出你的下一句 ‖ NextThought — Hear the conversation. Find your next line. }}">
+  <meta property="og:description" content="{{ 中英实时字幕、会议纪要、资料整理与知识问答。 ‖ Live Chinese–English captions, meeting notes, organised materials and knowledge Q&amp;A. }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{url}}">
-  <meta property="og:image" content="https://interviewhacker.vercel.app/previews/final-home.png">
+  <meta property="og:image" content="https://nextthought.vercel.app/previews/final-home.png">
   <link rel="canonical" href="{{url}}">
   <link rel="alternate" hreflang="zh-CN" href="{{url-zh}}">
   <link rel="alternate" hreflang="en" href="{{url-en}}">
@@ -56,9 +56,9 @@
 
   <header class="site-header" data-header>
     <div class="site-header__inner">
-      <a class="brand" href="#top" aria-label="{{ InterviewHacker 首页 ‖ InterviewHacker home }}">
+      <a class="brand" href="#top" aria-label="{{ NextThought 首页 ‖ NextThought home }}">
         <svg class="brand__mark" aria-hidden="true"><use href="#i-logo"/></svg>
-        <span class="brand__name">InterviewHacker</span>
+        <span class="brand__name">NextThought</span>
       </a>
       <nav class="site-nav" id="site-nav" aria-label="{{ 页面章节 ‖ Sections }}">
         <a href="#demo"><i>01</i>{{ 演示 ‖ Demo }}</a>
@@ -93,21 +93,21 @@
         </div>
 
         <div class="hero__copy" data-hero-copy>
-          <p class="eyebrow eyebrow--quiet mono">InterviewHacker <span>v1.9.0</span> <span>macOS</span></p>
+          <p class="eyebrow eyebrow--quiet mono">NextThought <span>v1.9.0</span> <span>macOS</span></p>
           <h1 class="hero__title" id="hero-title" data-two-pass data-draft="{{ 听清每一个问提， ‖ Hear every questoin. }}" data-draft-word="next lion">
-            <span class="sr-only">{{ 听清每一个问题，说出你的下一句。 ‖ Hear every question. Say your next line. }}</span>
+            <span class="sr-only">{{ 听清对话，说出你的下一句。 ‖ Hear the conversation. Find your next line. }}</span>
             <span class="hero__final" aria-hidden="true">
-              <span class="hero__line">{{ 听清每一个问题， ‖ Hear every question. }}</span>
-              <span class="hero__line">{{ 说出你的 ‖ Say your }}<span class="hero__lettering">{{@lettering}}</span></span>
+              <span class="hero__line">{{ 听清对话， ‖ Hear the conversation. }}</span>
+              <span class="hero__line">{{ 找到你的 ‖ Find your }}<span class="hero__lettering">{{@lettering}}</span></span>
             </span>
           </h1>
-          <p class="hero__lead">{{ 面试、组会、谈判、网课，对方一问完，回答就开始出现在屏幕上。<br>语音在本机识别，回答用的是你自己的资料。 ‖ In interviews, meetings and classes, the answer starts arriving as soon as the question ends.<br>Speech stays on your Mac; answers draw on your own notes. }}</p>
+          <p class="hero__lead">{{ 工作会议、学术交流与跨语言讨论，中英字幕实时跟上。<br>会后整理成纪要、决定事项和待办。 ‖ Follow meetings, research discussions and cross-language conversations with live Chinese–English captions.<br>Turn them into notes, decisions and action items afterwards. }}</p>
           <div class="hero__actions">
             <a class="btn btn--ink" href="#download">{{ 申请早期试用 ‖ Get early access }}<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
             <a class="btn btn--ghost" href="#demo">{{ 看它如何工作 ‖ See it work }}<svg aria-hidden="true"><use href="#i-down"/></svg></a>
           </div>
           <p class="hero__meta mono"><span>macOS 14+</span><span>Apple Silicon</span><span>{{ 即将开放试用 ‖ Early access soon }}</span></p>
-          <p class="hero__hint mono" aria-hidden="true"><i></i>{{ 向下滚动，播放一段完整的面试对话 ‖ Scroll to play a full interview, step by step }}</p>
+          <p class="hero__hint mono" aria-hidden="true"><i></i>{{ 向下滚动，查看一段双语会议演示 ‖ Scroll through a bilingual meeting, step by step }}</p>
         </div>
 
         <div class="voiceprint" data-voiceprint>
@@ -121,9 +121,9 @@
               <span class="device__cam" aria-hidden="true"></span>
               <div class="device__screen">
                 <div class="desk" aria-hidden="true">
-                  <div class="call"><span class="call__tile"><b>{{ 王 ‖ A }}</b><small>{{ 面试官 · Zoom ‖ Interviewer · Zoom }}</small></span><span class="call__tile call__tile--me"><b>{{ 我 ‖ Me }}</b><small>{{ 摄像头 ‖ Camera }}</small></span></div>
+                  <div class="call"><span class="call__tile"><b>{{ 王 ‖ A }}</b><small>{{ 参会者 · Zoom ‖ Participant · Zoom }}</small></span><span class="call__tile call__tile--me"><b>{{ 我 ‖ Me }}</b><small>{{ 参会者 ‖ Participant }}</small></span></div>
                 </div>
-                <div class="app" data-demo-app aria-label="{{ InterviewHacker 助手窗口演示 ‖ InterviewHacker assistant window, demo }}" role="group">
+                <div class="app" data-demo-app aria-label="{{ NextThought 助手窗口演示 ‖ NextThought assistant window, demo }}" role="group">
                   <div class="app__bar">
                     <span class="app__lights" aria-hidden="true"><i></i><i></i><i></i></span>
                     <span class="app__tabs" aria-hidden="true"><b class="is-on">{{ 助手 ‖ Assistant }}</b><b>{{ 场景 ‖ Scenes }}</b><b>{{ 记录 ‖ History }}</b><b>{{ 设置 ‖ Settings }}</b></span>
@@ -131,26 +131,26 @@
                   </div>
                   <div class="app__body">
                     <section class="app__pane app__pane--talk" aria-label="{{ 实时对话 ‖ Live transcript }}">
-                      <header class="app__head"><b>{{ 实时对话 ‖ Live transcript }}</b><span class="app__chip" data-demo-scene-name>{{ 字节后端二面 ‖ Backend · onsite round 2 }}</span></header>
+                      <header class="app__head"><b>{{ 实时对话 ‖ Live transcript }}</b><span class="app__chip" data-demo-scene-name>{{ 产品发布周会 · 版本评审 ‖ Product release · weekly review }}</span></header>
                       <p class="app__meta mono" data-demo-asr>{{ 本机识别 · 每句说完再校对一遍 ‖ On this Mac · each sentence checked again }}</p>
                       <div class="lanes">
                         <div class="lane lane--them"><svg aria-hidden="true"><use href="#i-speaker"/></svg><span>{{ 对方 ‖ Them }}</span><canvas data-wave="them"></canvas></div>
                         <div class="lane lane--me"><svg aria-hidden="true"><use href="#i-mic"/></svg><span>{{ 我 ‖ Me }}</span><canvas data-wave="me"></canvas></div>
                       </div>
                       <ol class="transcript" data-transcript aria-live="off">
-                        <li class="bubble bubble--them is-question"><span class="bubble__tag">{{ 追问 ‖ Follow-up }}</span>{{ 那数据库和缓存同时更新，怎么保证一致性？ ‖ When the database and cache both change, how do you keep them consistent? }}</li>
-                        <li class="bubble bubble--echo"><span class="bubble__tag">{{ 回声 · 已忽略 ‖ Echo · ignored }}</span>{{ 数据库和缓存同时更新怎么保证一致性 ‖ database and cache both change keep them consistent }}<button type="button" class="bubble__restore" tabindex="-1">{{ 是我说的 ‖ That was me }}</button></li>
+                        <li class="bubble bubble--them is-question"><span class="bubble__tag">{{ 讨论 ‖ Discussion }}</span>{{ 周四就能上线吗？回滚清单由谁确认？ ‖ Can we ship on Thursday? Who will confirm the rollback checklist? }}</li>
+                        <li class="bubble bubble--echo"><span class="bubble__tag">{{ 回声 · 已忽略 ‖ Echo · ignored }}</span>{{ 周四上线回滚清单由谁确认 ‖ ship Thursday who confirms rollback checklist }}<button type="button" class="bubble__restore" tabindex="-1">{{ 是我说的 ‖ That was me }}</button></li>
                       </ol>
                     </section>
                     <section class="app__pane app__pane--answer" aria-label="{{ 建议回答 ‖ Suggested answer }}">
                       <div class="qcard">
                         <span class="qcard__types" aria-label="{{ 问题类型 ‖ Question type }}"><b data-qtype="ask">{{ 明确提问 ‖ Question }}</b><b data-qtype="request">{{ 请求 ‖ Request }}</b><b data-qtype="follow" class="is-on">{{ 追问 ‖ Follow-up }}</b></span>
-                        <p class="qcard__text" data-demo-question>{{ 那数据库和缓存同时更新，怎么保证一致性？ ‖ When the database and cache both change, how do you keep them consistent? }}</p>
+                        <p class="qcard__text" data-demo-question>{{ 周四就能上线吗？回滚清单由谁确认？ ‖ Can we ship on Thursday? Who will confirm the rollback checklist? }}</p>
                       </div>
                       <div class="acard" data-acard>
                         <p class="acard__head"><svg aria-hidden="true"><use href="#i-spark"/></svg><b>{{ 建议回答 ‖ Suggested answer }}</b><span data-demo-answer-state>{{ 流式输出 ‖ Streaming }}</span></p>
-                        <p class="acard__text" data-demo-answer>{{ 我们用的是先更新数据库、再删除缓存。删除失败的 key 进重试队列，同时用 Canal 订阅 binlog 再删一次兜底；热点 key 做延迟双删。 ‖ We update the database first, then delete the cache. Failed deletes go to a retry queue, and a Canal binlog subscriber deletes again as a safety net; hot keys get a delayed double delete. }}</p>
-                        <p class="acard__sources" data-demo-sources><span><svg aria-hidden="true"><use href="#i-file"/></svg>{{ 订单系统设计.md · §3 ‖ order-system-design.md · §3 }}</span><span><svg aria-hidden="true"><use href="#i-file"/></svg>{{ 简历.pdf · 第 2 页 ‖ resume.pdf · p.2 }}</span></p>
+                        <p class="acard__text" data-demo-answer>{{ 先向 10% 用户发布并观察错误率；运维团队周三前确认回滚清单，林周五复核指标。 ‖ We can start with 10% of users and watch the error rate. Operations will confirm the checklist by Wednesday; Lin will review metrics Friday. }}</p>
+                        <p class="acard__sources" data-demo-sources><span><svg aria-hidden="true"><use href="#i-file"/></svg>{{ 发布计划.md · §2 ‖ release-plan.md · §2 }}</span><span><svg aria-hidden="true"><use href="#i-file"/></svg>{{ 回滚清单.pdf · 第 1 页 ‖ rollback-checklist.pdf · p. 1 }}</span></p>
                         <div class="acard__chips" role="group" aria-label="{{ 一键调整 ‖ Adjust }}" data-demo-chips>
                           <button type="button" data-variant="short">{{ 更简短 ‖ Shorter }}</button>
                           <button type="button" data-variant="example">{{ 举例 ‖ Example }}</button>
@@ -161,7 +161,7 @@
                   </div>
                   <div class="app__input">
                     <span>{{ 输入问题，或截图提问 ‖ Type a question, or ask with a screenshot }}</span>
-                    <button type="button" class="app__answer" data-demo-now><svg aria-hidden="true"><use href="#i-bolt"/></svg>{{ 立即回答 ‖ Answer now }}<kbd>⌘⇧↩</kbd></button>
+                    <button type="button" class="app__answer" data-demo-now><svg aria-hidden="true"><use href="#i-bolt"/></svg>{{ 整理要点 ‖ Summarise points }}<kbd>⌘⇧↩</kbd></button>
                   </div>
                   <p class="app__foot">{{ 声音只在本机识别，不保存；只有回答需要的文字会发给你选择的对话服务。 ‖ Audio is recognised on this Mac and not saved; only the text an answer needs goes to the service you chose. }}</p>
                 </div>
@@ -185,7 +185,7 @@
           <p class="demo-controls__hint mono"><i aria-hidden="true"></i>{{ 轮到你了：换个场景、点改写按钮，或按 ⌘⇧↩ ‖ Your turn: switch scenes, try a rewrite, or press ⌘⇧↩ }}</p>
           <p class="demo-controls__note mono">{{ 交互示意：预设脚本，不访问麦克风或网络 ‖ Interactive illustration: a scripted replay, no microphone or network }}</p>
           <div class="segmented" role="tablist" aria-label="{{ 演示场景 ‖ Demo scene }}" data-demo-scenes>
-            <button role="tab" type="button" aria-selected="true" data-scene-key="interview">{{ 面试 ‖ Interview }}</button>
+            <button role="tab" type="button" aria-selected="true" data-scene-key="interview">{{ 项目会议 ‖ Project meeting }}</button>
             <button role="tab" type="button" aria-selected="false" tabindex="-1" data-scene-key="talk">{{ 学术报告 ‖ Talk }}</button>
             <button role="tab" type="button" aria-selected="false" tabindex="-1" data-scene-key="meeting">{{ 商务会议 ‖ Meeting }}</button>
             <button role="tab" type="button" aria-selected="false" tabindex="-1" data-scene-key="class">{{ 课程 ‖ Class }}</button>
@@ -205,11 +205,11 @@
         <div class="swirl__orb" aria-hidden="true"><i></i><i></i><i></i></div>
         <div class="swirl__col" data-swirl-col>
           <h2 class="swirl__stanza swirl__stanza--head" id="swirl-title"><span class="sl">{{ 对话， ‖ Conversations }}</span><span class="sl">{{ 从不等你准备好。 ‖ don’t wait for you. }}</span></h2>
-          <p class="swirl__stanza swirl__stanza--a"><span class="sl">{{ 面试官的追问， ‖ An interviewer’s follow-up, }}</span><span class="sl">{{ 停在半空。 ‖ left hanging. }}</span></p>
+          <p class="swirl__stanza swirl__stanza--a"><span class="sl">{{ 项目讨论中的术语， ‖ A technical term in discussion, }}</span><span class="sl">{{ 不必等会后再查。 ‖ understood in the moment. }}</span></p>
           <p class="swirl__stanza swirl__stanza--b"><span class="sl">{{ 组会上， ‖ At lab meeting, }}</span><span class="sl">{{ 导师一句 ‖ a quiet }}</span><span class="sl">{{ “为什么这样设计？” ‖ “why this design?” }}</span></p>
           <p class="swirl__stanza swirl__stanza--c"><span class="sl">{{ 谈判桌对面： ‖ Across the table: }}</span><span class="sl"><em>{{ 再降八个点。 ‖ “another eight percent.” }}</em></span></p>
           <p class="swirl__stanza swirl__stanza--d"><span class="sl">{{ 网课里， ‖ In class, }}</span><span class="sl">{{ 突然被点到名字。 ‖ your name, called. }}</span></p>
-          <p class="swirl__stanza swirl__stanza--end"><span class="sl">{{ InterviewHacker 在听。 ‖ InterviewHacker is listening. }}</span><span class="sl">{{ 问题落下， ‖ The question ends; }}</span><span class="sl">{{ 回答随即出现。 ‖ the answer follows. }}</span></p>
+          <p class="swirl__stanza swirl__stanza--end"><span class="sl">{{ NextThought 在听。 ‖ NextThought is listening. }}</span><span class="sl">{{ 双语字幕， ‖ Bilingual captions; }}</span><span class="sl">{{ 重点清晰留下。 ‖ clear notes to keep. }}</span></p>
         </div>
       </div>
     </section>
@@ -223,10 +223,10 @@
           <div class="glass__card glass__card--prompter is-active" data-glass-card>
             <span class="glass__cam"></span>
             <div class="mini-prompter">
-              <p class="mini-prompter__status mono"><i class="live-dot"></i>{{ 正在聆听 · 追问 ‖ Listening · follow-up }}</p>
-              <p class="mini-prompter__q">{{ 那数据库和缓存同时更新，怎么保证一致性？ ‖ When the database and cache both change, how do you keep them consistent? }}</p>
-              <p class="mini-prompter__a">{{ 先更新数据库，再删除缓存；删除失败进重试队列，binlog 订阅兜底。 ‖ Write the database, then delete the cache; retry failed deletes, with a binlog subscriber as backstop. }}</p>
-              <p class="mini-prompter__src mono">{{ 简历.pdf · 第 2 页 ‖ resume.pdf · p.2 }}</p>
+              <p class="mini-prompter__status mono"><i class="live-dot"></i>{{ 双语转写 · 实时同步 ‖ Bilingual transcript · live sync }}</p>
+              <p class="mini-prompter__q">“The release can move to Thursday. Who will confirm the rollback checklist?”</p>
+              <p class="mini-prompter__a">{{ 发布时间可以调整到周四。运维团队会在周三前确认回滚清单。 ‖ The release can move to Thursday. Operations will confirm the rollback checklist by Wednesday. }}</p>
+              <p class="mini-prompter__src mono">{{ 发布计划.md · §2 ‖ release-plan.md · §2 }}</p>
             </div>
           </div>
           <div class="glass__card" data-glass-card>
@@ -256,26 +256,26 @@
           </div>
           <div class="glass__card" data-glass-card>
             <div class="mini-review">
-              <p class="mini-review__head"><b>{{ 二面 · 后端 ‖ Round 2 · backend }}</b><span class="mono">{{ 17 个问题 ‖ 17 questions }}</span></p>
-              <ul><li>{{ 订单系统与库存扣减 ‖ Order system and stock deduction }}</li><li>{{ 缓存一致性 · 追问两次 ‖ Cache consistency · two follow-ups }}</li><li>{{ 限流与降级 ‖ Rate limiting and fallback }}</li></ul>
-              <p class="mini-review__weak"><span class="mono">{{ 薄弱 ‖ Weak spot }}</span>{{ 分布式事务的取舍 ‖ Distributed-transaction trade-offs }}</p>
+              <p class="mini-review__head"><b>{{ 产品发布周会 ‖ Product release review }}</b><span class="mono">{{ 46 分钟 · 中英双语 ‖ 46 min · bilingual }}</span></p>
+              <ul><li>{{ 周四向 10% 用户发布 ‖ 10% rollout on Thursday }}</li><li>{{ 周三前确认回滚清单 ‖ Rollback checklist by Wednesday }}</li><li>{{ 周五复核错误率与登录成功率 ‖ Review errors and login success on Friday }}</li></ul>
+              <p class="mini-review__weak"><span class="mono">{{ 待确认 ‖ To confirm }}</span>{{ 发布范围与负责人 ‖ Rollout scope and owners }}</p>
             </div>
           </div>
         </div>
       </div>
       <div class="moments__chapters">
         <nav class="moments__index mono" aria-label="{{ 时刻 ‖ Moments }}">
-          <a href="#moment-interview" data-index><span>01</span>{{ 面试 ‖ Interview }}</a>
+          <a href="#moment-interview" data-index><span>01</span>{{ 项目会议 ‖ Project meeting }}</a>
           <a href="#moment-talk" data-index><span>02</span>{{ 报告 ‖ Talk }}</a>
           <a href="#moment-meeting" data-index><span>03</span>{{ 谈判 ‖ Meeting }}</a>
           <a href="#moment-class" data-index><span>04</span>{{ 网课 ‖ Class }}</a>
           <a href="#moment-after" data-index><span>05</span>{{ 会后 ‖ After }}</a>
         </nav>
         <article class="moment" id="moment-interview" data-moment>
-          <p class="moment__kicker mono">01 · {{ 求职面试 ‖ Job interview }}</p>
-          <h3 class="moment__title"><span>{{ 追问， ‖ The follow-up, }}</span><span>{{ 也接得住。 ‖ handled. }}</span></h3>
-          <p class="moment__body">{{ 面试官追问缓存一致性。摄像头下方的提词条里，回答已经开始出现，例子取自你简历上的项目。 ‖ The interviewer presses on cache consistency. In the bar under your camera, the answer is already forming, built on a project from your résumé. }}</p>
-          <p class="moment__aside">{{ 悬浮提词器 · 鼠标可穿透 · ⌘⇧\ 一键隐藏 ‖ Floating teleprompter · click-through · hide with ⌘⇧\ }}</p>
+          <p class="moment__kicker mono">01 · {{ 项目会议 ‖ Project meeting }}</p>
+          <h3 class="moment__title"><span>{{ 双语讨论， ‖ Bilingual discussion, }}</span><span>{{ 重点实时同步。 ‖ key points in sync. }}</span></h3>
+          <p class="moment__body">{{ 英文发言同步显示中文译文；确认后的决定、负责人和截止时间整理进会议纪要。 ‖ English speech appears alongside Chinese captions; confirmed decisions, owners and deadlines are captured in the meeting notes. }}</p>
+          <p class="moment__aside">{{ 中英实时转写 · 会议资料按场景整理 ‖ Live Chinese–English transcript · materials organised by meeting }}</p>
         </article>
         <article class="moment" id="moment-talk" data-moment>
           <p class="moment__kicker mono">02 · {{ 学术报告 ‖ Academic talk }}</p>
@@ -305,24 +305,24 @@
     </section>
 
 
-    <!-- Phone companion: a pinned scene in three beats — sharing, pairing, the answer on the phone — then the phone is yours. -->
+    <!-- Phone companion: a pinned scene in three beats — pairing, synced captions and notes, then the phone is yours. -->
     <section class="section companion" id="companion" aria-labelledby="companion-title" data-companion>
       <div class="companion__pin" data-companion-pin>
         <div class="container companion__grid">
           <div class="companion__text">
             <p class="eyebrow mono"><b>№ 03</b>{{ 手机伴侣 ‖ Phone companion }}</p>
-            <h2 id="companion-title" class="display">{{ 共享整个屏幕时，<br>看手机。 ‖ Sharing your screen?<br>Read your phone. }}</h2>
+            <h2 id="companion-title" class="display">{{ 双设备同步，<br>字幕纪要随手看。 ‖ Sync across devices.<br>Keep captions and notes close. }}</h2>
             <ol class="beats" role="list" data-beats>
-              <li class="beat is-on"><span class="mono">i.</span><b>{{ 你在共享整个屏幕。 ‖ You’re sharing your whole screen. }}</b><p>{{ 对方看到的，就是你电脑上的一切。 ‖ Whatever is on your Mac, they see. }}</p></li>
-              <li class="beat"><span class="mono">ii.</span><b>{{ 扫一下，手机就连上。 ‖ One scan, and the phone is in. }}</b><p>{{ 相机扫配对码，浏览器里就是提词屏，不用装 App。 ‖ The camera reads the code; the browser becomes your prompter. No app. }}</p></li>
-              <li class="beat"><span class="mono">iii.</span><b>{{ 问题和回答，只在手机上。 ‖ Questions and answers, on the phone only. }}</b><p>{{ 电脑屏幕上什么也不多。只同步此刻的问答，转录与资料留在 Mac。 ‖ Nothing new on the shared screen. Only this moment syncs; transcripts and material stay on the Mac. }}</p></li>
+              <li class="beat is-on"><span class="mono">i.</span><b>{{ 会议在电脑上进行。 ‖ Keep the meeting on your Mac. }}</b><p>{{ 字幕、译文和会议纪要可同步到配对设备查看。 ‖ Captions, translations and meeting notes can sync to a paired device. }}</p></li>
+              <li class="beat"><span class="mono">ii.</span><b>{{ 扫一下，手机就连上。 ‖ One scan connects your phone. }}</b><p>{{ 用手机相机扫描配对码，在浏览器中查看同步内容，无需安装 App。 ‖ Scan the pairing code and view synced content in your browser. No app to install. }}</p></li>
+              <li class="beat"><span class="mono">iii.</span><b>{{ 重点内容，随时查看。 ‖ Keep the key points close. }}</b><p>{{ 手机与 Mac 显示同一场会议的字幕、译文和待办；资料与会话记录仍保存在 Mac。 ‖ Your phone and Mac show the same captions, translations and action items; materials and session records stay on the Mac. }}</p></li>
             </ol>
           </div>
           <div class="companion__stage" data-companion-stage>
             <div class="cmac" aria-hidden="true">
             <div class="cmac__screen">
-              <p class="cmac__share mono"><i></i>{{ 正在共享整个屏幕 ‖ Sharing entire screen }}</p>
-              <div class="cmac__call"><span><b>{{ 王 ‖ A }}</b><small>{{ 面试官 ‖ Interviewer }}</small></span><span><b>{{ 我 ‖ Me }}</b></span></div>
+              <p class="cmac__share mono"><i></i>{{ 会议字幕同步 ‖ Meeting captions synced }}</p>
+              <div class="cmac__call"><span><b>{{ 王 ‖ A }}</b><small>{{ 参会者 ‖ Participant }}</small></span><span><b>{{ 我 ‖ Me }}</b></span></div>
               <div class="cmac__pair" data-pair>
                 <svg class="cmac__qr" viewBox="0 0 29 29" data-qr shape-rendering="crispEdges"></svg>
                 <p><b>{{ 用手机相机扫一扫 ‖ Scan with your phone’s camera }}</b><span class="mono">{{ 一次性配对码 ‖ One-time pairing code }}</span></p>
@@ -330,7 +330,7 @@
             </div>
             <div class="cmac__base"></div>
           </div>
-            <p class="companion__tag companion__tag--them mono" aria-hidden="true">{{ 对方看到的 ‖ What they see }}</p>
+            <p class="companion__tag companion__tag--them mono" aria-hidden="true">{{ 桌面端 ‖ Desktop }}</p>
           <div class="phone" data-phone>
             <span class="phone__island" aria-hidden="true"></span>
             <div class="phone__screen">
@@ -342,7 +342,7 @@
                 <p class="phone__a" data-phone-a aria-live="polite"></p>
                 <div class="phone__size" role="group" aria-label="{{ 字号 ‖ Text size }}"><button type="button" data-size="-1" aria-label="{{ 缩小字号 ‖ Smaller text }}">A−</button><button type="button" data-size="1" aria-label="{{ 放大字号 ‖ Larger text }}">A+</button></div>
                 <div class="phone__keys" role="group" aria-label="{{ 遥控 ‖ Remote }}">
-                  <button type="button" data-remote="answer" class="is-primary">{{ 回答 ‖ Answer }}</button>
+                  <button type="button" data-remote="answer" class="is-primary">{{ 会议纪要 ‖ Meeting notes }}</button>
                   <button type="button" data-remote="short">{{ 更简短 ‖ Shorter }}</button>
                   <button type="button" data-remote="example">{{ 举例 ‖ Example }}</button>
                   <button type="button" data-remote="translate">{{ 英文版 ‖ 中文版 }}</button>
@@ -354,7 +354,7 @@
             </div>
             <p class="coach" data-coach role="status" aria-live="polite"><span data-coach-text></span></p>
           </div>
-            <p class="companion__tag companion__tag--me mono" aria-hidden="true">{{ 只有你看到的 ‖ Only you see }}</p>
+            <p class="companion__tag companion__tag--me mono" aria-hidden="true">{{ 手机伴侣 ‖ Phone companion }}</p>
           </div>
         </div>
       </div>
@@ -370,7 +370,7 @@
           <li><span class="mono">ii.</span><h3>{{ 只带上需要的那几段。 ‖ Only the passages that matter. }}</h3><p>{{ 回答只使用当前问题检索到的相关片段，不会把所有资料塞入上下文。资料与会话记录保存在本机。 ‖ Answers use only the passages retrieved for the question at hand, not your whole library. Material and records stay on your Mac. }}</p></li>
           <li><span class="mono">iii.</span><h3>{{ 发什么出去，由你决定。 ‖ You decide what leaves. }}</h3><p>{{ 回答走你自己选的对话服务，密钥只存在系统钥匙串里；联网搜索和手机伴侣默认关闭。 ‖ Answers go through the service you choose, and its key stays in your Keychain; web search and the phone companion are off by default. }}</p></li>
         </ol>
-        <p class="fine">{{ 不做“隐身”承诺：录音与使用前请取得对方同意，并遵守所在场合的规则。 ‖ No stealth promises: get consent before recording, and follow the rules of the room. }} <a class="link" href="https://github.com/OmnixSI/InterviewHacker#数据去向">{{ 完整数据去向 ‖ Full data notes }}</a></p>
+        <p class="fine">{{ 开始录音或转写前，请取得与会者同意，并遵守所在场合的规则。 ‖ Get participants’ consent before recording or transcribing, and follow the rules of the room. }} <a class="link" href="https://github.com/OmnixSI/NextThought#数据去向">{{ 完整数据去向 ‖ Full data notes }}</a></p>
       </div>
     </section>
 
@@ -379,7 +379,7 @@
       <div class="ending__panel">
         <canvas class="ending__canvas" data-shore aria-hidden="true"></canvas>
         <div class="ending__copy" data-ending-copy>
-          <h2 class="ending__title" id="download-title"><span>InterviewHacker</span><span>{{ 即将开放试用。 ‖ is opening early access. }}</span></h2>
+          <h2 class="ending__title" id="download-title"><span>NextThought</span><span>{{ 即将开放试用。 ‖ is opening early access. }}</span></h2>
           <p class="ending__sub">{{ 首批试用正在小范围进行，名额会陆续开放。 ‖ The first beta is running now. More places open soon. }}</p>
           <button class="ending__btn" type="button" aria-controls="waitlist" aria-expanded="false" data-waitlist-open>{{ 加入试用名单 ‖ Join the waitlist }}</button>
         </div>
@@ -388,7 +388,7 @@
           <form class="waitlist__form" action="/api/waitlist" method="post" data-waitlist-form novalidate>
             <button class="waitlist__close" type="button" aria-label="{{ 关闭 ‖ Close }}" data-waitlist-close><i></i></button>
             <header class="waitlist__head">
-              <p class="waitlist__kicker mono">InterviewHacker · Early access</p>
+              <p class="waitlist__kicker mono">NextThought · Early access</p>
               <h3 class="waitlist__title" id="waitlist-title">{{ 加入试用名单 ‖ Join the waitlist }}</h3>
               <p class="waitlist__lead">{{ 开放试用时，我们会第一时间写信给你。 ‖ When places open, you’ll be the first to hear. }}</p>
             </header>
@@ -398,13 +398,13 @@
             </div>
             <fieldset class="uses">
               <legend class="wl-field__label">{{ 打算用在哪里？可多选 ‖ Where will you use it? Pick any }}</legend>
-              <label class="use"><input type="checkbox" name="uses" value="interview"><span>{{ 求职面试 ‖ Job interviews }}</span></label>
+              <label class="use"><input type="checkbox" name="uses" value="interview"><span>{{ 面试练习 ‖ Job interviews }}</span></label>
               <label class="use"><input type="checkbox" name="uses" value="talk"><span>{{ 组会与学术报告 ‖ Lab meetings &amp; talks }}</span></label>
               <label class="use"><input type="checkbox" name="uses" value="meeting"><span>{{ 商务会议与谈判 ‖ Meetings &amp; negotiations }}</span></label>
               <label class="use"><input type="checkbox" name="uses" value="class"><span>{{ 网课 ‖ Online classes }}</span></label>
               <label class="use"><input type="checkbox" name="uses" value="other"><span>{{ 其他 ‖ Something else }}</span></label>
             </fieldset>
-            <label class="wl-field wl-field--more"><span class="wl-field__label">{{ 更多（可选） ‖ Anything else (optional) }}</span><textarea name="more" rows="2" maxlength="1000" placeholder="{{ 比如：下个月有一场技术面试 ‖ e.g. a technical interview next month }}"></textarea></label>
+            <label class="wl-field wl-field--more"><span class="wl-field__label">{{ 更多（可选） ‖ Anything else (optional) }}</span><textarea name="more" rows="2" maxlength="1000" placeholder="{{ 比如：准备一次模拟练习 ‖ e.g. preparing for a practice session }}"></textarea></label>
             <label class="waitlist__trap" aria-hidden="true">Website<input name="website" type="text" tabindex="-1" autocomplete="off"></label>
             <input type="hidden" name="lang" value="{{ zh ‖ en }}">
             <div class="waitlist__foot">

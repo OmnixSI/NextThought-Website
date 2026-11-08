@@ -6,7 +6,7 @@
 //   IH.emit('turn', {who:'me'}) and the answer surfaces word by word ('voice' {who:'me'} + sound 'word' per word).
 // The hairline time numerals draw in with the scroll (scrubbed: position is state).
 // Gestures: 09:30 Answer / Record only · 11:00 rewrite chips · 14:00 Online / In person (also merges the background
-// lines via IH.emit('lines', {merge}), released when the scene leaves the viewport) · 16:30 Share entire screen
+// lines via IH.emit('lines', {merge}), released when the scene leaves the viewport) · 16:30 phone sync
 // (the answer card flies from the laptop to the phone with Flip). Gesture results are announced once, politely.
 // Reduced or paused motion: everything is shown complete and gestures switch instantly. No script: the part's
 // markup is already the complete, final reading (gestures are hidden with data-needs-js).
@@ -321,8 +321,8 @@
       fig.classList.toggle('is-sharing', on);
       target.append(card);
       if (doFlip) Flip.from(state, { duration: 0.7, ease: SETTLE, absolute: true, zIndex: 6, scale: false });
-      announce(on ? IH.t('正在共享整个屏幕。回答已移到手机上，只有你看得到。', 'Sharing entire screen. The answer moved to your phone, where only you can see it.')
-        : IH.t('已停止共享整个屏幕。回答回到电脑上。', 'Stopped sharing the entire screen. The answer is back on the laptop.'));
+      announce(on ? IH.t('字幕已同步到手机伴侣。', 'Captions synced to the phone companion.')
+        : IH.t('字幕已切回桌面端。', 'Captions are back on the desktop.'));
     });
   }
 

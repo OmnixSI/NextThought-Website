@@ -2,7 +2,7 @@
 // 1. The beats. On wide screens with motion, the stage pins and scroll scrubs five beats over one timing diagram:
 //    A their question lights up word by word while the amber bar grows under it → B 200 ms: the gap, a caret blinking in
 //    it, then your speech → C 600 ms: the indigo planning bar reaches back into their sentence → D the conclusion →
-//    E InterviewHacker: listening along their sentence, the answer surfacing at its end. Everywhere else the beats read
+//    E NextThought: listening along their sentence, the answer surfacing at its end. Everywhere else the beats read
 //    in order and the diagram is static and complete (that is the markup's own state; nothing here hides it).
 // 2. Try your blink: a question streams word by word; at its end a timer starts; Space / Answer stops it.
 //    Nothing is stored or sent.

@@ -3,10 +3,10 @@
     "ui": {
       "listening": "正在聆听",
       "detected": "识别到问题",
-      "generating": "正在生成回答",
+      "generating": "正在整理资料",
       "speaking": "你在说话",
       "ready": "本机语音已就绪",
-      "waiting": "等待问题",
+      "waiting": "等待会议发言",
       "streaming": "流式输出",
       "adjusted": {
         "short": "已改为更简短",
@@ -14,9 +14,9 @@
         "translate": "已改为英文版"
       },
       "tags": {
-        "ask": "问题 · 明确提问",
-        "request": "问题 · 请求",
-        "follow": "问题 · 追问"
+        "ask": "发言 · 发布安排",
+        "request": "会议请求",
+        "follow": "发言 · 待办更新"
       },
       "echo": "回声 · 已忽略",
       "restore": "是我说的",
@@ -25,54 +25,54 @@
       "chars": "问题识别追问请求明确提问上下文",
       "guide": [
         {
-          "title": "对方开口",
-          "desc": "会议窗口的声音单独一路识别，边说边出字。"
+          "title": "对话开始",
+          "desc": "系统声音和麦克风分别识别，保留发言顺序。"
         },
         {
-          "title": "认出这是在问你",
-          "desc": "区分陈述、请求和追问，问题一结束就锁定。"
+          "title": "转写与翻译",
+          "desc": "中英原文与译文并排显示，实时跟上讨论。"
         },
         {
-          "title": "流式给出回答",
-          "desc": "只取当前场景的相关资料，并注明出处。"
+          "title": "关联会议资料",
+          "desc": "按当前场景检索相关议程、项目文件和来源。"
         },
         {
-          "title": "你开口回答",
-          "desc": "你的麦克风是另一路，不会和对方混在一起。"
+          "title": "整理讨论记录",
+          "desc": "标记决定、负责人、截止时间和待办事项。"
         },
         {
-          "title": "追问到来，回答更新",
-          "desc": "扬声器回声被置灰；新问题出现，回答随之改写。"
+          "title": "双设备查看",
+          "desc": "电脑和手机伴侣同步显示字幕与会议重点。"
         },
         {
-          "title": "一键改写",
-          "desc": "更简短、加个例子，或者换成英文。"
+          "title": "按需继续提问",
+          "desc": "使用知识问答查看资料片段和引用来源。"
         }
       ]
     },
     "scenes": {
       "interview": {
-        "name": "字节后端二面",
+        "name": "产品发布周会 · 版本评审",
         "sources": [
-          "订单系统设计.md · §3",
-          "简历.pdf · 第 2 页"
+          "发布计划.md · §2",
+          "回滚清单.pdf · 第 1 页"
         ],
         "q1": {
           "type": "ask",
-          "text": "先聊聊你简历上的订单系统，大促时库存怎么扣？"
+          "text": "The release can move to Thursday. Who will confirm the rollback checklist?"
         },
-        "a1": "库存先放在 Redis，用 Lua 脚本原子扣减，避免超卖；扣减成功后发事务消息，消费端按订单号幂等落库。大促前再做一轮库存预热和限流。",
-        "me": "库存先在 Redis 里用 Lua 原子扣减，再异步落库。",
+        "a1": "发布时间可以调整到周四。谁来确认回滚清单？\\n\\n决定：周四先向 10% 用户发布，周五复核错误率。",
+        "me": "运维团队可以在周三前确认回滚清单。",
         "q2": {
           "type": "follow",
-          "text": "那数据库和缓存同时更新，怎么保证一致性？"
+          "text": "Lin will review error rates and login success on Friday."
         },
-        "echo": "数据库和缓存同时更新怎么保证一致性",
-        "a2": "我们用的是先更新数据库、再删除缓存。删除失败的 key 进重试队列，同时用 Canal 订阅 binlog 再删一次兜底；热点 key 做延迟双删。余额这类强一致数据直接读库。",
+        "echo": "Lin will review error rates and login success on Friday",
+        "a2": "林会在周五复核错误率与登录成功率。\\n\\n待办：运维周三前确认回滚清单。\\n负责人：林。",
         "variants": {
-          "short": "先更新库再删缓存；删除失败进重试队列，binlog 订阅兜底，热点 key 延迟双删。",
-          "example": "比如下单扣完库存后删缓存时 Redis 超时：这个 key 进重试队列，Canal 收到 binlog 后再删一次，下一次读请求回源拿到的就是新值。",
-          "translate": "We update the database first, then delete the cache. Failed deletes go to a retry queue, and a Canal binlog subscriber deletes again as a backstop; hot keys get a delayed double delete."
+          "short": "决定：周四向 10% 用户发布。待办：周三确认回滚清单。",
+          "example": "例如，回滚清单包括：停止扩量、恢复上一版本，并在确认后通知参会团队。",
+          "translate": "The release can move to Thursday. Operations will confirm the rollback checklist by Wednesday."
         }
       },
       "talk": {
@@ -150,10 +150,10 @@
     "ui": {
       "listening": "Listening",
       "detected": "Question detected",
-      "generating": "Answering",
+      "generating": "Organising notes",
       "speaking": "You’re speaking",
       "ready": "On-device speech ready",
-      "waiting": "Waiting for a question",
+      "waiting": "Waiting for the meeting",
       "streaming": "Streaming",
       "adjusted": {
         "short": "Made shorter",
@@ -161,9 +161,9 @@
         "translate": "Switched to Chinese"
       },
       "tags": {
-        "ask": "Question",
-        "request": "Request",
-        "follow": "Follow-up"
+        "ask": "Discussion · release plan",
+        "request": "Meeting request",
+        "follow": "Update · action item"
       },
       "echo": "Echo · ignored",
       "restore": "That was me",
@@ -172,54 +172,54 @@
       "chars": "questiondetectfollowuprequestcontext",
       "guide": [
         {
-          "title": "They start talking",
-          "desc": "The meeting window is its own channel, transcribed as they speak."
+          "title": "The conversation starts",
+          "desc": "System audio and microphone are recognised as separate speakers."
         },
         {
-          "title": "It knows it's a question",
-          "desc": "Statements, requests and follow-ups are told apart the moment they end."
+          "title": "Transcription and translation",
+          "desc": "Read the original Chinese or English alongside its translation."
         },
         {
-          "title": "The answer streams in",
-          "desc": "Only this scene's relevant material is used, with sources."
+          "title": "Bring in meeting materials",
+          "desc": "Search relevant agendas and project files for this scene."
         },
         {
-          "title": "You answer",
-          "desc": "Your microphone is a separate channel, never mixed with theirs."
+          "title": "Capture the discussion",
+          "desc": "Mark decisions, owners, deadlines and follow-up actions."
         },
         {
-          "title": "A follow-up, a new answer",
-          "desc": "Speaker echo is greyed out; the answer rewrites for the new question."
+          "title": "Continue on your phone",
+          "desc": "Sync captions and meeting highlights to the phone companion."
         },
         {
-          "title": "One-tap rewrites",
-          "desc": "Shorter, with an example, or in Chinese."
+          "title": "Ask when needed",
+          "desc": "Use knowledge Q&A to find relevant passages and citations."
         }
       ]
     },
     "scenes": {
       "interview": {
-        "name": "Backend · onsite round 2",
+        "name": "Product release · weekly review",
         "sources": [
-          "order-system-design.md · §3",
-          "resume.pdf · p.2"
+          "release-plan.md · §2",
+          "rollback-checklist.pdf · p.1"
         ],
         "q1": {
           "type": "ask",
-          "text": "Tell me about the order system on your résumé. How do you deduct stock during a flash sale?"
+          "text": "The release can move to Thursday. Who will confirm the rollback checklist?"
         },
-        "a1": "Stock lives in Redis and a Lua script deducts it atomically, so we never oversell. After a successful deduction we publish a transactional message, and the consumer writes to the database idempotently by order ID. Before big sales we pre-warm stock and add rate limits.",
-        "me": "We deduct in Redis with Lua, atomically, then persist asynchronously.",
+        "a1": "The release can move to Thursday. Who will confirm the rollback checklist?\\n\\nDecision: release to 10% of users on Thursday; review error rates on Friday.",
+        "me": "Operations can confirm the rollback checklist by Wednesday.",
         "q2": {
           "type": "follow",
-          "text": "And when the database and cache both change, how do you keep them consistent?"
+          "text": "Lin will review error rates and login success on Friday."
         },
-        "echo": "database and cache both change keep them consistent",
-        "a2": "We update the database first, then delete the cache. Failed deletes go to a retry queue, and a Canal binlog subscriber deletes again as a backstop; hot keys get a delayed double delete. Strongly consistent data like balances is read straight from the database.",
+        "echo": "Lin will review error rates and login success on Friday",
+        "a2": "Lin will review error rates and login success on Friday.\\n\\nAction: operations to confirm the rollback checklist by Wednesday.\\nOwner: Lin.",
         "variants": {
-          "short": "Write the database, then delete the cache; retry failed deletes, back them up with binlog, double-delete hot keys.",
-          "example": "Say the cache delete times out right after an order deducts stock: the key goes into the retry queue, Canal deletes it again when the binlog arrives, and the next read reloads the fresh value.",
-          "translate": "我们用的是先更新数据库、再删除缓存。删除失败的 key 进重试队列，同时用 Canal 订阅 binlog 再删一次兜底；热点 key 做延迟双删。"
+          "short": "Decision: 10% rollout on Thursday. Action: confirm the rollback checklist by Wednesday.",
+          "example": "For example, the rollback checklist covers stopping rollout, restoring the previous version, and notifying the team.",
+          "translate": "发布时间可调整到周四。运维团队将在周三前确认回滚清单。"
         }
       },
       "talk": {
