@@ -13,8 +13,7 @@
         }
       ],
       "destination": "https://nextthought.vercel.app/:path*",
-      "permanent": true,
-      "preserveQueryParams": true
+      "permanent": true
     }
   ],
   "headers": [
