@@ -12,7 +12,7 @@
 ## 正式站
 
 - 网站：<https://nextthought.vercel.app/>；Vercel 项目 `nextthought`。
-- Production 部署 `dpl_F1rYBz8WxGjfWyFpj1bpZMwALJr6` 状态为 READY，来源为 `main` 提交 `b762005d67e6ad9d7911d3a2a07f414b99a3a591`。
+- 正式站 Production 部署状态为 READY，部署来源为本仓库 `main`。
 - 新站首页与 `/minimal/` 返回 HTTP 200。公开静态文件 424 个逐一与本地 `dist` 比对，SHA-256 完全一致；CSP、Permissions-Policy、X-Content-Type-Options 和 Referrer-Policy 均存在。
 - `https://interviewhacker.vercel.app` 配置为 308 永久跳转至新站。实测 `/minimal/?src=legacy&code=42` 保留原路径及两个查询参数。
 
