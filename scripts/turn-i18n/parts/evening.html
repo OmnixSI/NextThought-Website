@@ -18,23 +18,23 @@
 
       <div class="ev-copy">
         <h2 class="t-h3 ev-title" id="evening-title">{{ 用第二语言开会，<br>也有下一句。 ‖ In a second language,<br>still a next line. }}</h2>
-        <p class="t-body">{{ 回答跟着对话的语言走：英文会议，就用英文回答。拿不准意思时，点一下看中文。 ‖ Answers follow the language of the room: an English call gets English answers. One tap shows the same line in Chinese. }}</p>
+        <p class="t-body">{{ 英文发言旁边实时显示中文译文；需要时可切换字幕语言，继续跟上讨论。 ‖ Follow the discussion with a live Chinese translation alongside the English transcript; switch the caption language whenever you need. }}</p>
       </div>
 
       <div class="ev-stage" data-ev-stage>
-        <p class="t-label ev-who"><i class="ev-dot ev-dot--them" aria-hidden="true"></i>{{ 对方 · 英文 ‖ Them · in English }}</p>
-        <blockquote class="ev-quote t-quote voice-them" lang="en" data-ev-quote><p>Could you walk us through the rollout plan?</p></blockquote>
+        <p class="t-label ev-who"><i class="ev-dot ev-dot--them" aria-hidden="true"></i>{{ 英文原文 ‖ English transcript }}</p>
+        <blockquote class="ev-quote t-quote voice-them" lang="en" data-ev-quote><p>The release will go out to ten percent of users on Monday. We’ll review error rates on Friday.</p></blockquote>
         <div class="ev-next">
           <div class="ev-next__bar">
-            <p class="t-label ev-who"><i class="ev-dot ev-dot--me" aria-hidden="true"></i>{{ 下一句 ‖ Next line }}</p>
-            <div class="ev-seg" role="group" aria-label="{{ 回答的语言 ‖ Answer language }}" data-needs-js>
+            <p class="t-label ev-who"><i class="ev-dot ev-dot--me" aria-hidden="true"></i>{{ 中文译文 ‖ Chinese translation }}</p>
+            <div class="ev-seg" role="group" aria-label="{{ 译文语言 ‖ Translation language }}" data-needs-js>
               <button class="ev-seg__btn" type="button" aria-pressed="true" data-ev-lang="en" lang="en">English</button>
               <button class="ev-seg__btn" type="button" aria-pressed="false" data-ev-lang="zh" lang="zh-CN">中文</button>
             </div>
           </div>
           <div class="ev-answer" data-ev-answer>
-            <p class="t-answer voice-next ev-answer__v" lang="en" data-v="en">Sure. We’ll ship to ten percent of users on Monday, watch errors for two days, then roll out to everyone on Thursday.</p>
-            <p class="t-answer voice-next ev-answer__v" lang="zh-CN" data-v="zh" data-off aria-hidden="true">好的。周一先放给一成用户，观察两天报错，周四再全量上线。</p>
+            <p class="t-answer voice-next ev-answer__v" lang="en" data-v="en">The release will go out to ten percent of users on Monday. We’ll review error rates on Friday.</p>
+            <p class="t-answer voice-next ev-answer__v" lang="zh-CN" data-v="zh" data-off aria-hidden="true">周一先向 10% 用户发布，周五复核错误率。</p>
           </div>
         </div>
       </div>
@@ -53,45 +53,45 @@
 
       <div class="ev-vignette" data-ev-vignette>
         <section class="ev-raw" aria-labelledby="ev-raw-title">
-          <p class="t-label ev-raw__title" id="ev-raw-title">{{ 转写 · 11:00 二面 · 后端 ‖ Transcript · 11:00 round 2 · backend }}</p>
+          <p class="t-label ev-raw__title" id="ev-raw-title">{{ 转写 · 跨时区发布评审 ‖ Transcript · cross-time-zone release review }}</p>
           <ol class="ev-raw__list">
-            <li class="ev-raw__line" id="ev-m1" tabindex="-1" data-ev-raw="1"><span class="ev-raw__t">11:02</span><span class="ev-raw__x"><b class="ev-raw__who ev-raw__who--them">{{ 面试官 ‖ Interviewer }}</b>{{ 数据库和缓存同时更新，怎么保证一致性？ ‖ When the database and the cache both change, how do you keep them consistent? }}</span></li>
-            <li class="ev-raw__line" id="ev-m2" tabindex="-1" data-ev-raw="1"><span class="ev-raw__t">11:03</span><span class="ev-raw__x"><b class="ev-raw__who ev-raw__who--me">{{ 我 ‖ Me }}</b>{{ 嗯……先更新数据库，再删缓存，删失败的进重试队列，binlog 兜底。 ‖ Um… write the database first, then delete the cache. Failed deletes go to a retry queue, binlog as backstop. }}</span></li>
-            <li class="ev-raw__line" id="ev-m3" tabindex="-1" data-ev-raw="2"><span class="ev-raw__t">11:24</span><span class="ev-raw__x"><b class="ev-raw__who ev-raw__who--them">{{ 面试官 ‖ Interviewer }}</b>{{ 那<span class="ev-heard">缓存基础</span>呢？热点 key 一过期，请求全压到库上。 ‖ And <span class="ev-heard">cash stampede</span>? A hot key expires and every request hits the database. }}</span></li>
-            <li class="ev-raw__line" id="ev-m4" tabindex="-1" data-ev-raw="3"><span class="ev-raw__t">11:25</span><span class="ev-raw__x"><b class="ev-raw__who ev-raw__who--me">{{ 我 ‖ Me }}</b>{{ 呃……加个锁？我不太确定。 ‖ Uh… add a lock? I’m not sure. }}</span></li>
-            <li class="ev-raw__line" id="ev-m5" tabindex="-1" data-ev-raw="4"><span class="ev-raw__t">11:52</span><span class="ev-raw__x"><b class="ev-raw__who ev-raw__who--them">{{ 面试官 ‖ Interviewer }}</b>{{ 小作业<span class="ev-heard ev-heard--vague">周四</span>交付就行。 ‖ The take-home? <span class="ev-heard ev-heard--vague">Ship Thursday</span> is fine. }}</span></li>
+            <li class="ev-raw__line" id="ev-m1" tabindex="-1" data-ev-raw="1"><span class="ev-raw__t">11:02</span><span class="ev-raw__x"><b class="ev-raw__who ev-raw__who--them">{{ 参会者 ‖ Participant }}</b>{{ 周一先向 10% 用户发布，周五复核错误率。 ‖ We’ll release to ten percent of users on Monday and review error rates on Friday. }}</span></li>
+            <li class="ev-raw__line" id="ev-m2" tabindex="-1" data-ev-raw="1"><span class="ev-raw__t">11:03</span><span class="ev-raw__x"><b class="ev-raw__who ev-raw__who--me">{{ 我 ‖ Me }}</b>{{ 运维团队周三前确认回滚清单。 ‖ Operations will confirm the rollback checklist by Wednesday. }}</span></li>
+            <li class="ev-raw__line" id="ev-m3" tabindex="-1" data-ev-raw="2"><span class="ev-raw__t">11:24</span><span class="ev-raw__x"><b class="ev-raw__who ev-raw__who--them">{{ 参会者 ‖ Participant }}</b>{{ 错误率连续 10 分钟升高，就停止扩量并恢复上一版本。 ‖ If the error rate stays high for ten minutes, stop the rollout and restore the previous version. }}</span></li>
+            <li class="ev-raw__line" id="ev-m4" tabindex="-1" data-ev-raw="3"><span class="ev-raw__t">11:25</span><span class="ev-raw__x"><b class="ev-raw__who ev-raw__who--me">{{ 我 ‖ Me }}</b>{{ 好的，我会把这个条件补进运维清单。 ‖ I’ll add that condition to the operations checklist. }}</span></li>
+            <li class="ev-raw__line" id="ev-m5" tabindex="-1" data-ev-raw="4"><span class="ev-raw__t">11:52</span><span class="ev-raw__x"><b class="ev-raw__who ev-raw__who--them">{{ 参会者 ‖ Participant }}</b>{{ 书面总结周四发给所有参会团队。 ‖ Send the written summary to all teams on Thursday. }}</span></li>
           </ol>
         </section>
 
         <section class="ev-sheet" aria-labelledby="ev-sheet-title" data-ev-sheet>
           <header class="ev-sheet__head">
-            <h3 class="ev-sheet__title" id="ev-sheet-title">{{ 二面 · 后端 ‖ Round 2 · Backend }}</h3>
-            <p class="t-label">{{ 纪要 · 10月26日 ‖ Notes · Oct 26 }}</p>
+            <h3 class="ev-sheet__title" id="ev-sheet-title">{{ 发布评审 · 会议纪要 ‖ Release review · meeting notes }}</h3>
+            <p class="t-label">{{ 跨时区项目会 · 纪要 ‖ Cross-time-zone project · notes }}</p>
           </header>
           <ol class="ev-note">
             <li class="ev-item" data-ev-item="1">
               <a class="ev-ts" href="#ev-m1" data-ev-ts data-no-smooth style="anchor-name: --ev-ts-1" aria-label="{{ 11:02，回到原话 ‖ 11:02, back to the moment }}">11:02</a>
               <span class="ev-tip" style="position-anchor: --ev-ts-1" aria-hidden="true">{{ 回到原话 ‖ Back to the moment }}</span>
-              <p class="ev-item__x"><b class="ev-k">{{ 一致性 ‖ Consistency }}</b>{{ 先更新数据库，再删缓存；删除失败进重试队列，binlog 兜底。 ‖ Write the database, then delete the cache; failed deletes retry, binlog as backstop. }}</p>
+              <p class="ev-item__x"><b class="ev-k">{{ 发布安排 ‖ Release plan }}</b>{{ 周一先向 10% 用户发布，周五复核错误率。 ‖ Release to ten percent of users on Monday; review error rates on Friday. }}</p>
             </li>
             <li class="ev-item" data-ev-item="2">
               <a class="ev-ts" href="#ev-m3" data-ev-ts data-no-smooth style="anchor-name: --ev-ts-2" aria-label="{{ 11:24，回到原话 ‖ 11:24, back to the moment }}">11:24</a>
               <span class="ev-tip" style="position-anchor: --ev-ts-2" aria-hidden="true">{{ 回到原话 ‖ Back to the moment }}</span>
-              <p class="ev-item__x"><b class="ev-k">{{ 追问 ‖ Follow-up }}</b>{{ <s class="ev-old" data-ev-old><span class="sr-only">听错：</span>缓存基础</s><ins class="ev-new" data-ev-new><span class="sr-only">改为：</span>缓存击穿</ins>：热点 key 过期，请求压到数据库。 ‖ <s class="ev-old" data-ev-old><span class="sr-only">Misheard: </span>cash stampede</s><ins class="ev-new" data-ev-new><span class="sr-only">corrected to: </span>cache stampede</ins>: a hot key expires and requests pile onto the database. }}</p>
+              <p class="ev-item__x"><b class="ev-k">{{ 回滚条件 ‖ Rollback condition }}</b>{{ 错误率连续 <s class="ev-old" data-ev-old><span class="sr-only">听错：</span>10分钟</s><ins class="ev-new" data-ev-new><span class="sr-only">改为：</span>10 分钟</ins> 高于基线时停止扩量并恢复上一版本。 ‖ Stop the rollout and restore the previous version if error rates remain high for <s class="ev-old" data-ev-old><span class="sr-only">Misheard: </span>ten hours</s><ins class="ev-new" data-ev-new><span class="sr-only">corrected to: </span>ten minutes</ins>. }}</p>
             </li>
             <li class="ev-item" data-ev-item="3">
               <a class="ev-ts" href="#ev-m4" data-ev-ts data-no-smooth style="anchor-name: --ev-ts-3" aria-label="{{ 11:25，回到原话 ‖ 11:25, back to the moment }}">11:25</a>
               <span class="ev-tip" style="position-anchor: --ev-ts-3" aria-hidden="true">{{ 回到原话 ‖ Back to the moment }}</span>
-              <p class="ev-item__x"><b class="ev-k">{{ 没答好 ‖ Weak answer }}</b>{{ 击穿怎么防，只答了“加个锁”，不确定。 ‖ How to prevent it: only “add a lock”, unsure. }}<span class="ev-tag ev-tag--bank" data-ev-tag>{{ 进题库 ‖ To question bank }}</span></p>
+              <p class="ev-item__x"><b class="ev-k">{{ 待办 ‖ Action }}</b>{{ 运维团队周三前确认回滚清单。 ‖ Operations to confirm the rollback checklist by Wednesday. }}<span class="ev-tag ev-tag--bank" data-ev-tag>{{ 已记录 ‖ Captured }}</span></p>
             </li>
             <li class="ev-item" data-ev-item="4">
               <a class="ev-ts" href="#ev-m5" data-ev-ts data-no-smooth style="anchor-name: --ev-ts-4" aria-label="{{ 11:52，回到原话 ‖ 11:52, back to the moment }}">11:52</a>
               <span class="ev-tip" style="position-anchor: --ev-ts-4" aria-hidden="true">{{ 回到原话 ‖ Back to the moment }}</span>
-              <p class="ev-item__x"><b class="ev-k">{{ 小作业 ‖ Take-home }}</b>{{ <span class="ev-date" data-ev-date>10月29日（周四）</span>交付 ‖ ship <span class="ev-date" data-ev-date>Thu, Oct 29</span> }}<span class="ev-tag ev-tag--ask" data-ev-tag>{{ 待确认 ‖ To confirm }}</span></p>
+              <p class="ev-item__x"><b class="ev-k">{{ 待办 ‖ Action }}</b>{{ 书面总结于 <span class="ev-date" data-ev-date>10月29日（周四）</span>发送给团队 ‖ Send the written summary to all teams on <span class="ev-date" data-ev-date>Thu, Oct 29</span> }}<span class="ev-tag ev-tag--ask" data-ev-tag>{{ 已安排 ‖ Scheduled }}</span></p>
             </li>
           </ol>
           <footer class="ev-sheet__foot" data-ev-foot>
-            <p class="ev-bank">{{ 答得不好的题存进题库，三面前会回来提醒你。 ‖ Weak answers go to your question bank and come back before round three. }}</p>
+            <p class="ev-bank">{{ 未确认事项保留标记；每条纪要都能回到对应的转写时间点。 ‖ Unconfirmed items stay marked, and every note links back to its transcript timestamp. }}</p>
             {{@letter:next line.|ev-sign}}
           </footer>
         </section>

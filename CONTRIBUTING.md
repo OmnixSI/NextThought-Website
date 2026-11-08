@@ -5,8 +5,8 @@
 需要 Node.js 24+，本地预览另需 Python 3。没有 npm 依赖，无需安装依赖即可检查和构建。
 
 ```sh
-git clone https://github.com/OmnixSI/InterviewHacker-Website.git
-cd InterviewHacker-Website
+git clone https://github.com/OmnixSI/NextThought-Website.git
+cd NextThought-Website
 git switch -c feat/your-change
 npm run dev
 ```

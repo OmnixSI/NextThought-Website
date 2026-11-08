@@ -1,77 +1,77 @@
-# InterviewHacker · Design Gallery
+# NextThought · Design Gallery
 
-同一个产品，不同的表达。这个公开仓库收集 InterviewHacker 网站的不同设计风格，README 本身就是展示画廊。
+同一个产品，不同的表达。这个公开仓库收集 NextThought 网站的不同设计风格，README 本身就是展示画廊。
 
 **一个风格，一个固定入口。** 同一风格的日常优化在原页面继续维护；只有设计语言明显不同的新方案才新增路径，不为每次小修改建立一个对照版本。更新页面时，同步对应首页预览、访问地址和本 README。
 
 ## 风格展示
 
 <!-- STYLES:START -->
-[打开在线展示画廊](https://interviewhacker.vercel.app/) · [并排对比风格](https://interviewhacker.vercel.app/compare/)
+[打开在线展示画廊](https://nextthought.vercel.app/) · [并排对比风格](https://nextthought.vercel.app/compare/)
 
-[![展示画廊首页](public/previews/gallery-home.png?v=b401a9a41ed4)](https://interviewhacker.vercel.app/)
+[![展示画廊首页](public/previews/gallery-home.png?v=0765b7ae9ae3)](https://nextthought.vercel.app/)
 
-<!-- gallery-source:d8eff6756c8d12a15a2ca79bca0ada315f5afc078646566b21e8e63090d6b513 preview:b401a9a41ed41da505dad14ec8adcb0c39de0c9c30b2100111a027c7d3985d7e -->
+<!-- gallery-source:318bf14527f740e06b99eb446f555d707be7dea037a696945e76e5580e178b3c preview:0765b7ae9ae348e2afbdb35879b908f0c352dec6682f649c51d608cf3de12075 -->
 
-### Minimal · 简洁 · 原生 · 从容
+### Minimal · 记录 · 翻译 · 整理
 
-[![Minimal 首页](public/previews/minimal-home.png?v=c9ba18983c7b)](https://interviewhacker.vercel.app/minimal/)
+[![Minimal 首页](public/previews/minimal-home.png?v=baabbd81258c)](https://nextthought.vercel.app/minimal/)
 
-温和紫色、玻璃提词卡与清晰的产品叙事，让功能与使用流程自然展开。
+以轻盈、易读的方式呈现中英实时字幕、会议记录、纪要和资料整理。
 
-**访问页面：[https://interviewhacker.vercel.app/minimal/](https://interviewhacker.vercel.app/minimal/)**
+**访问页面：[https://nextthought.vercel.app/minimal/](https://nextthought.vercel.app/minimal/)**
 
-<!-- style:minimal source:d9e2727b209895ebfee1c09c34dc975ac9b0452e2eb686a262d2489ad92bbcab preview:c9ba18983c7be7b2accdb3104a2a989c32163fb3b0c41aef71c6f6b58926be08 -->
+<!-- style:minimal source:b583bfa50e1777f83fd452470ba4e25c6c94b125b6f69ce808d15948916b9579 preview:baabbd81258cf6f52bd3987cd3f57e18a2ec740a9d7b3d513d77fde2d7f71a37 -->
 
-### Technology · 技术 · 交互 · 沉浸
+### Technology · 实时 · 清晰 · 有脉络
 
-[![Technology 首页](public/previews/technology-home.png?v=a975b5668b9d)](https://interviewhacker.vercel.app/technology/)
+[![Technology 首页](public/previews/technology-home.png?v=3b3f9202b4fc)](https://nextthought.vercel.app/technology/)
 
-粒子光场、深浅章节与可操控的技术链路，把声音到表达的过程变成体验。
+用实时字幕串联同声传译、对话转写和会后纪要，展示从声音到记录的完整流程。
 
-**访问页面：[https://interviewhacker.vercel.app/technology/](https://interviewhacker.vercel.app/technology/)**
+**访问页面：[https://nextthought.vercel.app/technology/](https://nextthought.vercel.app/technology/)**
 
-<!-- style:technology source:6ab4b4d80523e89040b345608ba63fea96ed516c44fc7ee8b6a69d8bf862c676 preview:a975b5668b9dba5982d2721dd348cb026f70bf95d7a2bf022dad91a7bb2e8839 -->
+<!-- style:technology source:cbfa03420b0f0ef104be9f551a24f2e1c11a568a48dee6f0d4e08958c1d2060f preview:3b3f9202b4fc02b8a664dd701674d82cc96eba46a703f31e33cf7deccf388d64 -->
 
-### Story · 产品 · 场景 · 精致
+### Story · 产品 · 场景 · 对话
 
-[![Story 首页](public/previews/story-home.png?v=2ad31607e438)](https://interviewhacker.vercel.app/story/)
+[![Story 首页](public/previews/story-home.png?v=c8e0fec4f1ee)](https://nextthought.vercel.app/story/)
 
-鸿蒙字体与金属设备外框，配合可播放的实时演示、WebGL 声纹光场和滚动叙事，串联准备、实时辅助与复盘。
+通过产品演示展示中英字幕、会议记录、资料问答和会后纪要如何协同工作。
 
-**访问页面：[https://interviewhacker.vercel.app/story/](https://interviewhacker.vercel.app/story/)**
+**访问页面：[https://nextthought.vercel.app/story/](https://nextthought.vercel.app/story/)**
 
-<!-- style:story source:7fb9c2c06e2ca75aa0070893b1990ce540f6faa584b20fc117218967ae6793d9 preview:2ad31607e438a2b61b68996edd12a587e109e70362decbb2ec10ceeba3e27dba -->
+<!-- style:story source:2d2464f7dfebb59831478a53ecf412295dae493b17cef1643884eb60bb3c20f0 preview:c8e0fec4f1ee82bc4969c29c4778ba8c351318452b502dc3d663fd38d9cc9c49 -->
 
-### Classic · 专业 · 严肃 · 设备叙事
+### Classic · 原生 · 专注 · 全流程
 
-[![Classic 首页](public/previews/classic-home.png?v=78c018f29149)](https://interviewhacker.vercel.app/classic/)
+[![Classic 首页](public/previews/classic-home.png?v=e83164be9fe3)](https://nextthought.vercel.app/classic/)
 
-鸿蒙字体、带刘海的金属笔记本与连续设备交接，配合明暗双主题、磁吸滚动和六步工作链路，串联准备、实时辅助与复盘。
+以原生桌面应用为主角，完整展现实时转写、资料整理、会议协作和会后复盘。
 
-**访问页面：[https://interviewhacker.vercel.app/classic/](https://interviewhacker.vercel.app/classic/)**
+**访问页面：[https://nextthought.vercel.app/classic/](https://nextthought.vercel.app/classic/)**
 
-<!-- style:classic source:56d7aa0c00aff7b7a5d8fedeb44f7cebf52f02819b9f9c0744af326bf533b9ca preview:78c018f29149273cbc5158edd36187b451f7d9c6e3852d986f5ff5f193ba817c -->
+<!-- style:classic source:3b2b810d5d4697401668ab42c3454738e0d6c58fc3a2c9b8a16f08126d666f6d preview:e83164be9fe3bed7f9903d966a47f057d2d7b0e11febd680b2afa4caf7afe9fe -->
 
-### Final · 专业 · 精致 · 最终版
+### Final · 人文 · 对话 · 双语
 
-[![Final 首页](public/previews/final-home.png?v=2f66aed59500)](https://interviewhacker.vercel.app/final/)
+[![Final 首页](public/previews/final-home.png?v=0af356707c01)](https://nextthought.vercel.app/final/)
 
-以「时刻」叙事：得意黑与定制手写字形，鼠标可拨动的声波水面，随滚动播放的完整面试演示，回旋的序与颗粒消融的边缘，以早期试用收尾，中英双语。
+以中英会议的一天展开叙事：实时字幕、双语理解、会后记录与资料沉淀，中英双语。
 
-**访问页面：[https://interviewhacker.vercel.app/final/](https://interviewhacker.vercel.app/final/)**
+**访问页面：[https://nextthought.vercel.app/final/](https://nextthought.vercel.app/final/)**
 
-<!-- style:final source:8d784e6fa3a9c198e5a337e32aa8d93dcddb91d057e0ba147bfd9441565694f1 preview:2f66aed59500470a5ce3f72bd88464ec84502c7770114927a273c03f7432f4f5 -->
+<!-- style:final source:6ea8c751f7ed2f7cabb7c11af5f6d14d7eee3b2b5ceeaf13504d16ec052b3d1c preview:0af356707c01e5df093cdc5362d3291c1cf11cb9ce066a668c31459706e2d94f -->
 
-### Turn · 一天 · 留白 · 声音
+### Turn · 一天 · 对话 · 纪要
 
-[![Turn 首页](public/previews/turn-home.png?v=6753e8c62cbb)](https://interviewhacker.vercel.app/turn/)
+[![Turn 首页](public/previews/turn-home.png?v=d980a0e0da94)](https://nextthought.vercel.app/turn/)
 
-以「轮到你」叙事：对话只给你一眨眼，从清晨例会到深夜纪要的一天；可拨动的两根声弦与实时合成的声音，纸色随时间入夜，中英双语。
+跟随一天中的例会、跨语言交流与深夜整理，感受实时理解如何自然沉淀为清晰纪要，中英双语。
 
-**访问页面：[https://interviewhacker.vercel.app/turn/](https://interviewhacker.vercel.app/turn/)**
+**访问页面：[https://nextthought.vercel.app/turn/](https://nextthought.vercel.app/turn/)**
 
-<!-- style:turn source:2e67bc0ab3fdb3d7e523768f14a400ca142e048c15650101012b2a203ebe45b3 preview:6753e8c62cbbbee660d70417b7543c1aec9714123744e780596ac5d0f160e1bb -->
+<!-- style:turn source:91d81b769708fe41ae9abcfb19b447d93a49e25e2c1ea719e954a8e555927bf9 preview:d980a0e0da9475b3b0ef0f7233a35e78438c3b990f02e6868d42f73fcacb29e2 -->
 <!-- STYLES:END -->
 
 ## 本地运行
@@ -79,8 +79,8 @@
 需要 Node.js 24（与正式构建一致，可用 `nvm use`）；本地预览另需 Python 3。没有 npm 依赖。
 
 ```sh
-git clone https://github.com/OmnixSI/InterviewHacker-Website.git
-cd InterviewHacker-Website
+git clone https://github.com/OmnixSI/NextThought-Website.git
+cd NextThought-Website
 npm run dev
 ```
 
@@ -118,7 +118,7 @@ npm run build
 
 ## 部署
 
-线上地址为 https://interviewhacker.vercel.app/ 。现有 Vercel 项目为 `interviewhacker`；本仓库目前尚未连接 Git 自动部署，单独 push 不会自动改变正式站。
+线上地址为 https://nextthought.vercel.app/ 。Vercel 项目为 `nextthought`；本仓库目前尚未连接 Git 自动部署，单独 push 不会自动改变正式站。
 
 根目录 `vercel.json` 用于 Git 导入：Framework Other，Build `npm run check && npm run build`，Output `dist`，无依赖安装命令。沿用现有项目连接仓库，避免创建重复项目影响域名。
 

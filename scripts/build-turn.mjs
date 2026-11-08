@@ -13,7 +13,7 @@ import { letteringSvg } from './turn-lettering.mjs';
 
 const src = path.join(root, 'scripts/turn-i18n');
 const out = path.join(root, 'public/turn');
-const origin = 'https://interviewhacker.vercel.app';
+const origin = 'https://nextthought.vercel.app';
 const langs = {
   zh: { file: 'index.html', base: './', html: 'zh-CN', url: `${origin}/turn/`, other: './en/', hrefZh: './', hrefEn: './en/' },
   en: { file: 'en/index.html', base: '../', html: 'en', url: `${origin}/turn/en/`, other: '../', hrefZh: '../', hrefEn: './' }

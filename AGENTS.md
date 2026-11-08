@@ -1,4 +1,4 @@
-# InterviewHacker Website
+# NextThought Website
 
 本仓库只维护宣传网站，不包含桌面应用代码、用户资料或模型权重。
 

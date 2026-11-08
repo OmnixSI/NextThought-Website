@@ -1,4 +1,4 @@
-<!-- OWNER: day agent. № 02 The day: 09:30 stand-up, 11:00 interview, 14:00 lab meeting (in person), 16:30 client call.
+<!-- OWNER: day agent. № 02 The day: 09:30 stand-up, 11:00 bilingual project review, 14:00 lab meeting (in person), 16:30 client call.
      Each scene is an <article> with its own [data-time] and [data-palette], so the header clock and the paper follow the
      reader; a .scene__end mark late in each scene keeps the clock inside the meeting while it is on screen, and the
      hours pass in the white space between meetings. Numerals are Instrument Serif outlines drawn as hairlines (one path
@@ -7,14 +7,14 @@
 <section class="day section" id="day" data-time="09:20" data-palette="morning" data-lines="day" aria-labelledby="day-title" data-day>
   <div class="wrap day__intro">
     <p class="kicker day__kicker"><b>№ 02</b><span>{{ 一天 ‖ The day }}</span></p>
-    <h2 class="t-h2 day__title" id="day-title" data-cursor="caret" data-day-reveal><span class="day-rl"><span>{{ 轮到你的， ‖ Your turn comes }}</span></span><span class="day-rl"><span>{{ 不止面试。 ‖ more than once a day. }}</span></span></h2>
-    <p class="t-body day__lead">{{ 例会、面试、组会、客户电话、跨时区的英文会议。一天里，有很多次轮到你开口。 ‖ Stand-ups, interviews, lab meetings, client calls, a late call in another language. A day hands you the floor more often than you think. }}</p>
+    <h2 class="t-h2 day__title" id="day-title" data-cursor="caret" data-day-reveal><span class="day-rl"><span>{{ 轮到你的， ‖ Your turn comes }}</span></span><span class="day-rl"><span>{{ 不止一种语言。 ‖ in more than one language. }}</span></span></h2>
+    <p class="t-body day__lead">{{ 例会、双语项目会、组会和客户电话，一天里有很多场交流值得听懂并记录。 ‖ Stand-ups, bilingual project reviews, lab meetings and client calls: conversations worth understanding and remembering. }}</p>
     <nav class="day__agenda" aria-label="{{ 这一天 ‖ This day }}">
       <ol>
         <li><a href="#day-0930"><time class="mono" datetime="09:30">09:30</time><span>{{ 周一例会 · 线上 ‖ Monday stand-up · online }}</span></a></li>
-        <li><a href="#day-1100"><time class="mono" datetime="11:00">11:00</time><span>{{ 二面 · 后端 ‖ Round two · backend }}</span></a></li>
+        <li><a href="#day-1100"><time class="mono" datetime="11:00">11:00</time><span>{{ 跨语言项目评审 · 中英 ‖ Cross-language project meeting }}</span></a></li>
         <li><a href="#day-1400"><time class="mono" datetime="14:00">14:00</time><span>{{ 组会 · 线下 ‖ Lab meeting · in person }}</span></a></li>
-        <li><a href="#day-1630"><time class="mono" datetime="16:30">16:30</time><span>{{ 客户电话 · 共享整个屏幕 ‖ Client call · whole screen }}</span></a></li>
+        <li><a href="#day-1630"><time class="mono" datetime="16:30">16:30</time><span>{{ 客户电话 · 中英同步 ‖ Client call · bilingual captions }}</span></a></li>
       </ol>
     </nav>
   </div>
@@ -39,7 +39,7 @@
         </div>
         <div class="seg scene__gesture" role="group" aria-label="{{ 被问到时 ‖ When you’re asked }}" data-seg="record" data-needs-js>
           <span class="seg__thumb" aria-hidden="true"></span>
-          <button class="seg__btn" type="button" aria-pressed="true" data-value="answer">{{ 回答 ‖ Answer }}</button>
+          <button class="seg__btn" type="button" aria-pressed="true" data-value="answer">{{ 显示译文 ‖ Show translation }}</button>
           <button class="seg__btn" type="button" aria-pressed="false" data-value="record">{{ 只记录 ‖ Record only }}</button>
         </div>
       </div>
@@ -51,28 +51,28 @@
     <span class="scene__end" data-time="09:45" aria-hidden="true"></span>
   </article>
 
-  <!-- 11:00 · round two. The series carries forward; the follow-up lands; one tap rewrites the answer. -->
+  <!-- 11:00 · bilingual project review. Carry forward the agenda and notes; each speaker is captioned and translated. -->
   <article class="scene scene--round" id="day-1100" data-time="11:00" data-palette="morning" aria-labelledby="day-round-title" data-scene="round">
     <div class="wrap scene__grid">
       <header class="scene__head">
         <!--NUM:11:00-->
-        <p class="kicker scene__kicker"><time class="sr-only" datetime="11:00">11:00</time><span>{{ 二面 ‖ Round two }}</span><i aria-hidden="true">·</i><span>{{ 后端 ‖ backend }}</span></p>
+        <p class="kicker scene__kicker"><time class="sr-only" datetime="11:00">11:00</time><span>{{ 跨语言项目评审 ‖ Bilingual project review }}</span><i aria-hidden="true">·</i><span>{{ 后端 ‖ backend }}</span></p>
       </header>
       <div class="scene__talk">
-        <ol class="series" aria-label="{{ 面试系列 ‖ Interview series }}" data-series>
-          <li class="series__tab series__tab--past"><b>{{ 一面 ‖ Round 1 }}</b><span>{{ 10月22日 · 已复盘 ‖ Oct 22 · reviewed }}</span></li>
+        <ol class="series" aria-label="{{ 会议系列 ‖ Meeting series }}" data-series>
+          <li class="series__tab series__tab--past"><b>{{ 上次会议 ‖ Previous meeting }}</b><span>{{ 11月6日 · 有会议纪要 ‖ Nov 6 · notes saved }}</span></li>
           <li class="series__arrow" aria-hidden="true"><svg viewBox="0 0 84 34" focusable="false"><path class="series__stem" d="M3 23.5C17 14.2 33.6 9.6 49.2 11.4C59.4 12.6 68.8 16.4 77.6 21.6"/><path class="series__head" d="M68.4 13.9C71.9 16.1 75.2 18.6 77.6 21.6C73.9 22.6 70 23.1 66.1 23.2"/></svg></li>
-          <li class="series__tab series__tab--now" aria-current="step"><b>{{ 二面 ‖ Round 2 }}</b><span>{{ 今天 · 带入上一场 ‖ today · continued }}</span></li>
+          <li class="series__tab series__tab--now" aria-current="step"><b>{{ 项目评审 ‖ Project review }}</b><span>{{ 今天 · 延续上次待办 ‖ today · follow-up }}</span></li>
         </ol>
-        <blockquote class="t-quote scene__quote" data-quote><p>{{ <span class="nw">那数据库和缓存</span><span class="nw">同时更新，</span><span class="nw">怎么保证</span><span class="nw">一致性？</span> ‖ When the database and the cache both change, how do you keep them consistent? }}</p></blockquote>
+        <blockquote class="t-quote scene__quote" data-quote><p>{{ <span class="nw">那数据库和缓存</span><span class="nw">同时更新，</span><span class="nw">怎么保证</span><span class="nw">一致性？</span> ‖ The release can move to Thursday. Who will confirm the rollback checklist? }}</p></blockquote>
         <div class="scene__slot" data-slot>
           <p class="t-answer scene__answer" data-answer data-cursor="caret"
-             data-rewrite-short="{{ 先写库，再删缓存；删失败就重试，binlog兜底。 ‖ Write the DB, delete the cache, retry failures, binlog as backstop. }}"
-             data-rewrite-example="{{ 比如订单系统：改价先落库，再删商品缓存；删失败的进重试队列，binlog订阅再删一次。 ‖ In our order system, a price change hits the database first, then the product cache is deleted; failures retry, and the binlog subscriber deletes once more. }}"
-             data-rewrite-lang="{{ Write the database first, then delete the cache. Failed deletes go to a retry queue, and a binlog subscriber deletes again as a backstop. ‖ 先更新数据库，再删缓存。删除失败的key进重试队列，再订阅binlog删一次兜底。 }}"
-             data-rewrite-lang-code="{{ en ‖ zh-CN }}">{{ 先更新数据库，再删缓存。删除失败的key进重试队列，再订阅binlog删一次兜底。 ‖ Write the database first, then delete the cache. Failed deletes go to a retry queue, and a binlog subscriber deletes again as a backstop. }}</p>
+             data-rewrite-short="{{ 先写库，再删缓存；删失败就重试，binlog兜底。 ‖ We can move the release to Thursday; operations will confirm the rollback checklist. }}"
+             data-rewrite-example="{{ 决定：周四小流量发布，周五复核错误率与登录成功率。 ‖ Decision: a small release on Thursday; review errors and login success on Friday. }}"
+             data-rewrite-lang="{{ Live caption translated from English to Chinese; meeting notes keep the decision and owner. ‖ 英文转写同步显示中文译文，并把决定和负责人整理进会议纪要。 }}"
+             data-rewrite-lang-code="{{ en ‖ zh-CN }}">{{ 英文转写同步显示中文译文，并把决定和负责人整理进会议纪要。 ‖ Live caption translated from English to Chinese; meeting notes keep the decision and owner. }}</p>
         </div>
-        <div class="chips scene__gesture" role="group" aria-label="{{ 改写回答 ‖ Rewrite the answer }}" data-chips data-needs-js>
+        <div class="chips scene__gesture" role="group" aria-label="{{ 字幕显示选项 ‖ Caption options }}" data-chips data-needs-js>
           <button class="chip" type="button" aria-pressed="true" data-variant="original">{{ 原文 ‖ Original }}</button>
           <button class="chip" type="button" aria-pressed="false" data-variant="short">{{ 更简短 ‖ Shorter }}</button>
           <button class="chip" type="button" aria-pressed="false" data-variant="example">{{ 举例 ‖ Example }}</button>
@@ -81,7 +81,7 @@
       </div>
       <div class="scene__note">
         <h3 class="t-h3 scene__title" id="day-round-title" data-cursor="caret" data-day-reveal><span class="day-rl"><span>{{ 一面卡住的题， ‖ What tripped you in round one, }}</span></span><span class="day-rl"><span>{{ 二面它记得。 ‖ it remembers in round two. }}</span></span></h3>
-        <p class="t-body scene__body">{{ 二面接着一面：上一场的资料、复盘和改好的答法，都带进来。追问一来，回答一个词一个词浮上来；想短一点、要个例子、换成英文，点一下就好。 ‖ Round two picks up where round one left off: the material, the review and the better answers come along. When the follow-up lands, the answer surfaces word by word. Shorter, an example, the other language: one tap. }}</p>
+        <p class="t-body scene__body">{{ 把上次会议的议程、纪要和待办带入本次讨论。中英字幕随发言更新，重要决定与负责人可以随手标记。 ‖ Carry the previous agenda, notes and actions into this discussion. Chinese and English captions update as people speak; flag decisions and owners as you go. }}</p>
       </div>
     </div>
     <span class="scene__end" data-time="11:45" aria-hidden="true"></span>
@@ -116,7 +116,7 @@
       </figure>
       <div class="scene__note">
         <h3 class="t-h3 scene__title" id="day-lab-title" data-cursor="caret" data-day-reveal><span class="day-rl"><span>{{ 坐在同一个房间， ‖ Same room, }}</span></span><span class="day-rl"><span>{{ 也一样。 ‖ same help. }}</span></span></h3>
-        <p class="t-body scene__body">{{ 线下开会，它只用麦克风，房间里所有人的声音都在这一路，转写标成“现场”。线下默认只记录；需要时让它回答，它会对照你放进来的论文，注明在第几页。 ‖ In person it listens through the microphone alone: the whole room on one line, marked In the room. In person it records by default; ask it to answer and it works from the paper you added, page number included. }}</p>
+        <p class="t-body scene__body">{{ 线下开会，它只用麦克风，房间里所有人的声音都在这一路，转写标成“现场”。线下会议可记录全场转写；知识问答会对照导入的论文，并标出对应页码。 ‖ In person it listens through the microphone alone: the whole room on one line, marked In the room. In person it records by default; ask it to answer and it works from the paper you added, page number included. }}</p>
       </div>
     </div>
     <span class="scene__end" data-time="14:50" aria-hidden="true"></span>
@@ -128,19 +128,19 @@
     <div class="wrap scene__grid">
       <header class="scene__head">
         <!--NUM:16:30-->
-        <p class="kicker scene__kicker"><time class="sr-only" datetime="16:30">16:30</time><span>{{ 客户电话 ‖ Client call }}</span><i aria-hidden="true">·</i><span>{{ 共享整个屏幕 ‖ sharing your whole screen }}</span></p>
+        <p class="kicker scene__kicker"><time class="sr-only" datetime="16:30">16:30</time><span>{{ 客户电话 ‖ Client call }}</span><i aria-hidden="true">·</i><span>{{ 字幕同步 ‖ captions on both devices }}</span></p>
       </header>
       <div class="scene__talk">
         <blockquote class="t-quote scene__quote" data-quote><p>{{ 月底能上线吗？ ‖ Can we go live by the end of the month? }}</p></blockquote>
       </div>
       <figure class="devices scene__stage is-sharing" data-devices>
         <div class="devices__bar" data-needs-js>
-          <button class="switch devices__switch" type="button" role="switch" aria-checked="false" data-switch><span class="switch__track" aria-hidden="true"><span class="switch__knob"></span></span><span class="switch__label">{{ 共享整个屏幕 ‖ Share entire screen }}</span></button>
+          <button class="switch devices__switch" type="button" role="switch" aria-checked="false" data-switch><span class="switch__track" aria-hidden="true"><span class="switch__knob"></span></span><span class="switch__label">{{ 字幕同步 ‖ Share entire screen }}</span></button>
         </div>
         <div class="devices__set">
           <div class="laptop">
             <div class="laptop__screen" data-dock="laptop">
-              <p class="laptop__share"><i aria-hidden="true"></i>{{ 正在共享整个屏幕 ‖ Sharing entire screen }}</p>
+              <p class="laptop__share"><i aria-hidden="true"></i>{{ 正在字幕同步 ‖ Sharing entire screen }}</p>
               <span class="laptop__window" aria-hidden="true"><i></i><i></i></span>
             </div>
             <span class="laptop__base" aria-hidden="true"></span>
@@ -153,12 +153,12 @@
             </div>
           </div>
         </div>
-        <p class="devices__caps"><span class="devices__cap devices__cap--laptop">{{ 对方看到的 ‖ What they see }}</span><span class="devices__cap devices__cap--phone">{{ 只有你看到的 ‖ Only you see }}</span></p>
-        <figcaption class="t-small devices__fine">{{ 手机本身被共享或镜像到电脑时，同样会被看到。 ‖ If the phone itself is shared or mirrored, it can be seen too. }}</figcaption>
+        <p class="devices__caps"><span class="devices__cap devices__cap--laptop">{{ 桌面端 ‖ Desktop }}</span><span class="devices__cap devices__cap--phone">{{ 手机伴侣 ‖ Phone companion }}</span></p>
+        <figcaption class="t-small devices__fine">{{ 手机伴侣同步显示原文、译文与会议纪要。 ‖ The phone companion shows the original, translation and meeting notes. }}</figcaption>
       </figure>
       <div class="scene__note">
-        <h3 class="t-h3 scene__title" id="day-call-title" data-cursor="caret" data-day-reveal><span class="day-rl"><span>{{ 要共享整个屏幕？ ‖ Sharing your whole screen? }}</span></span><span class="day-rl"><span>{{ 回答放到手机上。 ‖ Keep the answer on your phone. }}</span></span></h3>
-        <p class="t-body scene__body">{{ 只共享会议窗口时，对方看不到提词；要共享整个屏幕，就把回答交给手机。用手机相机扫一下配对码，打开的页面就是你的提词屏，不用装App。 ‖ Share only the meeting window and they never see your prompts. Sharing everything? Hand the answer to your phone: scan a pairing code with its camera and the page that opens is your prompter. No app to install. }}</p>
+        <h3 class="t-h3 scene__title" id="day-call-title" data-cursor="caret" data-day-reveal><span class="day-rl"><span>{{ 要字幕同步？ ‖ Sharing your whole screen? }}</span></span><span class="day-rl"><span>{{ 双设备继续查看。 ‖ Keep them in view across devices. }}</span></span></h3>
+        <p class="t-body scene__body">{{ 只共享会议窗口时，对方看不到提词；要字幕同步，就把回答交给手机。用手机相机扫一下配对码，打开的页面就是你的提词屏，不用装App。 ‖ Use the live captions to follow both languages; open the saved notes to review decisions and actions. and the page that opens is your prompter. No app to install. }}</p>
       </div>
     </div>
     <span class="scene__end" data-time="17:00" aria-hidden="true"></span>

@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#07080c">
-  <meta name="description" content="InterviewHacker 是一款原生 macOS 实时 SI 对话助手，适用于面试、学术报告、商务会议与课程。默认本机离线语音识别，按场景准备资料，并在会后复盘。">
-  <meta property="og:title" content="InterviewHacker — 您的私人 SI 助手">
-  <meta property="og:description" content="听清问题，准备下一句。从面试到会议，为每一次重要对话做好准备。">
+  <meta name="description" content="NextThought 是一款原生 macOS 双语会议助手，支持中英实时转写与翻译、会议纪要、资料整理和知识问答。">
+  <meta property="og:title" content="NextThought — 您的私人双语助手">
+  <meta property="og:description" content="听懂双语对话，留下完整记录。从实时字幕、会议纪要到资料整理。">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://interviewhacker.vercel.app/story/">
-  <meta property="og:image" content="https://interviewhacker.vercel.app/previews/story-home.png">
-  <link rel="canonical" href="https://interviewhacker.vercel.app/story/">
+  <meta property="og:url" content="https://nextthought.vercel.app/story/">
+  <meta property="og:image" content="https://nextthought.vercel.app/previews/story-home.png">
+  <link rel="canonical" href="https://nextthought.vercel.app/story/">
   <link rel="preload" href="./assets/fonts/harmonyos/HarmonyOS_Sans_SC_Medium.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="./assets/fonts/harmonyos.css?v=b4f94e68a8e6">
   <link rel="stylesheet" href="./assets/fonts/geist.css?v=e396ec8cee86">
   <link rel="stylesheet" href="./assets/vendor/lenis.css?v=a0510d86f0c8">
-  <link rel="stylesheet" href="./style.css?v=d2d8de4864fa">
-  <title>InterviewHacker — Story</title>
+  <link rel="stylesheet" href="./style.css?v=0b234fd0a9e0">
+  <title>NextThought — Story</title>
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./assets/manifest/apple-touch-icon.png">
   <script src="./scripts/bootstrap.js?v=473d23e706a2"></script>
@@ -56,9 +56,9 @@
 
   <header class="site-header" data-header>
     <div class="site-header__inner">
-      <a class="brand" href="#top" aria-label="InterviewHacker 首页">
+      <a class="brand" href="#top" aria-label="NextThought 首页">
         <span class="brand__mark"><svg aria-hidden="true"><use href="#i-logo"/></svg></span>
-        <span class="brand__name">InterviewHacker</span>
+        <span class="brand__name">NextThought</span>
       </a>
       <nav class="site-nav" id="site-nav" aria-label="页面导航">
         <a href="#capabilities">实时演示</a>
@@ -77,7 +77,7 @@
           <svg class="when-dark" aria-hidden="true"><use href="#i-sun"/></svg>
           <svg class="when-light" aria-hidden="true"><use href="#i-moon"/></svg>
         </button>
-        <a class="btn btn--primary btn--sm" href="https://github.com/OmnixSI/InterviewHacker/releases/latest">下载</a>
+        <a class="btn btn--primary btn--sm" href="https://github.com/OmnixSI/NextThought/releases/latest">下载</a>
         <button class="icon-btn menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-nav" aria-label="打开菜单">
           <svg aria-hidden="true"><use href="#i-menu"/></svg>
         </button>
@@ -95,15 +95,15 @@
       </div>
       <div class="hero__copy">
         <p class="pill" data-hero-item><span class="pill__dot"></span>v1.8.0 · 原生 macOS · 默认本机离线语音识别</p>
-        <p class="hero__brand" data-hero-item>InterviewHacker</p>
-        <h1 class="hero__title" id="hero-title" aria-label="InterviewHacker，您的私人 SI 助手">
+        <p class="hero__brand" data-hero-item>NextThought</p>
+        <h1 class="hero__title" id="hero-title" aria-label="NextThought，您的私人双语助手">
           <span class="hero__line" data-split>您的私人</span>
-          <span class="hero__line hero__line--grad"><span class="grad" data-hero-grad>SI 助手</span></span>
+          <span class="hero__line hero__line--grad"><span class="grad" data-hero-grad>双语助手</span></span>
         </h1>
-        <p class="hero__lead" data-hero-item>面试、学术报告、商务会议和课程中，分别听清对方与自己的声音，及时整理问题与建议回答。按场景带入资料，会后继续复盘。</p>
+        <p class="hero__lead" data-hero-item>面向会议、学术交流与课程的 macOS 助手。支持中英实时转写与字幕翻译，按需整理资料，并在会后生成结构化纪要。</p>
         <div class="hero__cta" data-hero-item>
-          <a class="btn btn--primary btn--lg magnetic" href="https://github.com/OmnixSI/InterviewHacker/releases/latest">
-            <svg aria-hidden="true"><use href="#i-download"/></svg>下载 InterviewHacker
+          <a class="btn btn--primary btn--lg magnetic" href="https://github.com/OmnixSI/NextThought/releases/latest">
+            <svg aria-hidden="true"><use href="#i-download"/></svg>下载 NextThought
           </a>
           <a class="btn btn--ghost btn--lg" href="#capabilities">看它如何工作<svg aria-hidden="true"><use href="#i-down"/></svg></a>
         </div>
@@ -115,22 +115,22 @@
           <div class="hero__glow" aria-hidden="true"></div>
           <picture>
             <source media="(prefers-color-scheme: light)" srcset="./assets/product-scenes/conversation-light.svg">
-            <img data-product-screen="conversation" alt="InterviewHacker 助手窗口：字节后端二面中的双路对话、追问与建议回答" data-ih-dark="./assets/product-scenes/conversation-dark.svg" data-ih-light="./assets/product-scenes/conversation-light.svg" src="./assets/product-scenes/conversation-dark.svg" width="1600" height="1044" fetchpriority="high" decoding="async">
+            <img data-product-screen="conversation" alt="NextThought 助手窗口：中英实时字幕、项目会议讨论与行动项" data-ih-dark="./assets/product-scenes/conversation-dark.svg" data-ih-light="./assets/product-scenes/conversation-light.svg" src="./assets/product-scenes/conversation-dark.svg" width="1600" height="1044" fetchpriority="high" decoding="async">
           </picture>
           <div class="float-chip float-chip--a" data-depth="1.2" aria-hidden="true">
-            <svg><use href="#i-speaker"/></svg><span>对方 · 系统声音</span><i class="bars bars--violet"><b></b><b></b><b></b><b></b><b></b></i>
+            <svg><use href="#i-speaker"/></svg><span>会议音频 · 系统声音</span><i class="bars bars--violet"><b></b><b></b><b></b><b></b><b></b></i>
           </div>
           <div class="float-chip float-chip--b" data-depth="0.8" aria-hidden="true">
-            <svg><use href="#i-mic"/></svg><span>我 · 麦克风</span><i class="bars bars--mint"><b></b><b></b><b></b><b></b><b></b></i>
+            <svg><use href="#i-mic"/></svg><span>本地音轨 · 麦克风</span><i class="bars bars--mint"><b></b><b></b><b></b><b></b><b></b></i>
           </div>
           <div class="float-chip float-chip--c" data-depth="1.6" aria-hidden="true">
-            <span class="tag tag--accent">识别为 · 追问</span>
+            <span class="tag tag--accent">识别为 · 待办事项</span>
           </div>
           <div class="float-chip float-chip--d" data-depth="1" aria-hidden="true">
-            <svg><use href="#i-spark"/></svg><span>建议回答 · 逐字输出</span><i class="typing"><b></b><b></b><b></b></i>
+            <svg><use href="#i-spark"/></svg><span>中英字幕 · 实时同步</span><i class="typing"><b></b><b></b><b></b></i>
           </div>
           <div class="float-chip float-chip--e" data-depth="1.4" aria-hidden="true">
-            <svg><use href="#i-layers"/></svg><span>场景 · 字节后端二面</span>
+            <svg><use href="#i-layers"/></svg><span>场景 · 项目会议 · 中英转写</span>
           </div>
         </div>
       </div>
@@ -142,43 +142,43 @@
       <div class="container">
         <header class="section-head section-head--center" data-reveal>
           <p class="eyebrow"><span>01</span>实时演示</p>
-          <h2 id="demo-title" class="display">从对方开口，<br class="br-md">到你说出下一句。</h2>
-          <p class="section-lead">双路收音、问题识别与流式回答在同一个窗口里连续发生。区分提问、请求与追问；对方补充后半句时，回答会跟着完整问题更新。</p>
+          <h2 id="demo-title" class="display">从听见对话，<br class="br-md">到读懂每一句。</h2>
+          <p class="section-lead">中英字幕与实时转写在同一个窗口里同步显示。会前导入议程和资料，会中跟上讨论，会后整理纪要、决定与行动项。</p>
         </header>
 
         <div class="demo" data-demo>
           <div class="demo__window" data-tilt>
             <div class="demo__bar">
               <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
-              <span class="demo__app">InterviewHacker</span>
+              <span class="demo__app">NextThought</span>
               <span class="demo__tabs" aria-hidden="true"><b class="is-on">助手</b><b>场景</b><b>记录</b><b>设置</b></span>
               <span class="demo__status"><i class="live-dot"></i><span data-demo-status>本机语音已就绪</span><time data-demo-clock>00:00</time></span>
             </div>
             <div class="demo__body">
               <div class="demo__col demo__col--talk">
-                <div class="demo__panel-head"><span>实时对话</span><span class="muted">字节后端二面 · Zoom</span></div>
+                <div class="demo__panel-head"><span>实时对话</span><span class="muted">产品发布周会 · Zoom</span></div>
                 <div class="lanes">
-                  <div class="lane lane--them"><span class="lane__label"><svg aria-hidden="true"><use href="#i-speaker"/></svg>对方 · 系统声音</span><canvas data-wave="them" aria-hidden="true"></canvas></div>
-                  <div class="lane lane--me"><span class="lane__label"><svg aria-hidden="true"><use href="#i-mic"/></svg>我 · 麦克风</span><canvas data-wave="me" aria-hidden="true"></canvas></div>
+                  <div class="lane lane--them"><span class="lane__label"><svg aria-hidden="true"><use href="#i-speaker"/></svg>会议音频 · 系统声音</span><canvas data-wave="them" aria-hidden="true"></canvas></div>
+                  <div class="lane lane--me"><span class="lane__label"><svg aria-hidden="true"><use href="#i-mic"/></svg>本地音轨 · 麦克风</span><canvas data-wave="me" aria-hidden="true"></canvas></div>
                 </div>
                 <ol class="transcript" data-transcript aria-live="off">
-                  <li class="bubble bubble--them"><span class="bubble__tag">问题 · 明确提问</span>先聊聊你简历上的订单系统，大促时库存怎么扣？</li>
-                  <li class="bubble bubble--me">库存先在 Redis 里用 Lua 原子扣减，再异步落库。</li>
-                  <li class="bubble bubble--them"><span class="bubble__tag">问题 · 追问</span>那数据库和缓存同时更新，怎么保证一致性？</li>
-                  <li class="bubble bubble--echo"><span class="bubble__tag">回声 · 已忽略</span>数据库和缓存同时更新怎么保证一致性</li>
+                  <li class="bubble bubble--them"><span class="bubble__tag">英语发言 · 中文字幕</span>The release can move to Thursday. Who will confirm the rollback checklist?</li>
+                  <li class="bubble bubble--me">运维团队可以在周三前确认回滚清单。</li>
+                  <li class="bubble bubble--them"><span class="bubble__tag">待办事项</span>林周五复核发布后的错误率与登录成功率。</li>
+                  <li class="bubble bubble--echo"><span class="bubble__tag">回声 · 已忽略</span>运维团队可以在周三前确认回滚清单</li>
                 </ol>
               </div>
               <div class="demo__col demo__col--answer">
                 <div class="qcard">
-                  <div class="demo__panel-head"><span>当前问题</span><span class="qtypes" aria-hidden="true"><b data-qtype="ask">明确提问</b><b data-qtype="request">请求</b><b data-qtype="follow" class="is-on">追问</b></span></div>
-                  <p class="qcard__text" data-demo-question>那数据库和缓存同时更新，怎么保证一致性？</p>
+                  <div class="demo__panel-head"><span>会议讨论 · 实时转写</span><span class="qtypes" aria-hidden="true"><b data-qtype="ask">明确提问</b><b data-qtype="request">请求</b><b data-qtype="follow" class="is-on">追问</b></span></div>
+                  <p class="qcard__text" data-demo-question>The release can move to Thursday. Who will confirm the rollback checklist?</p>
                 </div>
                 <div class="acard">
-                  <div class="demo__panel-head"><span><svg aria-hidden="true"><use href="#i-spark"/></svg>建议回答</span><span class="muted" data-demo-answer-state>流式输出</span></div>
-                  <p class="acard__text" data-demo-answer>我们用的是先更新数据库、再删除缓存。删除失败的 key 进重试队列，同时用 Canal 订阅 binlog 再删一次兜底；热点 key 做延迟双删。这是最终一致方案，余额这类强一致数据直接读库。</p>
+                  <div class="demo__panel-head"><span><svg aria-hidden="true"><use href="#i-spark"/></svg>中文实时译文</span><span class="muted" data-demo-answer-state>实时同步</span></div>
+                  <p class="acard__text" data-demo-answer>发布时间可以调整到周四。运维团队可以在周三前确认回滚清单。</p>
                   <div class="adjust" aria-hidden="true"><b data-adjust="short">更简短</b><b data-adjust="expand">展开</b><b data-adjust="example">举例</b><b data-adjust="star">STAR</b><b data-adjust="en">英文版</b><b data-adjust="clarify">澄清</b></div>
                 </div>
-                <div class="demo__input" aria-hidden="true"><span>输入问题，或截图提问</span><b>Fast</b><b class="primary">立即回答</b></div>
+                <div class="demo__input" aria-hidden="true"><span>输入问题，或搜索会议资料</span><b>Fast</b><b class="primary">立即回答</b></div>
               </div>
             </div>
           </div>
@@ -188,9 +188,9 @@
         </div>
 
         <ul class="demo-points" role="list">
-          <li data-point="listen" data-reveal><span class="demo-points__icon"><svg aria-hidden="true"><use href="#i-wave"/></svg></span><h3>双路收音</h3><p>对方的系统声音与你的麦克风分开识别，并尝试排除扬声器回声，抢话也不混在一起。</p></li>
-          <li data-point="detect" data-reveal><span class="demo-points__icon"><svg aria-hidden="true"><use href="#i-question"/></svg></span><h3>问题识别</h3><p>区分陈述、提问、请求与追问。识别到的问题会整理成清晰的回答提示，方便你先看重点。</p></li>
-          <li data-point="answer" data-reveal><span class="demo-points__icon"><svg aria-hidden="true"><use href="#i-spark"/></svg></span><h3>流式回答</h3><p>写成可以直接说出口的口语，逐字输出；可一键更简短、展开、举例、改为 STAR 或切换语言。</p></li>
+          <li data-point="listen" data-reveal><span class="demo-points__icon"><svg aria-hidden="true"><use href="#i-wave"/></svg></span><h3>双语实时转写</h3><p>系统声音与你的麦克风分开识别，实时显示中文和英语发言，并尽量排除扬声器回声。</p></li>
+          <li data-point="detect" data-reveal><span class="demo-points__icon"><svg aria-hidden="true"><use href="#i-question"/></svg></span><h3>会议要点</h3><p>按发言顺序整理议题、决定、负责人和待办；可从时间戳回看对应的原始转写。</p></li>
+          <li data-point="answer" data-reveal><span class="demo-points__icon"><svg aria-hidden="true"><use href="#i-spark"/></svg></span><h3>知识问答</h3><p>结合当前场景检索会议资料、论文和项目文件，并显示答案对应的来源。</p></li>
         </ul>
       </div>
     </section>
@@ -198,10 +198,10 @@
     <!-- Marquee -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee__row" data-marquee="1">
-        <span>求职面试</span><i></i><span>学术报告</span><i></i><span>商务会议</span><i></i><span>课程学习</span><i></i><span>通用交流</span><i></i>
+        <span>模拟练习</span><i></i><span>学术报告</span><i></i><span>商务会议</span><i></i><span>课程学习</span><i></i><span>通用交流</span><i></i>
       </div>
       <div class="marquee__row marquee__row--alt" data-marquee="-1">
-        <span>双路收音</span><i></i><span>问题识别</span><i></i><span>流式回答</span><i></i><span>悬浮提词器</span><i></i><span>手机伴侣</span><i></i><span>资料检索</span><i></i><span>SKILL.md</span><i></i><span>会后复盘</span><i></i>
+        <span>双语实时转写</span><i></i><span>实时翻译</span><i></i><span>会议纪要</span><i></i><span>会议字幕</span><i></i><span>手机伴侣</span><i></i><span>资料知识库</span><i></i><span>SKILL.md</span><i></i><span>整理纪要</span><i></i>
       </div>
     </div>
 
@@ -213,13 +213,13 @@
           <h2 id="pipeline-title" class="display">从声音到下一句，<br class="br-md">一条连续的链路。</h2>
           <p class="pipeline__count" aria-hidden="true"><b data-pipe-index>01</b><span>/ 06</span></p>
         </header>
-        <p class="pipeline__ghost" data-pipe-ghost aria-hidden="true">双路收音</p>
+        <p class="pipeline__ghost" data-pipe-ghost aria-hidden="true">双语实时转写</p>
         <div class="pipeline__viewport">
           <ol class="pipeline__track" data-pipe-track>
             <li class="station" data-station>
               <span class="station__num">01</span>
               <span class="station__icon"><svg aria-hidden="true"><use href="#i-wave"/></svg></span>
-              <h3>双路收音</h3>
+              <h3>双语实时转写</h3>
               <p>分别采集会议窗口的系统声音（对方）与麦克风（我），两路独立识别；自动识别并忽略扬声器回声。</p>
               <div class="station__viz viz-lanes" aria-hidden="true"><i class="bars bars--violet"><b></b><b></b><b></b><b></b><b></b><b></b><b></b></i><i class="bars bars--mint"><b></b><b></b><b></b><b></b><b></b><b></b><b></b></i></div>
             </li>
@@ -228,34 +228,34 @@
               <span class="station__icon"><svg aria-hidden="true"><use href="#i-text"/></svg></span>
               <h3>两遍识别</h3>
               <p>默认本机离线流式模型边说边出字，中英混说也能跟上；每句说完再整句精修。也可选系统语音或云端识别。</p>
-              <div class="station__viz viz-scramble" aria-hidden="true"><span data-scramble="如果删除缓存失败了怎么办？">如果删除缓存失败了怎么办？</span></div>
+              <div class="station__viz viz-scramble" aria-hidden="true"><span data-scramble="如何安排一次平稳的版本发布？">如何安排一次平稳的版本发布？</span></div>
             </li>
             <li class="station" data-station>
               <span class="station__num">03</span>
               <span class="station__icon"><svg aria-hidden="true"><use href="#i-question"/></svg></span>
-              <h3>问题识别</h3>
-              <p>区分陈述、未说完、提问、请求与追问，去掉口头禅；对方补充后半句时，自动改答完整问题。</p>
-              <div class="station__viz viz-tags" aria-hidden="true"><b>陈述</b><b>请求</b><b class="is-on">追问</b></div>
+              <h3>实时翻译</h3>
+              <p>实时修正未说完的句子并同步更新译文；系统声音与麦克风分轨识别，并尽量过滤扬声器回声。</p>
+              <div class="station__viz viz-tags" aria-hidden="true"><b>陈述</b><b>会议记录</b><b class="is-on">待办事项</b></div>
             </li>
             <li class="station" data-station>
               <span class="station__num">04</span>
               <span class="station__icon"><svg aria-hidden="true"><use href="#i-layers"/></svg></span>
               <h3>场景检索</h3>
               <p>只取当前场景里相关的资料片段、经验与题库，并标注来源文件。不会把所有资料塞入上下文。</p>
-              <div class="station__viz viz-files" aria-hidden="true"><b>简历_后端.pdf</b><b class="is-on">订单系统设计.md</b><b>字节面经.md</b></div>
+              <div class="station__viz viz-files" aria-hidden="true"><b>发布计划.md</b><b class="is-on">上线检查表.pdf</b><b>会议议程.docx</b></div>
             </li>
             <li class="station" data-station>
               <span class="station__num">05</span>
               <span class="station__icon"><svg aria-hidden="true"><use href="#i-spark"/></svg></span>
-              <h3>流式回答</h3>
-              <p>连接你配置的回答引擎，写成能直接说出口的口语。需要最新信息时可联网补充，并附上来源。</p>
+              <h3>会议纪要</h3>
+              <p>连接你配置的知识问答服务，按场景检索资料片段。需要最新信息时可联网搜索，并附上来源。</p>
               <div class="station__viz viz-stream" aria-hidden="true"><span>删除失败的 key 进重试队列，再用 binlog</span><i class="caret"></i></div>
             </li>
             <li class="station" data-station>
               <span class="station__num">06</span>
               <span class="station__icon"><svg aria-hidden="true"><use href="#i-devices"/></svg></span>
               <h3>随处查看</h3>
-              <p>完整内容留在助手窗口，重点放进悬浮提词器；同一 Wi-Fi 下，也可以用手机伴侣查看。</p>
+              <p>完整对话和双语字幕保留在助手窗口；同一 Wi-Fi 下，也可以用手机伴侣查看实时记录。</p>
               <div class="station__viz viz-devices" aria-hidden="true"><b class="d-desk"></b><b class="d-prompt"></b><b class="d-phone"></b></div>
             </li>
           </ol>
@@ -276,7 +276,7 @@
           <div class="pipe-payload" data-pipe-payload aria-hidden="true"><i></i><span>音频帧 · 对方 / 我</span></div>
         </div>
         <ol class="pipe-rail container" data-pipe-rail aria-hidden="true">
-          <li>双路收音</li><li>两遍识别</li><li>问题识别</li><li>场景检索</li><li>流式回答</li><li>随处查看</li>
+          <li>双语实时转写</li><li>两遍识别</li><li>实时翻译</li><li>场景检索</li><li>会议纪要</li><li>随处查看</li>
           <span class="pipe-rail__track"><span data-pipe-fill></span></span>
         </ol>
       </div>
@@ -288,43 +288,43 @@
         <header class="section-head" data-reveal>
           <p class="eyebrow"><span>03</span>核心能力</p>
           <h2 id="features-title" class="display">把注意力<br>留给交流。</h2>
-          <p class="section-lead">双路收音分别处理对方的系统声音和你的麦克风，让你更容易跟上问题与自己的表达。回答建议用于辅助准备，请结合实际情况判断和作答。</p>
+          <p class="section-lead">系统声音与麦克风分开处理，原文和译文并排显示。会议结束后，可回看完整转写、资料来源与行动项。</p>
         </header>
         <div class="chapters__grid">
           <div class="chapters__steps">
             <article class="chapter" data-chapter>
               <p class="chapter__kicker"><span>01</span>实时</p>
-              <h3>听见问题，及时准备回答</h3>
-              <p>区分提问、请求与追问。对方补充后半句时，回答会跟着完整问题更新。</p>
-              <p class="chapter__note">识别到的问题会整理成清晰的回答提示，方便你先看重点，再用自己的方式表达。</p>
-              <figure class="chapter__inline"><img data-product-screen="conversation" alt="实时对话、当前问题与建议回答" data-ih-dark="./assets/product-scenes/conversation-dark.svg" data-ih-light="./assets/product-scenes/conversation-light.svg" src="./assets/product-scenes/conversation-dark.svg" width="1600" height="1044" loading="lazy" decoding="async"></figure>
+              <h3>中英实时字幕，逐句清楚显示</h3>
+              <p>中文和英语发言实时转写，句子结束后校对，并同步显示另一种语言的译文。</p>
+              <p class="chapter__note">系统声音与麦克风分开识别，发言结束后整句校对，减少回声与口误对转写的影响。</p>
+              <figure class="chapter__inline"><img data-product-screen="conversation" alt="实时对话、实时转写与双语译文" data-ih-dark="./assets/product-scenes/conversation-dark.svg" data-ih-light="./assets/product-scenes/conversation-light.svg" src="./assets/product-scenes/conversation-dark.svg" width="1600" height="1044" loading="lazy" decoding="async"></figure>
             </article>
             <article class="chapter" data-chapter>
               <p class="chapter__kicker"><span>02</span>场景</p>
-              <h3>回答带上当前场景</h3>
-              <p>每场面试、报告或会议都有独立背景，切换场景即可带入对应的目标、资料与回答要求。</p>
-              <p class="chapter__note">回答只参考当前场景里相关的资料、经验和题库，减少临场翻找信息的时间。</p>
+              <h3>每场会议，都有自己的资料脉络</h3>
+              <p>每场会议或学术交流都可建立独立场景，议程、项目资料与会议要求随场景切换。</p>
+              <p class="chapter__note">导入议程、项目文件、论文或课堂资料；知识问答按需检索相关片段，并标出来源。</p>
               <figure class="chapter__inline"><img data-product-screen="workspace" alt="场景页：目标、资料与回答要求" data-ih-dark="./assets/product-scenes/workspace-dark.svg" data-ih-light="./assets/product-scenes/workspace-light.svg" src="./assets/product-scenes/workspace-dark.svg" width="1600" height="1044" loading="lazy" decoding="async"></figure>
             </article>
             <article class="chapter" data-chapter>
               <p class="chapter__kicker"><span>03</span>查看</p>
               <h3>用适合自己的方式查看</h3>
-              <p>完整内容留在助手窗口，重点放进悬浮提词器。同一 Wi-Fi 下，也可以用手机伴侣查看当前问题与回答。</p>
-              <p class="chapter__note">提词器可放在摄像头下方，支持鼠标穿透、调整不透明度和一键隐藏全部窗口。</p>
-              <figure class="chapter__inline"><img data-product-screen="devices" alt="桌面助手、悬浮提词器与手机伴侣" data-ih-dark="./assets/product-scenes/devices-dark.svg" data-ih-light="./assets/product-scenes/devices-light.svg" src="./assets/product-scenes/devices-dark.svg" width="1600" height="1044" loading="lazy" decoding="async"></figure>
+              <p>完整对话和双语字幕保留在助手窗口；同一 Wi-Fi 下，也可以用手机伴侣查看实时记录。</p>
+              <p class="chapter__note">查看实时字幕、资料来源与会议纪要。演讲或分享准备时，可用会议字幕查看讲稿要点。</p>
+              <figure class="chapter__inline"><img data-product-screen="devices" alt="桌面助手、会议字幕与手机伴侣" data-ih-dark="./assets/product-scenes/devices-dark.svg" data-ih-light="./assets/product-scenes/devices-light.svg" src="./assets/product-scenes/devices-dark.svg" width="1600" height="1044" loading="lazy" decoding="async"></figure>
             </article>
             <article class="chapter" data-chapter>
               <p class="chapter__kicker"><span>04</span>资料</p>
               <h3>资料和技能，按需参与</h3>
-              <p>简历、岗位说明、论文或会议材料，都可以加入当前场景。资料在本机解析，回答时按问题取用相关内容。</p>
-              <p class="chapter__note">也可以导入自己的 SKILL.md，让回答按全局习惯或指定场景使用答题框架。</p>
+              <p>议程、项目文件、论文和课程资料都可以加入对应场景。文件在本机解析，知识问答按需检索相关片段。</p>
+              <p class="chapter__note">导入自己的 SKILL.md，为资料整理与知识问答指定处理步骤。</p>
               <figure class="chapter__inline"><img data-product-screen="materials" alt="资料列表、资料内容与场景技能" data-ih-dark="./assets/product-scenes/materials-dark.svg" data-ih-light="./assets/product-scenes/materials-light.svg" src="./assets/product-scenes/materials-dark.svg" width="1600" height="1044" loading="lazy" decoding="async"></figure>
             </article>
             <article class="chapter" data-chapter>
               <p class="chapter__kicker"><span>05</span>复盘</p>
               <h3>会后继续积累</h3>
-              <p>结束后可回看转录、问题、回答和摘要；复盘得到的经验与题目可以留给下一次使用。</p>
-              <p class="chapter__note">会话记录与场景资料保存在本机；你可以在设置中关闭记录、导出备份或删除数据。</p>
+              <p>结束后回看转写与摘要，整理讨论结论、负责人、截止时间和待确认事项。</p>
+              <p class="chapter__note">会议记录与场景资料保存在本机；你可以在设置中关闭记录、导出备份或删除数据。</p>
               <figure class="chapter__inline"><img data-product-screen="review" alt="问题回顾、摘要与改进建议" data-ih-dark="./assets/product-scenes/review-dark.svg" data-ih-light="./assets/product-scenes/review-light.svg" src="./assets/product-scenes/review-dark.svg" width="1600" height="1044" loading="lazy" decoding="async"></figure>
             </article>
           </div>
@@ -354,13 +354,13 @@
             <p class="eyebrow"><span>04</span>四步流程</p>
             <h2 id="workflow-title" class="display">从准备到复盘，<br>清楚走完每一步。</h2>
           </div>
-          <p class="section-lead">为面试、学术报告、商务会议、课程或通用交流建立独立场景。当前场景的目标、资料、经验和题库会按需参与回答。</p>
+          <p class="section-lead">为项目会议、学术交流和课程建立独立场景。相关议程、文件和背景资料可按需检索。</p>
         </header>
         <ol class="steps" data-steps>
-          <li class="step" data-step><span class="step__num">1</span><span class="step__icon"><svg aria-hidden="true"><use href="#i-layers"/></svg></span><h3>选择场景</h3><p>为面试、报告、会议或课程建立专属上下文。</p></li>
+          <li class="step" data-step><span class="step__num">1</span><span class="step__icon"><svg aria-hidden="true"><use href="#i-layers"/></svg></span><h3>选择场景</h3><p>为会议、学术交流或课程整理专属资料。</p></li>
           <li class="step" data-step><span class="step__num">2</span><span class="step__icon"><svg aria-hidden="true"><use href="#i-file"/></svg></span><h3>加入资料</h3><p>导入相关文件，设置目标、回答要求与可选技能。</p></li>
-          <li class="step" data-step><span class="step__num">3</span><span class="step__icon"><svg aria-hidden="true"><use href="#i-wave"/></svg></span><h3>开始辅助</h3><p>选择音频来源，实时查看转录、问题判断和流式回答。</p></li>
-          <li class="step" data-step><span class="step__num">4</span><span class="step__icon"><svg aria-hidden="true"><use href="#i-loop"/></svg></span><h3>会后复盘</h3><p>回看问题、回答与摘要，把经验留给下一次。</p></li>
+          <li class="step" data-step><span class="step__num">3</span><span class="step__icon"><svg aria-hidden="true"><use href="#i-wave"/></svg></span><h3>实时翻译</h3><p>选择音频来源，实时查看转录、问题判断和会议纪要。</p></li>
+          <li class="step" data-step><span class="step__num">4</span><span class="step__icon"><svg aria-hidden="true"><use href="#i-loop"/></svg></span><h3>整理纪要</h3><p>回看摘要、决定和行动项，导出会议纪要。</p></li>
           <li class="steps__line" aria-hidden="true"><span data-steps-line></span></li>
         </ol>
       </div>
@@ -376,7 +376,7 @@
         </header>
         <div class="bento" data-bento>
           <article class="card card--wide card--listen" data-card>
-            <div class="card__copy"><p class="card__kicker">双路实时识别</p><h3>对方和你，分开听清。</h3><p>系统声音与麦克风分开识别，并尝试排除扬声器回声。你在说话时，等你说完再出回答。</p></div>
+            <div class="card__copy"><p class="card__kicker">双路实时识别</p><h3>原文与译文，并排呈现。</h3><p>系统声音与麦克风分开识别，实时展示中英转写与译文。</p></div>
             <div class="viz-duo" aria-hidden="true">
               <div class="viz-duo__row"><span>对方</span><canvas data-wave="them-lg"></canvas></div>
               <div class="viz-duo__row viz-duo__row--me"><span>我</span><canvas data-wave="me-lg"></canvas></div>
@@ -384,15 +384,15 @@
             </div>
           </article>
           <article class="card card--tall card--context" data-card>
-            <div class="card__copy"><p class="card__kicker">回答贴合场景</p><h3>每个场景，一套背景。</h3><p>问题、相关资料、经验和题库结合当前场景提供上下文。</p></div>
+            <div class="card__copy"><p class="card__kicker">资料问答有据可查</p><h3>每个场景，一套背景。</h3><p>知识问答按场景检索资料片段，并显示对应的文档来源。</p></div>
             <figure class="card__shot"><img data-product-screen="context" alt="当前场景的目标、资料片段与经验" data-ih-dark="./assets/product-scenes/context-dark.svg" data-ih-light="./assets/product-scenes/context-light.svg" src="./assets/product-scenes/context-dark.svg" width="1600" height="1044" loading="lazy" decoding="async"></figure>
           </article>
           <article class="card card--adjust" data-card>
             <div class="card__copy"><p class="card__kicker">一键调整</p><h3>换个说法，一下就好。</h3></div>
-            <div class="viz-adjust" aria-hidden="true" data-adjust-cycle><b>更简短</b><b>展开</b><b>举例</b><b>STAR</b><b>英文版</b><b>澄清问题</b><b>我可以反问</b></div>
+            <div class="viz-adjust" aria-hidden="true" data-adjust-cycle><b>查看纪要</b><b>原文</b><b>译文</b><b>收藏</b><b>切换语言</b><b>知识问答问题</b><b>我可以反问</b></div>
           </article>
           <article class="card card--search" data-card>
-            <div class="card__copy"><p class="card__kicker">联网搜索</p><h3>先回答，再补充最新信息。</h3></div>
+            <div class="card__copy"><p class="card__kicker">联网搜索</p><h3>先定位资料，再查看来源。</h3></div>
             <div class="viz-search" aria-hidden="true" data-search-cycle>
               <span class="viz-search__state"><i></i><em data-search-label>快速回答</em></span>
               <span class="viz-search__line"></span><span class="viz-search__line viz-search__line--short"></span>
@@ -400,22 +400,22 @@
             </div>
           </article>
           <article class="card card--devices" data-card>
-            <div class="card__copy"><p class="card__kicker">查看方式灵活</p><h3>窗口、提词器、手机。</h3><p>悬浮提词器可放在摄像头下方；手机伴侣在同一 Wi-Fi 下查看并遥控。</p></div>
-            <div class="viz-phone"><img data-product-screen="phone" alt="手机伴侣显示当前问题与回答" data-ih-dark="./assets/product-scenes/phone-dark.svg" data-ih-light="./assets/product-scenes/phone-light.svg" src="./assets/product-scenes/phone-dark.svg" width="440" height="860" loading="lazy" decoding="async"></div>
+            <div class="card__copy"><p class="card__kicker">桌面、手机，随处查看</p><h3>字幕、纪要与资料。</h3><p>桌面与手机可查看双语字幕和会议重点；参与者同意后再开始转写。</p></div>
+            <div class="viz-phone"><img data-product-screen="phone" alt="手机伴侣显示实时转写与回答" data-ih-dark="./assets/product-scenes/phone-dark.svg" data-ih-light="./assets/product-scenes/phone-light.svg" src="./assets/product-scenes/phone-dark.svg" width="440" height="860" loading="lazy" decoding="async"></div>
           </article>
           <article class="card card--prompter" data-card>
-            <div class="card__copy"><p class="card__kicker">悬浮提词器</p><h3>看着镜头，也能读到重点。</h3><p>半透明浮窗，鼠标穿透时控制按钮仍可点击；可隐藏玻璃背景，只留文字。</p></div>
-            <figure class="card__shot card__shot--flush"><img data-product-screen="prompter" alt="桌面上的半透明悬浮提词器" data-ih-dark="./assets/product-scenes/prompter-dark.svg" data-ih-light="./assets/product-scenes/prompter-light.svg" src="./assets/product-scenes/prompter-dark.svg" width="1600" height="1044" loading="lazy" decoding="async"></figure>
+            <div class="card__copy"><p class="card__kicker">会议字幕</p><h3>字幕与纪要，随手可查。</h3><p>在桌面或手机查看实时字幕、转写和行动项，并调整字号与显示布局。</p></div>
+            <figure class="card__shot card__shot--flush"><img data-product-screen="prompter" alt="桌面上的半透明会议字幕" data-ih-dark="./assets/product-scenes/prompter-dark.svg" data-ih-light="./assets/product-scenes/prompter-light.svg" src="./assets/product-scenes/prompter-dark.svg" width="1600" height="1044" loading="lazy" decoding="async"></figure>
           </article>
           <article class="card card--docs" data-card>
-            <div class="card__copy"><p class="card__kicker">资料检索</p><h3>文件统一转成 Markdown。</h3><p>PDF、Word、PPT、Excel、图片等在本机转换，按问题检索相关片段并标注文件与页码。</p></div>
+            <div class="card__copy"><p class="card__kicker">资料知识库</p><h3>文件统一转成 Markdown。</h3><p>PDF、Word、PPT、Excel、图片等在本机转换，按问题检索相关片段并标注文件与页码。</p></div>
             <div class="viz-docs" aria-hidden="true"><span class="viz-docs__in"><b>PDF</b><b>DOCX</b><b>PPTX</b><b>XLSX</b><b>PNG</b></span><svg class="viz-docs__arrow"><use href="#i-arrow"/></svg><span class="viz-docs__out">.md</span></div>
           </article>
           <article class="card card--skill" data-card>
-            <div class="card__copy"><p class="card__kicker">技能</p><h3>用你的答题套路。</h3><p>导入自己的 SKILL.md，全局或按场景启用。</p></div>
+            <div class="card__copy"><p class="card__kicker">技能</p><h3>按你的工作流程处理。</h3><p>导入自己的 SKILL.md，为资料整理和知识问答指定步骤。</p></div>
             <pre class="viz-skill" aria-hidden="true"><code><span class="c">---</span>
-<span class="k">name</span>: 系统设计答题框架
-<span class="k">description</span>: 先澄清需求，再估算规模
+<span class="k">name</span>: 会议纪要整理流程
+<span class="k">description</span>: 提取决定事项、负责人和行动项
 <span class="c">---</span></code></pre>
           </article>
           <article class="card card--shot" data-card>
@@ -432,20 +432,20 @@
         <div class="loop__copy" data-reveal>
           <p class="eyebrow"><span>06</span>复盘与自我迭代</p>
           <h2 id="loop-title" class="display">越用，<br>越懂你。</h2>
-          <p class="section-lead">每次会话自动记录转录、问题、提词与当时的资料。会后按模式复盘，经验与改进后的回答并入当前场景的经验库和题库，下次回答自动参考。</p>
+          <p class="section-lead">每场会议保存转写、译文与关联资料。会后生成摘要、讨论结论、负责人、待办和待确认事项；原文可按时间戳回看。</p>
           <ul class="loop__list" role="list">
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg>相近的问题去重合并，只保留一条并更新答案</li>
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg>阶段复盘找出高频问题和反复出现的薄弱点</li>
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg>置顶的经验会优先交给回答引擎</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>合并重复议题，保留一条清晰记录</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>按主题归纳讨论要点与待确认事项</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg>资料问答保留引用来源</li>
           </ul>
         </div>
         <div class="orbit" data-orbit aria-hidden="true">
           <svg class="orbit__ring" viewBox="0 0 400 400"><circle cx="200" cy="200" r="150"/><circle class="orbit__inner" cx="200" cy="200" r="92"/></svg>
           <svg class="orbit__ring orbit__spin" viewBox="0 0 400 400"><circle class="orbit__dash" cx="200" cy="200" r="150"/></svg>
-          <div class="orbit__core"><svg><use href="#i-loop"/></svg><span>下次回答<br>自动参考</span></div>
-          <span class="orbit__node" style="--a:-90deg"><b>01</b>开会 / 面试</span>
+          <div class="orbit__core"><svg><use href="#i-loop"/></svg><span>会后纪要<br>一键回看</span></div>
+          <span class="orbit__node" style="--a:-90deg"><b>01</b>会议 / 课程 / 研究</span>
           <span class="orbit__node" style="--a:-18deg"><b>02</b>自动记录</span>
-          <span class="orbit__node" style="--a:54deg"><b>03</b>会后复盘</span>
+          <span class="orbit__node" style="--a:54deg"><b>03</b>整理纪要</span>
           <span class="orbit__node" style="--a:126deg"><b>04</b>场景经验库</span>
           <span class="orbit__node" style="--a:198deg"><b>05</b>场景题库</span>
         </div>
@@ -460,22 +460,22 @@
             <p class="eyebrow"><span>07</span>使用场景</p>
             <h2 id="stories-title" class="display">一场对话，<br>一套合适的背景。</h2>
           </div>
-          <p class="section-lead">每个场景是一套独立的上下文：各用各的简历版本、讲稿、议程或笔记。开始前切换场景，回答只使用当前场景的内容。</p>
+          <p class="section-lead">为项目会议、学术交流、课程和模拟练习分别整理背景。议程、讲稿、研究资料和笔记按场景切换。</p>
         </header>
         <div class="scenes__tabs" role="tablist" aria-label="使用场景" data-scene-tabs>
-          <button role="tab" id="tab-interview" aria-controls="panel-interview" aria-selected="true" tabindex="0"><span>求职面试</span><small>字节后端二面</small><i class="scenes__progress"></i></button>
+          <button role="tab" id="tab-interview" aria-controls="panel-interview" aria-selected="true" tabindex="0"><span>项目会议</span><small>产品发布周会 · 版本评审</small><i class="scenes__progress"></i></button>
           <button role="tab" id="tab-lecture" aria-controls="panel-lecture" aria-selected="false" tabindex="-1"><span>学术组会</span><small>Mamba 论文精读</small><i class="scenes__progress"></i></button>
           <button role="tab" id="tab-meeting" aria-controls="panel-meeting" aria-selected="false" tabindex="-1"><span>商务会议</span><small>代理商续约谈判</small><i class="scenes__progress"></i></button>
           <button role="tab" id="tab-course" aria-controls="panel-course" aria-selected="false" tabindex="-1"><span>课程学习</span><small>操作系统网课</small><i class="scenes__progress"></i></button>
         </div>
         <div class="scenes__panels">
           <article class="scene is-active" role="tabpanel" id="panel-interview" aria-labelledby="tab-interview" data-scene>
-            <div class="scene__copy"><h3>字节后端二面</h3><p>带入简历、岗位 JD 和面经。面试官从订单系统追问到缓存一致性，回答直接引用你项目里的方案与数字。</p><p class="scene__chips"><b>简历</b><b>岗位 JD</b><b>面经</b><b>项目资料</b></p></div>
-            <figure class="scene__shot"><img data-product-screen="conversation" alt="字节后端二面：追问缓存一致性时的建议回答" data-ih-dark="./assets/product-scenes/conversation-dark.svg" data-ih-light="./assets/product-scenes/conversation-light.svg" src="./assets/product-scenes/conversation-dark.svg" width="1600" height="1044" loading="lazy" decoding="async"></figure>
+            <div class="scene__copy"><h3>项目会议 · 版本发布评审</h3><p>带入议程、发布计划和回滚清单；会中查看中英字幕，会后整理决定、负责人和待办。</p><p class="scene__chips"><b>会议议程</b><b>发布计划</b><b>回滚清单</b><b>会议纪要</b></p></div>
+            <figure class="scene__shot"><img data-product-screen="conversation" alt="产品发布会议：中英字幕、回滚清单与行动项" data-ih-dark="./assets/product-scenes/conversation-dark.svg" data-ih-light="./assets/product-scenes/conversation-light.svg" src="./assets/product-scenes/conversation-dark.svg" width="1600" height="1044" loading="lazy" decoding="async"></figure>
           </article>
           <article class="scene" role="tabpanel" id="panel-lecture" aria-labelledby="tab-lecture" data-scene>
-            <div class="scene__copy"><h3>组会 · Mamba 论文精读</h3><p>讲稿跟随当前幻灯片，讲过的要点自动打勾，并提示过渡句。导师追问“参数随输入变化为什么还能并行训练”时，给出引用论文页码的解释。</p><p class="scene__chips"><b>论文</b><b>幻灯片</b><b>讲稿</b><b>可能被问</b></p></div>
-            <figure class="scene__shot"><img data-product-screen="lecture" alt="组会论文讲解：讲稿跟随与导师追问" data-ih-dark="./assets/product-scenes/lecture-dark.svg" data-ih-light="./assets/product-scenes/lecture-light.svg" src="./assets/product-scenes/lecture-dark.svg" width="1600" height="1044" loading="lazy" decoding="async"></figure>
+            <div class="scene__copy"><h3>组会 · Mamba 论文精读</h3><p>讲稿跟随当前幻灯片，讲过的要点自动打勾，并提示过渡句。讨论论文设计时，可查阅引用页码和相关资料。</p><p class="scene__chips"><b>论文</b><b>幻灯片</b><b>讲稿</b><b>参考资料</b></p></div>
+            <figure class="scene__shot"><img data-product-screen="lecture" alt="组会论文讲解：讲稿跟随与导师待办事项" data-ih-dark="./assets/product-scenes/lecture-dark.svg" data-ih-light="./assets/product-scenes/lecture-light.svg" src="./assets/product-scenes/lecture-dark.svg" width="1600" height="1044" loading="lazy" decoding="async"></figure>
           </article>
           <article class="scene" role="tabpanel" id="panel-meeting" aria-labelledby="tab-meeting" data-scene>
             <div class="scene__copy"><h3>华东代理商 · 年度续约</h3><p>对方要求单价再降 8 个点时，按场景里设定的底线给出阶梯报价思路；同时实时记下决定事项、待办与分歧。</p><p class="scene__chips"><b>议程</b><b>报价表</b><b>我方底线</b><b>会议纪要</b></p></div>
@@ -495,9 +495,9 @@
         <div class="privacy__copy" data-reveal>
           <p class="eyebrow"><span>08</span>数据去向</p>
           <h2 id="privacy-title" class="display">数据去向，<br>由你决定。</h2>
-          <p class="section-lead">默认使用本机离线语音识别，原始音频不会保存。若选择云端识别并同意，音频会发送给所选服务。生成回答时，转录、问题、相关资料片段、截图与启用的技能会发送到你配置的回答引擎；场景资料和会话记录保存在本机。</p>
-          <p class="fine">联网搜索开启后，问题文本会发送至所选搜索服务。手机伴侣默认关闭；启用后仅同步当前问题与回答，通过本地网络以明文 HTTP 传输，请只在可信 Wi-Fi 下使用。</p>
-          <a class="btn btn--ghost" href="https://github.com/OmnixSI/InterviewHacker#数据去向">查看完整数据去向<svg aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+          <p class="section-lead">默认使用本机离线语音识别，原始音频不会保存。若选择云端识别并同意，音频会发送给所选服务。使用外部知识问答服务时，相关问题与检索到的资料片段会发送到你配置的服务；场景资料和会话记录保存在本机。</p>
+          <p class="fine">联网搜索开启后，问题文本会发送至所选搜索服务。手机伴侣默认关闭；启用后仅同步实时转写与回答，通过本地网络以明文 HTTP 传输，请只在可信 Wi-Fi 下使用。</p>
+          <a class="btn btn--ghost" href="https://github.com/OmnixSI/NextThought#数据去向">查看完整数据去向<svg aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
         </div>
         <div class="flowmap" data-flowmap>
           <div class="flowmap__local">
@@ -522,12 +522,12 @@
             </li>
             <li class="route" data-route>
               <span class="route__wire" aria-hidden="true"><i></i></span>
-              <div class="route__body"><p class="route__name">手机伴侣 <small>默认关闭 · 可信 Wi-Fi</small></p><p class="route__data">当前问题与回答，本地网络明文 HTTP</p></div>
+              <div class="route__body"><p class="route__name">手机伴侣 <small>默认关闭 · 可信 Wi-Fi</small></p><p class="route__data">实时转写与回答，本地网络明文 HTTP</p></div>
               <button class="switch" type="button" role="switch" aria-checked="false" aria-label="演示：开启手机伴侣时的数据去向"><span></span></button>
             </li>
           </ul>
           <p class="flowmap__foot">当前应用版本 v1.8.0；下载需要仓库访问权。</p>
-          <p class="flowmap__foot">开始使用需要语音识别 + 对话服务。回答会使用当前问题检索到的资料片段，不会把所有资料塞入上下文。</p>
+          <p class="flowmap__foot">开始使用需要语音识别 + 对话服务。回答会使用实时转写检索到的资料片段，不会把所有资料塞入上下文。</p>
         </div>
       </div>
     </section>
@@ -541,8 +541,8 @@
         </header>
         <div class="faq__list" data-faq>
           <details>
-            <summary>InterviewHacker 是什么？<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
-            <div class="faq__answer"><p>InterviewHacker 是面向 macOS 的私人 SI（Super Intelligence，超级智能）对话助手，可用于面试、学术报告、商务会议、课程和通用交流。</p></div>
+            <summary>NextThought 是什么？<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <div class="faq__answer"><p>NextThought 是面向 macOS 的双语会议助手，提供中英实时转写与翻译、会议纪要、资料整理和知识问答。</p></div>
           </details>
           <details>
             <summary>语音识别可以离线使用吗？<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
@@ -550,11 +550,11 @@
           </details>
           <details>
             <summary>哪些内容会发送给外部服务？<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
-            <div class="faq__answer"><p>生成回答时，转录、问题、检索到的资料片段、主动添加的截图和启用的技能会发送到你配置的回答引擎。联网搜索开启后，问题文本会发送到所选搜索服务。</p></div>
+            <div class="faq__answer"><p>使用外部知识问答服务时，相关问题与检索资料片段会发送至你配置的服务。开启联网搜索后，查询文本会发送至所选搜索服务。</p></div>
           </details>
           <details>
-            <summary>它支持提词器和手机伴侣吗？<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
-            <div class="faq__answer"><p>支持悬浮提词器和手机伴侣。手机与 Mac 连接同一 Wi-Fi 后，可查看实时回答并进行遥控。</p></div>
+            <summary>支持手机查看实时字幕和会议纪要吗？<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
+            <div class="faq__answer"><p>支持会议字幕和手机伴侣。手机与 Mac 连接同一 Wi-Fi 后，可查看实时回答并进行遥控。</p></div>
           </details>
         </div>
       </div>
@@ -568,9 +568,9 @@
           <h2 id="tips-title" class="display">用得更顺手。</h2>
         </header>
         <ol class="tips__list">
-          <li class="tip" data-card><span class="tip__num">会前</span><h3>先选对场景</h3><p>面试、报告和会议分别建立场景，提前加入职位说明、论文、议程或笔记，让回答有当前背景。</p><a href="#stories">了解更多<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
-          <li class="tip" data-card><span class="tip__num">会中</span><h3>按需要调整</h3><p>建议回答支持缩短、展开、举例、STAR、切换语言和澄清；把它当成提示，再用自己的话表达。</p><a href="#capabilities">了解更多<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
-          <li class="tip" data-card><span class="tip__num">会后</span><h3>整理复盘</h3><p>结束后回看问题、完整转录和摘要；将有效经验与改进后的回答加入场景经验库和题库。</p><a href="#loop">了解更多<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+          <li class="tip" data-card><span class="tip__num">会前</span><h3>先选对场景</h3><p>会议、课程、学术交流与模拟练习分别建立场景，提前加入议程、论文、项目资料或笔记。</p><a href="#stories">了解更多<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+          <li class="tip" data-card><span class="tip__num">会中</span><h3>按需要调整</h3><p>双语译文支持缩短、原文、译文、收藏、切换语言和知识问答；把它当成提示，再用自己的话表达。</p><a href="#capabilities">了解更多<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+          <li class="tip" data-card><span class="tip__num">会后</span><h3>整理复盘</h3><p>会后回看完整转录和摘要，整理决定、负责人、截止时间和待确认事项。</p><a href="#loop">了解更多<svg aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
         </ol>
       </div>
     </section>
@@ -584,7 +584,7 @@
       <div class="container cta__inner" data-reveal>
         <span class="cta__mark" aria-hidden="true"><svg><use href="#i-logo"/></svg></span>
         <h2 id="cta-title" class="cta__title">准备好下一次<br>重要对话了吗？</h2>
-        <a class="btn btn--primary btn--xl magnetic" href="https://github.com/OmnixSI/InterviewHacker/releases/latest"><svg aria-hidden="true"><use href="#i-download"/></svg>下载 InterviewHacker</a>
+        <a class="btn btn--primary btn--xl magnetic" href="https://github.com/OmnixSI/NextThought/releases/latest"><svg aria-hidden="true"><use href="#i-download"/></svg>下载 NextThought</a>
         <p class="hero__meta"><span>macOS 14+</span><span>Apple Silicon</span><span>v1.8.0</span></p>
       </div>
     </section>
@@ -592,14 +592,14 @@
 
   <footer class="site-footer">
     <div class="container site-footer__inner">
-      <a class="brand" href="#top"><span class="brand__mark"><svg aria-hidden="true"><use href="#i-logo"/></svg></span><span class="brand__name">InterviewHacker</span></a>
+      <a class="brand" href="#top"><span class="brand__mark"><svg aria-hidden="true"><use href="#i-logo"/></svg></span><span class="brand__name">NextThought</span></a>
       <nav aria-label="页脚链接">
         <a href="#privacy">数据与隐私</a>
         <a href="#stories">使用场景</a>
         <a href="#tips">使用技巧</a>
-        <a href="https://github.com/OmnixSI/InterviewHacker">项目文档</a>
+        <a href="https://github.com/OmnixSI/NextThought">项目文档</a>
       </nav>
-      <p class="site-footer__meta">© 2026 InterviewHacker · macOS 14+ · Apple Silicon · 字体：HarmonyOS Sans、Geist</p>
+      <p class="site-footer__meta">© 2026 NextThought · macOS 14+ · Apple Silicon · 字体：HarmonyOS Sans、Geist</p>
     </div>
   </footer>
 
@@ -612,7 +612,7 @@
   <script src="./assets/vendor/ScrambleTextPlugin.min.js?v=e9ce04a07d93"></script>
   <script src="./assets/vendor/lenis.min.js?v=10f00688bc3f"></script>
   <script src="./scripts/shader.js?v=ea1c0bd0fa53"></script>
-  <script src="./scripts/demo.js?v=83fec61d7558"></script>
+  <script src="./scripts/demo.js?v=c8873c8b96e8"></script>
   <script src="./scripts/main.js?v=fa175657b44c"></script>
   <script src="./scripts/fps.js?v=c2f92270878e"></script>
 </body>

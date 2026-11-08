@@ -2,6 +2,21 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "key": "host",
+          "value": "interviewhacker.vercel.app"
+        }
+      ],
+      "destination": "https://nextthought.vercel.app/:path*",
+      "permanent": true,
+      "preserveQueryParams": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

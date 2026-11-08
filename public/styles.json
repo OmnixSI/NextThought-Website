@@ -1,12 +1,12 @@
 {
-  "title": "InterviewHacker Design Gallery",
-  "origin": "https://interviewhacker.vercel.app",
+  "title": "NextThought — 实时翻译与会议助手",
+  "origin": "https://nextthought.vercel.app",
   "styles": [
     {
       "slug": "minimal",
       "name": "Minimal",
-      "subtitle": "简洁 · 原生 · 从容",
-      "description": "温和紫色、玻璃提词卡与清晰的产品叙事，让功能与使用流程自然展开。",
+      "subtitle": "记录 · 翻译 · 整理",
+      "description": "以轻盈、易读的方式呈现中英实时字幕、会议记录、纪要和资料整理。",
       "path": "/minimal/",
       "preview": "/previews/minimal-home.png",
       "accent": "#ad9aff",
@@ -20,8 +20,8 @@
     {
       "slug": "technology",
       "name": "Technology",
-      "subtitle": "技术 · 交互 · 沉浸",
-      "description": "粒子光场、深浅章节与可操控的技术链路，把声音到表达的过程变成体验。",
+      "subtitle": "实时 · 清晰 · 有脉络",
+      "description": "用实时字幕串联同声传译、对话转写和会后纪要，展示从声音到记录的完整流程。",
       "path": "/technology/",
       "preview": "/previews/technology-home.png",
       "accent": "#c5ff65",
@@ -35,8 +35,8 @@
     {
       "slug": "story",
       "name": "Story",
-      "subtitle": "产品 · 场景 · 精致",
-      "description": "鸿蒙字体与金属设备外框，配合可播放的实时演示、WebGL 声纹光场和滚动叙事，串联准备、实时辅助与复盘。",
+      "subtitle": "产品 · 场景 · 对话",
+      "description": "通过产品演示展示中英字幕、会议记录、资料问答和会后纪要如何协同工作。",
       "path": "/story/",
       "preview": "/previews/story-home.png",
       "accent": "#666bff",
@@ -50,8 +50,8 @@
     {
       "slug": "classic",
       "name": "Classic",
-      "subtitle": "专业 · 严肃 · 设备叙事",
-      "description": "鸿蒙字体、带刘海的金属笔记本与连续设备交接，配合明暗双主题、磁吸滚动和六步工作链路，串联准备、实时辅助与复盘。",
+      "subtitle": "原生 · 专注 · 全流程",
+      "description": "以原生桌面应用为主角，完整展现实时转写、资料整理、会议协作和会后复盘。",
       "path": "/classic/",
       "preview": "/previews/classic-home.png",
       "accent": "#666bff",
@@ -65,8 +65,8 @@
     {
       "slug": "final",
       "name": "Final",
-      "subtitle": "专业 · 精致 · 最终版",
-      "description": "以「时刻」叙事：得意黑与定制手写字形，鼠标可拨动的声波水面，随滚动播放的完整面试演示，回旋的序与颗粒消融的边缘，以早期试用收尾，中英双语。",
+      "subtitle": "人文 · 对话 · 双语",
+      "description": "以中英会议的一天展开叙事：实时字幕、双语理解、会后记录与资料沉淀，中英双语。",
       "path": "/final/",
       "preview": "/previews/final-home.png",
       "accent": "#5b5ff0",
@@ -80,8 +80,8 @@
     {
       "slug": "turn",
       "name": "Turn",
-      "subtitle": "一天 · 留白 · 声音",
-      "description": "以「轮到你」叙事：对话只给你一眨眼，从清晨例会到深夜纪要的一天；可拨动的两根声弦与实时合成的声音，纸色随时间入夜，中英双语。",
+      "subtitle": "一天 · 对话 · 纪要",
+      "description": "跟随一天中的例会、跨语言交流与深夜整理，感受实时理解如何自然沉淀为清晰纪要，中英双语。",
       "path": "/turn/",
       "preview": "/previews/turn-home.png",
       "accent": "#5b5ff0",

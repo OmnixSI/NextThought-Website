@@ -2,10 +2,7 @@ import {mkdir, readFile, writeFile} from 'node:fs/promises';
 import path from 'node:path';
 import {root} from './catalog.mjs';
 
-// Editable product artwork. Layouts follow the shipping macOS app (assets/ih/ screenshots):
-// top navigation, scene and audio-source pickers, question bar, streamed answer with
-// adjust chips. Content is realistic sample data for each scenario; it never states
-// product speed or accuracy figures.
+// Editable product artwork: scenes, bilingual transcripts, meeting notes and knowledge cards.
 const palettes = {
   light: {canvas:'#eef0f6', canvas2:'#e9e6f6', panel:'#ffffff', soft:'#f4f5fa', soft2:'#eceef6', ink:'#1f2335', copy:'#5d6680', faint:'#8a92a8', line:'#e1e5ee', tint:'#ece9ff', tint2:'#ddd8ff', accent:'#6a5cf0', accentInk:'#5a4de0', green:'#1f9d6a', orange:'#e88a2e', red:'#e25b5b', me:'#e7e3ff', glass:'#ffffff', video:'#d9dde8', videoInk:'#4a5268'},
   dark: {canvas:'#151926', canvas2:'#221d3a', panel:'#1d2232', soft:'#262c3f', soft2:'#2d3449', ink:'#f1f3fb', copy:'#b3bcd2', faint:'#7f89a3', line:'#323a50', tint:'#35305a', tint2:'#433b78', accent:'#a99cff', accentInk:'#c4bbff', green:'#6fdcae', orange:'#f2a35a', red:'#ff7d7d', me:'#3a3366', glass:'#1a1f2e', video:'#232838', videoInk:'#9aa3ba'}
@@ -116,7 +113,7 @@ function drawing(p, cameraHousing = false) {
       `<g clip-path="url(#display)">`+(bare?'':chrome)+body+
       (cameraHousing?`<path d="M750 42H850V62C850 68.627 844.627 74 838 74H762C755.373 74 750 68.627 750 62V42Z" fill="#0c0f16"/><circle cx="800" cy="52" r="2.5" fill="#090d15" stroke="#182131" stroke-width="1"/><circle cx="799.2" cy="51.2" r=".7" fill="#354156" opacity=".7"/>`:'')+`</g>`+
       `<path d="M88 44H1511" stroke="#fff" stroke-opacity=".14"/>`+
-      text(800,972,'I N T E R V I E W H A C K E R',9,'#98a3ba',500,'text-anchor="middle"')+
+      text(800,972,'N E X T T H O U G H T',9,'#98a3ba',500,'text-anchor="middle"')+
       `<path d="M18 988H1582L1546 1018Q1540 1026 1518 1026H82Q60 1026 54 1018Z" fill="url(#base)" stroke="#9ca6bb" stroke-width=".8"/>`+
       `<path d="M18 989H1582" stroke="#f4f6fd" stroke-opacity=".8"/>`+
       `<path d="M652 988H948L934 999Q932 1001 926 1001H674Q668 1001 666 999Z" fill="url(#notch)"/>`+
@@ -200,24 +197,27 @@ function drawing(p, cameraHousing = false) {
 
   function conversation(){
     return assistant({
-      timer:'14:06',leftH:576,pickers:[['字节后端二面','person'],['Zoom · 后端工程师二面','speaker']],
-      status:'X-ASR 本地识别 · 每句整句精修 · 1 句疑似回声已忽略',
+      timer:'10:16',leftH:576,pickers:[['产品发布周会','bag'],['Zoom · 系统声音','speaker']],
+      status:'中英实时转写 · 双向翻译 · 3 位参会者',
       left:lanes(248)+transcript(112,306,656,[
-        {who:'them',text:'先聊聊你简历上的订单系统，大促时库存怎么扣？'},
-        {who:'me',text:'库存先在 Redis 里用 Lua 原子扣减，再异步落库。'},
-        {tag:'问题',at:'14:05:20'},
-        {who:'them',text:'那数据库和缓存同时更新，怎么保证一致性？'},
-        {echo:'数据库和缓存同时更新的时候你们怎么保证一致性'},
-        {who:'me',text:'我们用的是先更新数据库、再删除缓存的方式。'},
-        {who:'them',text:'如果删除缓存失败了怎么办…',interim:true}]),
-      leftBottom:by=>recordList(by,'回答记录',[['14:05','数据库和缓存同时更新，怎么保证一致性？','先更新数据库再删缓存，用 binlog 订阅兜底，保证最终一致。'],['','','']]),
-      qtype:'追问',question:'如果删除缓存失败了怎么办？',conf:.82,
-      answer:{page:'2/2',q:'对方追问：如果删除缓存失败了怎么办？',head:'删除失败的 key 进重试队列，再用 binlog 订阅兜底删一次。',
-        bullets:[['重试队列：','删除失败的 key 写进 MQ，消费端重试直到成功，超过次数告警。'],['binlog 兜底：','用 Canal 订阅 binlog，数据变更后异步再删一次。'],['延迟双删：','热点 key 更新后延迟几百毫秒再删，降低旧值被回填的概率。'],['取舍：','这是最终一致方案；余额这类强一致数据直接读库。']],active:'更简短'}
+        {who:'them',text:'The release is planned for next Thursday. Could we confirm the rollout plan?'},
+        {who:'me',text:'Yes. We can start with ten percent of users and watch the error rate.'},
+        {tag:'实时翻译',at:'10:15:20'},
+        {who:'them',text:'Can the operations team confirm the rollback plan by Wednesday?'},
+        {who:'me',text:'I’ll ask the team and add the owner to today’s notes.'},
+        {who:'them',text:'Great. Let’s review the metrics on Friday…',interim:true}]),
+      leftBottom:by=>panelHead(112,by+42,'check','会议纪要 · 实时')+
+        text(116,by+84,'决定',15,p.faint,600)+text(170,by+84,'先向 10% 用户发布，观察错误率',17,p.ink)+
+        text(116,by+118,'待办',15,p.faint,600)+text(170,by+118,'运维周三前确认回滚方案',17,p.ink)+
+        text(116,by+152,'负责人',15,p.faint,600)+text(170,by+152,'林 · 周五检查发布指标',17,p.ink),
+      qtype:'实时译文',question:'运维团队能否在周三前确认回滚方案？',conf:.98,
+      answer:{page:'中英',q:'Can the operations team confirm the rollback plan by Wednesday?',head:'运维团队能否在周三前确认回滚方案？',label:'中文实时翻译',
+        bullets:[['决定：','周四先向 10% 用户发布，并观察错误率。'],['待办：','运维团队周三前确认回滚方案。'],['负责人：','林负责周五检查发布指标。']],
+        sources:['原文 · 10:15','会议纪要 · 发布计划'],active:'更简短'}
     });
   }
   function context(){
-    const snips=[['简历','简历_后端_2026.pdf · 第 1 页','订单服务缓存层改造：Cache Aside + Canal 订阅 binlog，P99 从 120 ms 降到 18 ms。'],['题库','缓存一致性 · 被问 2 次','改进版：先给方案，再讲删除失败兜底和一致性取舍。'],['经验','置顶 · 一面复盘','上一轮反馈“项目讲得不够量化”，这次先报结果数字。']];
+    const snips=[['会议议程','发布周会议程.docx · 第 1 页','确认发布日期、灰度范围、回滚条件与负责人。'],['运维清单','回滚检查表.pdf · 第 2 页','错误率连续十分钟高于基线时，暂停扩量并恢复上一版本。'],['会议纪要','发布评审 · 11月6日','上次决定：迁移检查已完成，运维团队负责最终确认。']];
     let left='';
     snips.forEach(([cat,src,body],i)=>{
       const y=256+i*132;
@@ -225,15 +225,15 @@ function drawing(p, cameraHousing = false) {
       left+=para(132,y+76,[[body,false]],18,610,{gap:28}).svg;
     });
     return assistant({
-      timer:'14:09',leftIcon:'layers',leftTitle:'本次参考',pickers:[['字节后端二面','person'],['只用当前场景','layers']],
-      status:'按问题检索 3 段相关内容 · 不会把所有资料塞入上下文',
+      timer:'10:18',leftIcon:'layers',leftTitle:'本次参考',pickers:[['产品发布周会','bag'],['只用当前场景','layers']],
+      status:'按问题检索 3 段相关内容 · 保留原始资料来源',
       left,
       leftBottom:by=>panelHead(112,by+42,'file','当前场景资料')+text(290,by+42,'4 份',15,p.faint)+
-        row(112,by+66,[['简历_后端_2026.pdf','file',true],['抖音电商后端 JD.pdf','file']],{size:15,h:34})+row(112,by+110,[['字节后端面经.md','file'],['订单系统设计文档.md','file']],{size:15,h:34}),
-      qtype:'明确提问',question:'这套缓存方案上线后，效果怎么样？',conf:.9,
-      answer:{page:'1/1',q:'这套缓存方案上线后，效果怎么样？',head:'订单详情 P99 从 120 ms 降到 18 ms，大促 8 万 QPS 零故障。[1]',
-        bullets:[['背景：','订单详情读多写少，大促时数据库是瓶颈。[1]'],['方案：','Cache Aside + binlog 订阅兜底，热点 key 加本地缓存。[1]'],['取舍：','接受最终一致；支付和余额不走缓存。[2]'],['补一句：','上轮被说不够量化，所以先给数字再讲过程。[3]']],
-        sources:['简历 · 第 1 页','题库 · 缓存一致性','经验 · 置顶'],active:'举例'}
+        row(112,by+66,[['发布周会议程.docx','file',true],['回滚检查表.pdf','file']],{size:15,h:34})+row(112,by+110,[['发布计划.md','file'],['上次会议纪要.md','file']],{size:15,h:34}),
+      qtype:'资料问答',question:'What condition should trigger a rollback?',conf:.9,
+      answer:{page:'1/1',q:'What condition should trigger a rollback?',head:'Pause the rollout and restore the previous version if the error rate stays above baseline for ten minutes.[2]',
+        bullets:[['Threshold:','Error rate stays above the agreed baseline for ten minutes.[2]'],['Action:','Stop increasing rollout coverage and restore the previous version.[2]'],['Owner:','Operations confirms the checklist before Wednesday.[1]'],['Source:','Release review notes and the operations runbook.']],
+        sources:['回滚检查表 · 第 2 页','会议议程 · 第 1 页','会议纪要 · 11月6日'],active:'展开'}
     });
   }
   function slide(x,y,w,h,kind){
@@ -315,9 +315,9 @@ function drawing(p, cameraHousing = false) {
   }
 
   /* ---------- Scenes page ---------- */
-  const groups=[['面试','person',[['字节后端二面','4 份资料 · 3 题 · 1 次会话'],['美团到店 · 后端一面','3 份资料 · 5 题 · 2 次会话']]],['学术会议','cap',[['组会 · Mamba 论文精读','3 份资料 · 4 题 · 1 次会话']]],['商务会议','bag',[['华东代理商 · 年度续约','5 份资料 · 2 题 · 3 次会话']]],['课程','book',[['操作系统 · 虚拟内存','6 份资料 · 8 题 · 4 次会话']]]];
-  function sceneList(selected='字节后端二面'){
-    let out=panel(90,146,380,792)+text(114,192,'场景',24,p.ink,600)+text(114,222,'每套面试 / 报告 / 会议单独管理',15,p.faint)+`<circle cx="434" cy="190" r="19" fill="${p.soft}" stroke="${p.line}"/>`+icon(423,179,'plus',p.ink,22,2);
+  const groups=[['工作会议','bag',[['产品发布周会','4 份资料 · 3 位参会者 · 1 份纪要'],['跨时区项目同步','3 份资料 · 中英双语']]],['学术交流','cap',[['组会 · Mamba 论文精读','3 份资料 · 4 个讨论要点']]],['客户讨论','person',[['华东代理商 · 年度续约','5 份资料 · 3 次会话']]],['课程','book',[['操作系统 · 虚拟内存','6 份资料 · 8 个知识点']]]];
+  function sceneList(selected='产品发布周会'){
+    let out=panel(90,146,380,792)+text(114,192,'场景',24,p.ink,600)+text(114,222,'会议、课程与研究资料分别整理',15,p.faint)+`<circle cx="434" cy="190" r="19" fill="${p.soft}" stroke="${p.line}"/>`+icon(423,179,'plus',p.ink,22,2);
     let y=252;
     for(const [g,ic,items] of groups){
       out+=icon(114,y,ic,p.faint,18)+text(142,y+15,g,16,p.faint,600);y+=30;
@@ -326,7 +326,7 @@ function drawing(p, cameraHousing = false) {
     }
     return out;
   }
-  function sceneHeader(title,tabs,active,controls=[['面试','chevron'],['提词要点','chevron']]){
+  function sceneHeader(title,tabs,active,controls=[['会议资料','chevron'],['实时记录','chevron']]){
     let out=panel(488,146,1022,792)+rect(512,168,52,52,14,'url(#accent)','none')+icon(526,182,'person','#fff',24)+text(580,204,title,28,p.ink,600);
     let cx=1490;for(const [l,ic] of [...controls,['预测问题','spark']].reverse()){const w=chipW(l,16,true)+6;cx-=w+10;out+=chip(cx,172,l,{ic,size:16,h:40});}
     let tx=512;for(const t of tabs){const w=chipW(t,17)+8;out+=rect(tx,240,w,42,21,t===active?'url(#accent)':p.soft,'none')+text(tx+w/2,267,t,17,t===active?'#fff':p.copy,600,'text-anchor="middle"');tx+=w+8;}
@@ -334,31 +334,31 @@ function drawing(p, cameraHousing = false) {
   }
   const field=(x,y,w,label,value,h=50)=>text(x,y,label,15,p.faint,600)+rect(x,y+10,w,h,12,p.soft,'none')+para(x+16,y+42,[[value,false]],18,w-32,{gap:28}).svg;
   function workspace(){
-    let out=sceneList()+sceneHeader('字节后端二面',['资料与要求','经验库与题库','复盘'],'资料与要求');
-    out+=icon(512,304,'file',p.copy,20)+text(540,321,'面试信息',18,p.ink,600);
-    out+=field(512,360,476,'应聘公司','字节跳动 · 抖音电商')+field(1010,360,476,'岗位','后端开发工程师（2-1）');
-    out+=field(512,446,974,'面试官 / HR','二面面试官为订单中台负责人，偏重系统设计与高并发');
-    out+=field(512,532,476,'我的亮点','订单服务缓存层改造：P99 从 120 ms 降到 18 ms；大促 8 万 QPS 零故障',80)+field(1010,532,476,'其他背景','一面问了 MySQL 索引和 Redis，反馈是项目讲得不够量化',80);
-    out+=field(512,648,974,'回答要求','先给结论，再讲方案和取舍；涉及效果时先报数字，控制在 1 分钟内');
+    let out=sceneList()+sceneHeader('产品发布周会',['资料与议程','知识库','会议记录'],'资料与议程');
+    out+=icon(512,304,'file',p.copy,20)+text(540,321,'会前资料',18,p.ink,600);
+    out+=field(512,360,476,'会议主题','NextThought 2.4 · 首轮发布')+field(1010,360,476,'会议日期','11 月 12 日 · 上午 10:00');
+    out+=field(512,446,974,'参会者 / 主持人','产品、工程、设计与运维团队；确认发布范围、风险和负责人');
+    out+=field(512,532,476,'本次目标','先向 10% 用户发布，持续观察错误率与关键指标',80)+field(1010,532,476,'相关背景','迁移检查已完成；回滚方案由运维团队确认',80);
+    out+=field(512,648,974,'会后输出','整理中英转写、已确认决定、负责人、截止时间与待确认事项');
     out+=text(512,750,'资料',15,p.faint,600)+text(552,750,'4',15,p.faint)+text(1486,750,'导入资料',15,p.accentInk,600,'text-anchor="end"');
-    [['简历','简历_后端_2026.pdf'],['岗位 JD','抖音电商后端 JD.pdf'],['面经','字节后端面经合集.md'],['项目资料','订单系统设计文档.md']].forEach(([cat,f],i)=>{
+    [['议程','发布周会议程.docx'],['发布计划','NextThought-2.4-发布.md'],['运维清单','上线与回滚检查表.pdf'],['项目资料','迁移方案与风险记录.md']].forEach(([cat,f],i)=>{
       const x=512+(i%2)*490,y=766+Math.floor(i/2)*76;
       out+=rect(x,y,476,64,14,p.soft,'none')+icon(x+16,y+20,'file',p.accent,24)+text(x+52,y+39,f,18,p.ink,500)+chip(x+476-chipW(cat,14)-16,y+16,cat,{size:14,h:30,active:true});
     });
     return shell(out,'场景',{timer:'13:52'});
   }
   function materials(){
-    let out=sceneList()+sceneHeader('字节后端二面',['资料与要求','经验库与题库','复盘'],'资料与要求');
+    let out=sceneList()+sceneHeader('产品发布周会',['资料与议程','知识库','会议记录'],'资料与议程');
     out+=rect(512,300,430,620,16,p.soft,'none')+text(532,338,'资料',19,p.ink,600)+text(922,338,'批量导入 · 自动归类',14,p.accentInk,600,'text-anchor="end"');
-    [['简历','简历_后端_2026.pdf','已转 Markdown · 2 页'],['岗位 JD','抖音电商后端 JD.pdf','已转 Markdown · 1 页'],['面经','字节后端面经合集.md','Markdown · 46 题'],['项目资料','订单系统设计文档.md','Markdown · 9 节']].forEach(([cat,f,meta],i)=>{
+    [['议程','发布周会议程.docx','已转 Markdown · 2 页'],['发布计划','NextThought-2.4-发布.md','Markdown · 4 节'],['运维清单','上线与回滚检查表.pdf','已提取文字 · 3 页'],['项目资料','迁移方案与风险记录.md','Markdown · 6 节']].forEach(([cat,f,meta],i)=>{
       const y=358+i*86,on=i===3;out+=rect(526,y,402,74,12,on?p.tint:p.panel,on?'none':p.line)+icon(542,y+24,'file',on?p.accent:p.copy,24)+text(578,y+32,f,17,p.ink,600)+text(578,y+57,meta,14,p.faint)+chip(928-chipW(cat,13)-14,y+12,cat,{size:13,h:26,active:true});
     });
-    out+=rect(526,712,402,192,14,p.panel,p.line)+icon(542,728,'spark',p.accent,22)+text(574,746,'技能 · SKILL.md',17,p.ink,600)+rect(864,728,48,26,13,p.accent,'none')+`<circle cx="899" cy="741" r="10" fill="#fff"/>`+
-      `<g font-family="'SF Mono',Menlo,monospace">`+text(544,786,'---',15,p.faint)+text(544,812,'name: 系统设计答题框架',15,p.ink)+text(544,838,'description: 澄清需求 → 估算规模',15,p.ink)+text(544,864,'  → 核心链路 → 取舍与兜底',15,p.ink)+text(544,890,'---',15,p.faint)+`</g>`;
-    out+=rect(960,300,526,620,16,p.panel,p.line)+icon(980,318,'file',p.accent,22)+text(1012,337,'订单系统设计文档.md',18,p.ink,600)+text(1466,337,'本机解析',14,p.green,600,'text-anchor="end"')+line(976,358,1470,358);
-    out+=text(982,402,'## 3. 库存扣减',21,p.ink,600)+para(982,440,[['大促时库存先在 ',false],['Redis',true],[' 中用 ',false],['Lua 脚本原子扣减',true],['，扣减成功后发送事务消息，消费端按订单号幂等落库。',false]],17,470,{gap:28,boldFill:p.accentInk}).svg;
-    out+=text(982,560,'## 4. 一致性兜底',21,p.ink,600)+para(982,598,[['写库后删除缓存，删除失败的 key 进入重试队列；同时 ',false],['Canal 订阅 binlog',true],[' 异步再删一次。每日凌晨对账任务修正 Redis 与 MySQL 的库存差异。',false]],17,470,{gap:28,boldFill:p.accentInk}).svg;
-    out+=rect(976,750,494,150,12,p.tint,'none')+text(996,784,'回答时按问题检索',16,p.accentInk,600)+para(996,818,[['问到“删除缓存失败怎么办”，只取第 4 节相关片段，并标注 [项目资料] 订单系统设计文档.md。',false]],16,454,{gap:26}).svg;
+    out+=rect(526,712,402,192,14,p.panel,p.line)+icon(542,728,'spark',p.accent,22)+text(574,746,'知识库索引',17,p.ink,600)+rect(864,728,48,26,13,p.accent,'none')+`<circle cx="899" cy="741" r="10" fill="#fff"/>`+
+      `<g font-family="'SF Mono',Menlo,monospace">`+text(544,786,'---',15,p.faint)+text(544,812,'topic: 发布与回滚流程',15,p.ink)+text(544,838,'source: 运维检查表 · 第 2 页',15,p.ink)+text(544,864,'updated: 2026-11-07',15,p.ink)+text(544,890,'---',15,p.faint)+`</g>`;
+    out+=rect(960,300,526,620,16,p.panel,p.line)+icon(980,318,'file',p.accent,22)+text(1012,337,'上线与回滚检查表.pdf',18,p.ink,600)+text(1466,337,'本机解析',14,p.green,600,'text-anchor="end"')+line(976,358,1470,358);
+    out+=text(982,402,'## 2. 分批发布',21,p.ink,600)+para(982,440,[['首先向 ',false],['10% 用户',true],[' 开放新版本，观察关键错误率、登录成功率和同步延迟。',false]],17,470,{gap:28,boldFill:p.accentInk}).svg;
+    out+=text(982,560,'## 3. 回滚条件',21,p.ink,600)+para(982,598,[['错误率连续 ',false],['10 分钟',true],[' 高于基线时停止扩量，并由运维负责人按检查表恢复上一版本。',false]],17,470,{gap:28,boldFill:p.accentInk}).svg;
+    out+=rect(976,750,494,150,12,p.tint,'none')+text(996,784,'知识问答 · 有据可查',16,p.accentInk,600)+para(996,818,[['问“达到什么条件需要回滚？”，答案引用检查表第 3 节，并保留页码来源。',false]],16,454,{gap:26}).svg;
     return shell(out,'场景',{timer:'13:55'});
   }
 
@@ -366,22 +366,22 @@ function drawing(p, cameraHousing = false) {
   function review(){
     let out=panel(90,146,440,792)+rect(110,166,400,46,23,p.soft,'none')+icon(126,177,'search',p.faint,22)+text(158,196,'搜索标题、问题和提词',16,p.faint);
     out+=row(110,226,[['全部场景','chevron'],['近 30 天','chevron'],['按时间','chevron']],{size:14,h:32});
-    [['字节后端二面','10月22日 14:00 · 46 分钟 · 9 问'],['组会 · Mamba 论文精读','10月21日 19:30 · 32 分钟 · 6 问'],['华东代理商 · 年度续约','10月20日 10:00 · 58 分钟 · 4 问'],['操作系统 · 虚拟内存','10月18日 10:00 · 95 分钟 · 7 问'],['美团到店 · 后端一面','10月15日 15:00 · 38 分钟 · 8 问']].forEach(([t,m],i)=>{
+    [['产品发布周会','11月07日 10:00 · 46 分钟 · 中英双语'],['组会 · Mamba 论文精读','11月06日 19:30 · 32 分钟 · 6 个要点'],['华东代理商 · 年度续约','11月05日 10:00 · 58 分钟 · 4 项待办'],['操作系统 · 虚拟内存','11月04日 10:00 · 95 分钟 · 7 个知识点'],['跨时区项目同步','11月03日 15:00 · 38 分钟 · 中英双语']].forEach(([t,m],i)=>{
       const y=282+i*92,on=i===0;out+=rect(108,y,404,80,14,on?p.tint:p.soft,'none')+text(128,y+33,t,19,p.ink,600)+text(128,y+60,m,14,p.faint);
     });
     out+=text(312,880,'共 5 条记录',14,p.faint,400,'text-anchor="middle"');
-    out+=panel(548,146,962,792)+text(574,196,'字节后端二面 · 订单系统与缓存一致性',25,p.ink,600)+text(574,228,'10月22日 14:00 · 46 分钟 · 9 个问题 · 已加入场景经验库',15,p.faint);
+    out+=panel(548,146,962,792)+text(574,196,'产品发布周会 · 上线范围与回滚安排',25,p.ink,600)+text(574,228,'11月07日 10:00 · 46 分钟 · 中英双语 · 已生成会议纪要',15,p.faint);
     out+=chip(1316,172,'导出 Markdown',{size:15,h:38,ic:'file'});
     let tx=574;for(const t of ['摘要','问题','转录','提词']){const w=chipW(t,16)+14;out+=rect(tx,252,w,40,20,t==='摘要'?'url(#accent)':p.soft,'none')+text(tx+w/2,278,t,16,t==='摘要'?'#fff':p.copy,600,'text-anchor="middle"');tx+=w+8;}
-    out+=text(574,334,'问题清单与我的回答要点',18,p.ink,600);
-    [['订单系统大促时库存怎么扣？','Redis + Lua 原子扣减，事务消息异步落库，消费端幂等。'],['数据库和缓存怎么保证一致性？','先更新库再删缓存，binlog 订阅兜底，最终一致。'],['删除缓存失败了怎么办？','重试队列 + Canal 再删一次，热点 key 延迟双删。'],['Kafka 怎么保证消息不丢？','只答了消费端手动提交，生产端 acks 没讲到。']].forEach(([q,a],i)=>{
+    out+=text(574,334,'讨论摘要与行动项',18,p.ink,600);
+    [['发布范围','先向 10% 用户发布，持续观察错误率。'],['回滚方案','运维团队周三前完成检查与确认。'],['负责人','林负责周五整理发布指标。'],['待确认','最终扩大范围前复核登录成功率。']].forEach(([q,a],i)=>{
       const y=352+i*82;out+=rect(574,y,910,72,12,i===3?p.soft:p.soft,'none')+text(594,y+30,`0${i+1}`,15,p.accentInk,600)+text(630,y+30,q,18,p.ink,600)+text(630,y+57,a,15,i===3?p.orange:p.copy);
     });
-    out+=text(574,712,'复盘建议',18,p.ink,600);
-    [['check','缓存一致性讲得清楚，下次先给结论再展开。',p.green],['help','Kafka 追问补上 acks=all、幂等生产者和重试。',p.orange],['spark','已整理 2 条经验、3 道改进回答进场景题库。',p.accent]].forEach(([ic,t,c],i)=>{
+    out+=text(574,712,'会议结论',18,p.ink,600);
+    [['check','决定：采用分批上线，先覆盖 10% 用户。',p.green],['help','待办：运维确认回滚条件与操作步骤。',p.orange],['spark','附件：发布清单、会议转写与双语摘要。',p.accent]].forEach(([ic,t,c],i)=>{
       const y=730+i*44;out+=icon(576,y,ic,c,22)+text(610,y+18,t,17,p.ink);
     });
-    out+=button(1256,862,'加入下次准备',228,true,'plus',46);
+    out+=button(1256,862,'导出会议纪要',228,true,'file',46);
     return shell(out,'记录',{timer:'15:02'});
   }
 
@@ -401,18 +401,18 @@ function drawing(p, cameraHousing = false) {
   function prompter(){
     let out=rect(74,42,1452,912,16,p.video,'none');
     out+=rect(100,140,920,650,18,'#2a3044','none')+`<g clip-path="url(#tile-a)"><defs><clipPath id="tile-a"><rect x="100" y="140" width="920" height="650" rx="18"/></clipPath></defs>`+rect(100,140,920,650,0,'url(#room)','none')+roomBack(100,140,920,650)+person(560,470,1.45,'#4b5a80','#2a2320','pa')+`</g>`+
-      rect(118,738,180,36,10,'rgba(0,0,0,.45)','none')+text(134,762,'面试官 · 订单中台',16,'#fff',500);
+      rect(118,738,220,36,10,'rgba(0,0,0,.45)','none')+text(134,762,'项目团队 · 英语会议',16,'#fff',500);
     out+=rect(1040,140,460,320,18,'#323a52','none')+`<g clip-path="url(#tile-b)"><defs><clipPath id="tile-b"><rect x="1040" y="140" width="460" height="320" rx="18"/></clipPath></defs>`+rect(1040,140,460,320,0,'url(#room)','none')+person(1270,300,.72,'#3f6d63','#3a2a22','pb')+`</g>`+rect(1056,420,60,30,8,'rgba(0,0,0,.45)','none')+text(1086,441,'我',15,'#fff',500,'text-anchor="middle"');
-    out+=rect(1040,476,460,314,18,'#2a3044','none')+text(1270,620,'共享屏幕已暂停',18,'#9aa3ba',400,'text-anchor="middle"');
+    out+=rect(1040,476,460,314,18,'#2a3044','none')+text(1270,620,'发布计划 · 议程与文档',18,'#9aa3ba',400,'text-anchor="middle"');
     out+=rect(500,822,600,64,32,'#1b2030','none');[['mic',560],['camera',640],['slides',720],['chat',800],['person',880]].forEach(([ic,x])=>{out+=icon(x,842,ic,'#c9d0e2',24);});out+=rect(950,834,124,40,20,'#e25b5b','none')+text(1012,860,'离开',17,'#fff',600,'text-anchor="middle"');
-    // Floating prompter tucked under the camera
+    // Floating bilingual captions and live meeting notes.
     out+=`<g filter="url(#card-shadow)">`+rect(420,58,760,330,26,'#141824cc','#ffffff33')+`</g>`+
-      `<circle cx="452" cy="94" r="6" fill="${p.green}"/>`+text(468,100,'聆听中',16,'#c9d0e2',500)+chip(540,80,'追问',{size:14,h:28,fill:'#6a5cf044',color:'#d3ccff'})+
-      icon(856,85,'left','#c9d0e2',22)+text(902,101,'2/2',15,'#c9d0e2',500,'text-anchor="middle"')+icon(924,85,'right','#c9d0e2',22)+text(968,101,'A−',16,'#c9d0e2',600)+text(1006,101,'A+',16,'#c9d0e2',600)+icon(1046,85,'pointer','#a99cff',22)+icon(1086,85,'eye','#c9d0e2',22)+icon(1126,85,'pin','#c9d0e2',22)+
-      line(440,122,1160,122,'#ffffff22')+text(448,156,'如果删除缓存失败了怎么办？',18,'#aeb6cc',500)+
-      text(448,206,'删除失败的 key 进重试队列，',30,'#ffffff',600)+text(448,252,'再用 binlog 订阅兜底删一次；',30,'#ffffff',600)+text(448,298,'热点 key 延迟双删，缓存都设 TTL。',30,'#ffffff',600)+
-      line(440,322,1160,322,'#ffffff22')+chip(448,336,'回答',{size:15,h:34,fill:'#6a5cf0',color:'#fff'})+chip(526,336,'取消',{size:15,h:34,fill:'#ffffff14',color:'#d7dcea'})+chip(604,336,'复制',{size:15,h:34,fill:'#ffffff14',color:'#d7dcea'})+
-      text(1160,358,'鼠标穿透已开启 · 按钮仍可点',14,'#9aa3ba',400,'text-anchor="end"');
+      `<circle cx="452" cy="94" r="6" fill="${p.green}"/>`+text(468,100,'实时字幕',16,'#c9d0e2',500)+chip(540,80,'EN → 中',{size:14,h:28,fill:'#6a5cf044',color:'#d3ccff'})+
+      icon(856,85,'left','#c9d0e2',22)+text(902,101,'10:16',15,'#c9d0e2',500,'text-anchor="middle"')+icon(924,85,'right','#c9d0e2',22)+text(968,101,'A−',16,'#c9d0e2',600)+text(1006,101,'A+',16,'#c9d0e2',600)+icon(1046,85,'copy','#a99cff',22)+icon(1086,85,'eye','#c9d0e2',22)+icon(1126,85,'pin','#c9d0e2',22)+
+      line(440,122,1160,122,'#ffffff22')+text(448,156,'The release is planned for next Thursday.',18,'#aeb6cc',500)+
+      text(448,206,'发布计划定在下周四。',30,'#ffffff',600)+text(448,252,'先向 10% 用户发布，观察错误率。',30,'#ffffff',600)+text(448,298,'运维团队周三前确认回滚方案。',30,'#ffffff',600)+
+      line(440,322,1160,322,'#ffffff22')+chip(448,336,'查看纪要',{size:15,h:34,fill:'#6a5cf0',color:'#fff'})+chip(550,336,'保存片段',{size:15,h:34,fill:'#ffffff14',color:'#d7dcea'})+chip(652,336,'复制译文',{size:15,h:34,fill:'#ffffff14',color:'#d7dcea'})+
+      text(1160,358,'参会者同意后开始转写',14,'#9aa3ba',400,'text-anchor="end"');
     return shell(out,'助手',{bare:true});
   }
 
@@ -420,17 +420,17 @@ function drawing(p, cameraHousing = false) {
   function phone(){
     return `<g filter="url(#phone-shadow)">`+rect(24,12,392,832,58,'url(#metal)','#777d91')+rect(31,19,378,818,52,'#101219')+
       rect(40,28,360,800,45,p.canvas)+rect(164,43,112,29,15,'#101219')+
-      text(69,64,'14:07',16,p.ink,600)+text(340,64,'Wi-Fi',13,p.ink,500)+
+      text(69,64,'10:16',16,p.ink,600)+text(340,64,'Wi-Fi',13,p.ink,500)+
       icon(62,100,'wave',p.accent,24)+text(96,120,'手机伴侣',22,p.ink,600)+chip(254,98,'已连接 Mac',{size:13,h:28,active:true})+
-      text(64,166,'同一 Wi-Fi · 字节后端二面',14,p.faint)+
-      rect(56,184,328,118,20,p.panel,p.line)+chip(72,198,'追问',{size:13,h:26,active:true})+para(74,258,[['如果删除缓存失败了怎么办？',false]],19,292,{gap:30,weight:600}).svg+
-      rect(56,318,328,382,20,p.panel,p.line)+icon(72,334,'spark',p.accent,20)+text(100,351,'建议回答',17,p.accentInk,600)+
-      para(74,396,[['删除失败的 key 进重试队列，再用 binlog 订阅兜底删一次。',true]],20,290,{boldFill:p.ink,gap:32}).svg+
-      line(74,500,366,500)+para(74,536,[['• 重试队列：MQ 消费端重试，超过次数告警',false]],15,292,{fill:p.copy,gap:24}).svg+
-      para(74,574,[['• 热点 key 延迟双删，降低旧值回填',false]],15,292,{fill:p.copy,gap:24}).svg+
-      para(74,612,[['• 余额类强一致数据直接读库',false]],15,292,{fill:p.copy,gap:24}).svg+para(74,662,[['首字出现即可开口，后续逐字补全。',false]],13,292,{fill:p.faint,gap:20}).svg+
-      rect(56,716,100,52,26,p.soft,p.line)+icon(94,730,'left',p.ink,24)+rect(170,716,100,52,26,'url(#accent)','none')+text(220,749,'回答',18,'#fff',600,'text-anchor="middle"')+rect(284,716,100,52,26,p.soft,p.line)+icon(322,730,'right',p.ink,24)+
-      text(220,796,'遥控：上一条 · 回答 · 下一条',13,p.faint,400,'text-anchor="middle"')+
+      text(64,166,'产品发布周会 · English → 中文',14,p.faint)+
+      rect(56,184,328,118,20,p.panel,p.line)+chip(72,198,'原文 · EN',{size:13,h:26,active:true})+para(74,258,[['The release is planned for next Thursday.',false]],19,292,{gap:30,weight:600}).svg+
+      rect(56,318,328,382,20,p.panel,p.line)+icon(72,334,'file',p.accent,20)+text(100,351,'实时字幕与纪要',17,p.accentInk,600)+
+      para(74,396,[['发布计划定在下周四。',true]],20,290,{boldFill:p.ink,gap:32}).svg+
+      line(74,460,366,460)+para(74,496,[['决定：先向 10% 用户发布',false]],15,292,{fill:p.copy,gap:24}).svg+
+      para(74,534,[['待办：运维周三前确认回滚方案',false]],15,292,{fill:p.copy,gap:24}).svg+
+      para(74,572,[['负责人：林 · 周五检查指标',false]],15,292,{fill:p.copy,gap:24}).svg+para(74,640,[['字幕、原文与行动项同步更新。',false]],13,292,{fill:p.faint,gap:20}).svg+
+      rect(56,716,100,52,26,p.soft,p.line)+icon(94,730,'left',p.ink,24)+rect(170,716,100,52,26,'url(#accent)','none')+text(220,749,'纪要',18,'#fff',600,'text-anchor="middle"')+rect(284,716,100,52,26,p.soft,p.line)+icon(322,730,'right',p.ink,24)+
+      text(220,796,'浏览：字幕 · 决定 · 待办',13,p.faint,400,'text-anchor="middle"')+
       rect(162,812,116,5,3,p.ink)+`</g>`;
   }
   function devices(){
@@ -456,7 +456,7 @@ function drawing(p, cameraHousing = false) {
   return {conversation,context,workspace,materials,review,prompter,phone,devices,lecture,meeting,course,privacy};
 }
 
-const titles={conversation:'字节后端二面：双路实时对话与追问回答',context:'回答引用当前场景的资料、题库与经验',workspace:'场景页：字节后端二面的面试信息与资料',materials:'资料转 Markdown 与场景技能',review:'会话记录：问题清单与复盘建议',prompter:'视频面试中的悬浮提词器',phone:'手机伴侣：当前问题与回答',devices:'助手窗口与手机伴侣',lecture:'组会论文讲解：讲稿跟随与导师追问',meeting:'商务谈判：实时纪要与报价建议',course:'网课：课件对齐与老师提问',privacy:'设置：本机数据与服务使用'};
+const titles={conversation:'NextThought：中英实时字幕与会议纪要',context:'知识问答引用当前场景资料与来源',workspace:'场景页：产品发布周会的议程与背景',materials:'会议资料整理与知识库检索',review:'会议记录：讨论摘要、决定与待办',prompter:'会议字幕：桌面与手机同步查看',phone:'手机伴侣：双语字幕与会议纪要',devices:'桌面与手机的实时会议辅助',lecture:'学术交流：讲稿跟随与论文资料',meeting:'商务会议：双语转写与行动项',course:'课程学习：课件对齐与知识问答',privacy:'设置：本机数据与服务使用'};
 // Keep the physical display aperture identical in every desktop scene. The page
 // can transform one device between hero and content without remapping UI pixels.
 const definitions = (p) => `<defs>
@@ -491,11 +491,11 @@ for (const out of outs) for (const [theme,p] of Object.entries(palettes)) {
 // Classic also uses square close-ups and a wide wall cut from the same screens (SVG viewBox
 // crops), in place of the template's stock portraits.
 const tiles={
-  answer:['conversation',[800,140,720,720],'追问：删除缓存失败怎么办'],
+  answer:['conversation',[800,140,720,720],'发布周会：回滚方案与行动项'],
   lecture:['lecture',[84,140,720,720],'组会：讲稿跟随当前幻灯片'],
   meeting:['meeting',[800,140,720,720],'谈判：按底线给出报价建议'],
   course:['course',[84,140,720,720],'网课：老师提问与课件对齐'],
-  prompter:['prompter',[400,40,800,800],'摄像头下方的悬浮提词器'],
+  prompter:['prompter',[400,40,800,800],'实时双语字幕与会议重点'],
   review:['review',[540,140,720,720],'复盘：问题清单与改进建议']};
 const page={light:'#f5f6f8',dark:'#0f1115'};
 const classicOut=path.join(root,'public/classic/assets/product-scenes');
@@ -511,7 +511,7 @@ for (const [theme,p] of Object.entries(palettes)) {
   // 1536×1024 wall: staggered close-ups that fade into the page on the right, where the copy sits.
   const keys=Object.keys(tiles),cells=[];
   keys.forEach((key,i)=>{const col=i%3,row=Math.floor(i/3);cells.push(crop(key,40+col*500,(col%2?140:60)+row*500,460,460,26));});
-  const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024" fill="none"><title>InterviewHacker 在面试、组会、谈判与网课中的界面</title>${definitions(p)}<defs><linearGradient id="wall-fade" x1="0" x2="1"><stop offset=".35" stop-color="${page[theme]}" stop-opacity="0"/><stop offset=".72" stop-color="${page[theme]}" stop-opacity=".92"/><stop offset="1" stop-color="${page[theme]}"/></linearGradient></defs><rect width="1536" height="1024" fill="${page[theme]}"/><g ${font} opacity=".9">${cells.join('')}</g><rect width="1536" height="1024" fill="url(#wall-fade)"/></svg>\n`;
+  const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024" fill="none"><title>NextThought：双语会议、资料整理与会议纪要</title>${definitions(p)}<defs><linearGradient id="wall-fade" x1="0" x2="1"><stop offset=".35" stop-color="${page[theme]}" stop-opacity="0"/><stop offset=".72" stop-color="${page[theme]}" stop-opacity=".92"/><stop offset="1" stop-color="${page[theme]}"/></linearGradient></defs><rect width="1536" height="1024" fill="${page[theme]}"/><g ${font} opacity=".9">${cells.join('')}</g><rect width="1536" height="1024" fill="url(#wall-fade)"/></svg>\n`;
   await emit(path.join(classicOut,`wall-${theme}.svg`),svg);
 }
 // Classic hero side panels are tall (≈0.72) and perspective-clipped, so they get complete
@@ -520,9 +520,9 @@ const cards={
   lecture:['cap','组会 · Mamba 论文精读','导师追问','为什么参数随输入变化，还能并行训练？',['并行扫描：线性递推满足结合律','核融合：中间状态只放 SRAM','重计算：显存与 FlashAttention 相当']],
   meeting:['bag','华东代理商 · 年度续约','对方请求','采购量翻倍，单价能不能再降 8 个点？',['阶梯价：1.5 倍降 4%，翻倍降 6%','换条件：账期 90 天缩到 60 天','守底线：降幅上限 6%']],
   course:['book','操作系统 · 虚拟内存','老师提问','TLB 未命中时，硬件和操作系统分别做什么？',['MMU 逐级查页表，补回 TLB','页表项无效 → 缺页异常','内核调页、更新页表后重试']],
-  review:['clock','字节后端二面 · 复盘','会后整理','Kafka 怎么保证消息不丢？',['补上 acks=all 与幂等生产者','重试 + 消费端手动提交','已加入场景题库']],
-  prompter:['eye','悬浮提词器','放在摄像头下方','如果删除缓存失败了怎么办？',['失败的 key 进重试队列','binlog 订阅兜底再删一次','热点 key 延迟双删']],
-  skill:['spark','技能 · SKILL.md','系统设计答题框架','设计一个短链服务，你会怎么做？',['先澄清需求与读写比例','估算规模，再画核心链路','最后讲取舍与兜底']]};
+  review:['clock','产品发布周会 · 纪要','会后整理','哪些决定与待办需要跟进？',['决定：分批向 10% 用户发布','待办：周三前确认回滚方案','负责人：林 · 周五检查指标']],
+  prompter:['globe','双语会议字幕','桌面与手机同步','The release is planned for next Thursday.',['发布计划定在下周四。','原文与译文同步显示','决定与待办自动归档']],
+  skill:['spark','技能 · SKILL.md','会议纪要整理流程','如何从这场会议生成可回看的纪要？',['提取关键决定并关联来源','标记负责人、行动项和期限','按讨论顺序保留上下文']]};
 for (const [theme,p] of Object.entries(palettes)) {
   for(const [key,[ic,scene,who,q,points]] of Object.entries(cards)){
     const W=360,H=500,lines=[];

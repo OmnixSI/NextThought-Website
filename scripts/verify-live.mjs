@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 const root = fileURLToPath(new URL('../', import.meta.url));
-const base = process.argv[2] || 'https://interviewhacker.vercel.app';
+const base = process.argv[2] || 'https://nextthought.vercel.app';
 const inventory = [];
 async function walk(dir) {
   for (const entry of await readdir(dir, {withFileTypes:true})) {

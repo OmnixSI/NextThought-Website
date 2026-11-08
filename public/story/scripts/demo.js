@@ -1,6 +1,6 @@
 // Live assistant demo and waveform canvases.
-// The demo replays a fixed, local script (no audio, model or network access) of features the app ships:
-// two-lane capture, echo suppression, question typing, streaming answers and one-tap rewrites.
+// The demo replays a fixed, local meeting (no audio, model or network access):
+// two-lane capture, bilingual captions, meeting notes and one-tap text adjustments.
 (() => {
   const root = document.documentElement;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
@@ -59,7 +59,7 @@
       any = true;
       let target;
       if (w.autonomous) {
-        // Alternate turns: the other side talks, then you answer.
+        // Alternate turns: the other side talks, then you speak.
         const phase = (waveTime % 6) / 6;
         const them = phase < .5;
         target = (w.lane === 'them') === them ? .75 + .25 * Math.sin(waveTime * 4) : .08;
@@ -150,7 +150,7 @@
     if (isQ) li.classList.add('is-question');
     return li;
   }
-  async function stream(text, g, label = '流式输出') {
+  async function stream(text, g, label = '实时同步') {
     point('answer');
     answerState.textContent = label;
     answer.textContent = '';
@@ -167,9 +167,9 @@
   async function setQuestion(text, type_, g) {
     point('detect');
     setType(type_);
-    status.textContent = '识别到问题';
+    status.textContent = '识别到发言';
     if (window.gsap && window.ScrambleTextPlugin) {
-      gsap.to(question, {duration: .8, scrambleText: {text, chars: '问题识别追问请求明确提问上下文', speed: .6}});
+      gsap.to(question, {duration: .8, scrambleText: {text, chars: '项目发布回滚检查清单负责人日期', speed: .6}});
     } else question.textContent = text;
     await wait(700, g);
   }
@@ -178,30 +178,30 @@
     transcript.textContent = '';
     question.textContent = '';
     answer.textContent = '';
-    answerState.textContent = '等待问题';
+    answerState.textContent = '等待发言';
     setType(null);
     for (const b of adjustChips) b.classList.remove('is-on');
     status.textContent = '正在聆听';
     await wait(500, g);
-    await speak('them', '先聊聊你简历上的订单系统，大促时库存怎么扣？', g, {tag: '问题 · 明确提问', question: true});
-    await setQuestion('先聊聊你简历上的订单系统，大促时库存怎么扣？', 'ask', g);
-    status.textContent = '正在生成回答';
-    await stream('库存先放在 Redis，用 Lua 脚本原子扣减，避免超卖；扣减成功后发事务消息，消费端按订单号幂等落库。大促前再做一轮库存预热和限流。', g);
-    status.textContent = '你在说话';
+    await speak('them', 'The release can move to Thursday. Who will confirm the rollback checklist?', g, {tag: '英语发言 · 中英转写', question: true});
+    await setQuestion('The release can move to Thursday. Who will confirm the rollback checklist?', 'ask', g);
+    status.textContent = '正在整理译文';
+    await stream('发布时间可以调整到周四。谁来确认回滚清单？', g, '中文实时译文');
+    status.textContent = '会议记录';
     await wait(400, g);
-    await speak('me', '库存先在 Redis 里用 Lua 原子扣减，再异步落库。', g);
+    await speak('me', '运维团队可以在周三前确认回滚清单。', g);
     status.textContent = '正在聆听';
     await wait(400, g);
-    await speak('them', '那数据库和缓存同时更新，怎么保证一致性？', g, {tag: '问题 · 追问', question: true});
+    await speak('them', 'Lin will review the error rate and login success on Friday.', g, {tag: '待办 · 负责人确认', question: true});
     const echo = bubble('echo', '回声 · 已忽略');
-    echo.lastChild.data = '数据库和缓存同时更新怎么保证一致性';
-    await setQuestion('那数据库和缓存同时更新，怎么保证一致性？', 'follow', g);
-    status.textContent = '正在生成回答';
-    await stream('我们用的是先更新数据库、再删除缓存。删除失败的 key 进重试队列，同时用 Canal 订阅 binlog 再删一次兜底；热点 key 做延迟双删。这是最终一致方案，余额这类强一致数据直接读库。', g);
+    echo.lastChild.data = 'Lin will review the error rate and login success on Friday';
+    await setQuestion('林周五复核错误率与登录成功率。', 'follow', g);
+    status.textContent = '正在整理纪要';
+    await stream('决定：版本可于周四小流量发布。\n待办：运维周三前确认回滚清单。\n负责人：林周五复核错误率与登录成功率。', g, '会议纪要 · 实时整理');
     await wait(900, g);
     adjustChips.find(b => b.dataset.adjust === 'short')?.classList.add('is-on');
     await wait(450, g);
-    await stream('先更新库再删缓存；删除失败进重试队列，binlog 订阅兜底，热点 key 延迟双删。', g, '已改为更简短');
+    await stream('决定：周四小流量发布。待办：周三确认回滚清单。', g, '摘要 · 已缩短');
     status.textContent = '本机语音已就绪';
     point(null);
     await wait(4200, g);
